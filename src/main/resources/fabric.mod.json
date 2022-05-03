@@ -4,13 +4,13 @@
   "version": "${version}",
 
   "name": "Endless Encore",
-  "description": "A revamp of Minecraft's End dimension in its entirety, complete with new building blocks, biomes, mobs, and mechanics!",
+  "description": "A revamp of Minecraft's End dimension in its entirety, complete with new building blocks, biomes, mobs, items, and mechanics!",
   "authors": [
     "Sydokiddo"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Sydokiddo/endless_encore"
   },
 
   "license": "CC0-1.0",
