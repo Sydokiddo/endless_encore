@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "endlessencore:ethereal_bricks"
+  },
+  "result": "endlessencore:ethereal_pillar",
+  "count": 1
+}

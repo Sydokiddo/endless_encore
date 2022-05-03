@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bedrock",
+    "minecraft:spawner",
+    "minecraft:chest",
+    "minecraft:barrel",
+    "minecraft:shulker_box",
+    "minecraft:end_portal_frame",
+    "endlessencore:end_gateway_activator",
+    "#minecraft:bedrock_blocks"
+  ]
+}

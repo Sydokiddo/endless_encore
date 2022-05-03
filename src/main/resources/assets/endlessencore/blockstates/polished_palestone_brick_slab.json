@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endlessencore:block/polished_palestone_brick_slab"
+    },
+    "type=double": {
+      "model": "endlessencore:block/polished_palestone_bricks"
+    },
+    "type=top": {
+      "model": "endlessencore:block/polished_palestone_brick_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column_horizontal",
+  "textures": {
+    "end": "endlessencore:block/ethereal_pillar_top",
+    "side": "endlessencore:block/ethereal_pillar"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "endlessencore:palestone"
+  },
+  "result": "endlessencore:palestone_stairs",
+  "count": 1
+}

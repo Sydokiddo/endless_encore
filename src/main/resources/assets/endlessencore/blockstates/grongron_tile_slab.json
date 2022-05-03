@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endlessencore:block/grongron_tile_slab"
+    },
+    "type=double": {
+      "model": "endlessencore:block/grongron_tiles"
+    },
+    "type=top": {
+      "model": "endlessencore:block/grongron_tile_slab_top"
+    }
+  }
+}

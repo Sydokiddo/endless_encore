@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:grongron_tile_slab"
+    }
+  },
+  "result": {
+    "item": "endlessencore:chiseled_grongron"
+  }
+}

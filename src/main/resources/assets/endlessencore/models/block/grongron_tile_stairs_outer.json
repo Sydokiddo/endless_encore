@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "endlessencore:block/grongron_tiles",
+    "top": "endlessencore:block/grongron_tiles",
+    "side": "endlessencore:block/grongron_tiles"
+  }
+}

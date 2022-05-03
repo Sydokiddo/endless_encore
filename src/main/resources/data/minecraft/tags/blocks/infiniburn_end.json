@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:infiniburn_overworld",
+    "minecraft:bedrock",
+    "#minecraft:bedrock_blocks",
+    "#minecraft:obsidian_blocks",
+    "#minecraft:void_fire_base_blocks"
+  ]
+}

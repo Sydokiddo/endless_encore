@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "endlessencore:palestone"
+  },
+  "result": "endlessencore:polished_palestone_brick_wall",
+  "count": 1
+}

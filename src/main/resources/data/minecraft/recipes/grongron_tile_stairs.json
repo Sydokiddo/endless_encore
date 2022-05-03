@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:grongron_tiles"
+    }
+  },
+  "result": {
+    "item": "endlessencore:grongron_tile_stairs",
+    "count": 4
+  }
+}

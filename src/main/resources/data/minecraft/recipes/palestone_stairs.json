@@ -1,0 +1,17 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:palestone"
+    }
+  },
+  "result": {
+    "item": "endlessencore:palestone_stairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "endlessencore:iolite_block"
+    }
+  ],
+  "result": {
+    "item": "endlessencore:iolite_fragment",
+    "count": 4
+  }
+}

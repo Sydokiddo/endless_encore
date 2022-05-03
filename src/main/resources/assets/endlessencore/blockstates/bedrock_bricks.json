@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "endlessencore:block/bedrock_bricks"
+    }
+  }
+}

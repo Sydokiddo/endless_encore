@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "group": "iron_ingot",
+  "ingredient": {
+    "item": "endlessencore:end_iron_ore"
+  },
+  "result": "minecraft:iron_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

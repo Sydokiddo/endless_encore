@@ -1,0 +1,115 @@
+{
+  "parent": "minecraft:end/find_ethereal_city",
+  "display": {
+    "icon": {
+      "item": "endlessencore:peroratite_ingot"
+    },
+    "title": {
+      "translate": "advancements.end.obtain_peroratite.title"
+    },
+    "description": {
+      "translate": "advancements.end.obtain_peroratite.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "peroratite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_sword"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_sickle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_sickle"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_pickaxe"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_axe"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_shovel"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_hoe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_hoe"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "peroratite_ingot",
+      "peroratite_sword",
+      "peroratite_sickle",
+      "peroratite_pickaxe",
+      "peroratite_axe",
+      "peroratite_shovel",
+      "peroratite_hoe"
+    ]
+  ]
+}

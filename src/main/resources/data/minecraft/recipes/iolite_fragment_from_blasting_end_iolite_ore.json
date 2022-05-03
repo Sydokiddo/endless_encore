@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "iolite_fragment",
+  "ingredient": {
+    "item": "endlessencore:end_iolite_ore"
+  },
+  "result": "endlessencore:iolite_fragment",
+  "experience": 1.0,
+  "cookingtime": 100
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column_horizontal",
+  "textures": {
+    "end": "endlessencore:block/concord_stalk_top",
+    "side": "endlessencore:block/concord_stalk"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:ethereal_tiles"
+    }
+  },
+  "result": {
+    "item": "endlessencore:ethereal_tile_slab",
+    "count": 6
+  }
+}

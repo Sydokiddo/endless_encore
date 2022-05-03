@@ -1,0 +1,223 @@
+{
+	"block.nettled_end_stone.place": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/nettled_end_stone/break1",
+			"endlessencore:block/nettled_end_stone/break2",
+			"endlessencore:block/nettled_end_stone/break3",
+			"endlessencore:block/nettled_end_stone/break4",
+			"endlessencore:block/nettled_end_stone/break5"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.nettled_end_stone.break": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/nettled_end_stone/break1",
+			"endlessencore:block/nettled_end_stone/break2",
+			"endlessencore:block/nettled_end_stone/break3",
+			"endlessencore:block/nettled_end_stone/break4",
+			"endlessencore:block/nettled_end_stone/break5"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.nettled_end_stone.hit": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/nettled_end_stone/step1",
+			"endlessencore:block/nettled_end_stone/step2",
+			"endlessencore:block/nettled_end_stone/step3",
+			"endlessencore:block/nettled_end_stone/step4",
+			"endlessencore:block/nettled_end_stone/step5"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.nettled_end_stone.step": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/nettled_end_stone/step1",
+			"endlessencore:block/nettled_end_stone/step2",
+			"endlessencore:block/nettled_end_stone/step3",
+			"endlessencore:block/nettled_end_stone/step4",
+			"endlessencore:block/nettled_end_stone/step5"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.nettled_end_stone.fall": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/nettled_end_stone/step1",
+			"endlessencore:block/nettled_end_stone/step2",
+			"endlessencore:block/nettled_end_stone/step3",
+			"endlessencore:block/nettled_end_stone/step4",
+			"endlessencore:block/nettled_end_stone/step5"
+		]
+	},
+	"block.iolite.place": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/iolite/place1",
+			"endlessencore:block/iolite/place2",
+			"endlessencore:block/iolite/place3",
+			"endlessencore:block/iolite/place4"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.iolite.break": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/iolite/break1",
+			"endlessencore:block/iolite/break2",
+			"endlessencore:block/iolite/break3",
+			"endlessencore:block/iolite/break4",
+			"endlessencore:block/iolite/break5"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.iolite.hit": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/iolite/step1",
+			"endlessencore:block/iolite/step2",
+			"endlessencore:block/iolite/step3",
+			"endlessencore:block/iolite/step4"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.iolite.step": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/iolite/step1",
+			"endlessencore:block/iolite/step2",
+			"endlessencore:block/iolite/step3",
+			"endlessencore:block/iolite/step4"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.iolite.fall": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/iolite/step1",
+			"endlessencore:block/iolite/step2",
+			"endlessencore:block/iolite/step3",
+			"endlessencore:block/iolite/step4"
+		]
+	},
+	"block.end_stalk.place": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_stalks/break1",
+			"endlessencore:block/end_stalks/break2",
+			"endlessencore:block/end_stalks/break3",
+			"endlessencore:block/end_stalks/break4"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.end_stalk.break": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_stalks/break1",
+			"endlessencore:block/end_stalks/break2",
+			"endlessencore:block/end_stalks/break3",
+			"endlessencore:block/end_stalks/break4"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.end_stalk.hit": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_stalks/step1",
+			"endlessencore:block/end_stalks/step2",
+			"endlessencore:block/end_stalks/step3"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.end_stalk.step": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_stalks/step1",
+			"endlessencore:block/end_stalks/step2",
+			"endlessencore:block/end_stalks/step3"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.end_stalk.fall": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_stalks/step1",
+			"endlessencore:block/end_stalks/step2",
+			"endlessencore:block/end_stalks/step3"
+		]
+	},
+	"block.end_ore.place": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_ore/break1",
+			"endlessencore:block/end_ore/break2",
+			"endlessencore:block/end_ore/break3",
+			"endlessencore:block/end_ore/break4"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.end_ore.break": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_ore/break1",
+			"endlessencore:block/end_ore/break2",
+			"endlessencore:block/end_ore/break3",
+			"endlessencore:block/end_ore/break4"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.end_ore.hit": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_ore/step1",
+			"endlessencore:block/end_ore/step2",
+			"endlessencore:block/end_ore/step3",
+			"endlessencore:block/end_ore/step4"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.end_ore.step": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_ore/step1",
+			"endlessencore:block/end_ore/step2",
+			"endlessencore:block/end_ore/step3",
+			"endlessencore:block/end_ore/step4"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.end_ore.fall": {
+		"category": "block",
+		"sounds": [
+			"endlessencore:block/end_ore/step1",
+			"endlessencore:block/end_ore/step2",
+			"endlessencore:block/end_ore/step3",
+			"endlessencore:block/end_ore/step4"
+		]
+	},
+	"ambient.general_end.mood": {
+		"category": "ambient",
+		"sounds": [
+			"endlessencore:ambient/end/general_end/mood1",
+			"endlessencore:ambient/end/general_end/mood2",
+			"endlessencore:ambient/end/general_end/mood3"
+		]
+	},
+	"ambient.general_end.additions": {
+		"category": "ambient",
+		"sounds": [
+			"endlessencore:ambient/end/general_end/addition1",
+			"endlessencore:ambient/end/general_end/addition2",
+			"endlessencore:ambient/end/general_end/addition3"
+		]
+	},
+	"ambient.general_end.loop": {
+		"category": "ambient",
+		"sounds": [
+			"endlessencore:ambient/end/general_end/ambience"
+		]
+	}
+}

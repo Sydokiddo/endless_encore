@@ -1,0 +1,27 @@
+{
+  "feature": "minecraft:ore_end_diamond",
+  "placement": [
+    {
+      "count": 8,
+      "type": "minecraft:count"
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "height": {
+        "min_inclusive": {
+          "above_bottom": -16
+        },
+        "max_inclusive": {
+          "above_bottom": 60
+        },
+        "type": "minecraft:trapezoid"
+      },
+      "type": "minecraft:height_range"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

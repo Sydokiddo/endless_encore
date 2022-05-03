@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endlessencore:block/palestone_slab"
+    },
+    "type=double": {
+      "model": "endlessencore:block/palestone"
+    },
+    "type=top": {
+      "model": "endlessencore:block/palestone_slab_top"
+    }
+  }
+}

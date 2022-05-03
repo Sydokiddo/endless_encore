@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:ethereal_bricks"
+    }
+  },
+  "result": {
+    "item": "endlessencore:ethereal_brick_stairs",
+    "count": 4
+  }
+}

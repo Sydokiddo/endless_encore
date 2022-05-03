@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:peroratite_ingot"
+    }
+  },
+  "result": {
+    "item": "endlessencore:peroratite_block"
+  }
+}

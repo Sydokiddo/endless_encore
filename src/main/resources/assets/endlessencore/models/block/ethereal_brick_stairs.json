@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "endlessencore:block/ethereal_bricks",
+    "top": "endlessencore:block/ethereal_bricks",
+    "side": "endlessencore:block/ethereal_bricks"
+  }
+}

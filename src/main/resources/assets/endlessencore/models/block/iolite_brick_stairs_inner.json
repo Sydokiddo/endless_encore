@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "endlessencore:block/iolite_bricks",
+    "top": "endlessencore:block/iolite_bricks",
+    "side": "endlessencore:block/iolite_bricks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "endlessencore:block/flowering_nettle_shrub"
+  }
+}

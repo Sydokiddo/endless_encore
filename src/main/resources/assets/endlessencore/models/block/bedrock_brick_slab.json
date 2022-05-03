@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "endlessencore:block/bedrock_bricks",
+    "top": "endlessencore:block/bedrock_bricks",
+    "side": "endlessencore:block/bedrock_bricks"
+  }
+}

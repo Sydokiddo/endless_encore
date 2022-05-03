@@ -1,0 +1,6 @@
+{
+  "parent": "block/carpet",
+  "textures": {
+    "wool": "endlessencore:block/blighted_carpet"
+  }
+}

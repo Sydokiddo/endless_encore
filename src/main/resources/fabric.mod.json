@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "endlessencore",
+  "version": "${version}",
+
+  "name": "Endless Encore",
+  "description": "A revamp of Minecraft's End dimension in its entirety, complete with new building blocks, biomes, mobs, and mechanics!",
+  "authors": [
+    "Sydokiddo"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/endlessencore/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.sydokiddo.endlessencore.EndlessEncore"
+    ],
+    "client": [
+      "net.sydokiddo.endlessencore.client.EndlessEncoreClient"
+    ]
+  },
+  "mixins": [
+    "endlessencore.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

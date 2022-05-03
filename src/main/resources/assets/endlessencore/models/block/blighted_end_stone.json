@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "endlessencore:block/blighted_end_stone",
+    "bottom": "minecraft:block/end_stone",
+    "side": "endlessencore:block/blighted_end_stone_side"
+  }
+}

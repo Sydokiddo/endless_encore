@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "endlessencore:polished_palestone_bricks"
+    }
+  },
+  "result": {
+    "item": "endlessencore:polished_palestone_brick_slab",
+    "count": 6
+  }
+}

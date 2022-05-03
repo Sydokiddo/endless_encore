@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "endlessencore:grongron_tile_wall",
+    "endlessencore:ethereal_brick_wall",
+    "endlessencore:ethereal_tile_wall",
+    "endlessencore:bedrock_brick_wall",
+    "endlessencore:palestone_wall",
+    "endlessencore:polished_palestone_wall",
+    "endlessencore:polished_palestone_brick_wall",
+    "endlessencore:iolite_brick_wall"
+  ]
+}

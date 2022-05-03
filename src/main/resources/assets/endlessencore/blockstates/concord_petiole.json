@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "endlessencore:block/concord_petiole",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "endlessencore:block/concord_petiole"
+    },
+    "axis=z": {
+      "model": "endlessencore:block/concord_petiole",
+      "x": 90
+    }
+  }
+}

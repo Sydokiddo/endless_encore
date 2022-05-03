@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bedrock",
+    "endlessencore:bedrock_bricks",
+    "endlessencore:bedrock_brick_slab",
+    "endlessencore:bedrock_brick_stairs",
+    "endlessencore:bedrock_brick_wall",
+    "endlessencore:bedrock_pillar"
+  ]
+}

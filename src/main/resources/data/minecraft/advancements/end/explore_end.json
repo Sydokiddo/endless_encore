@@ -1,0 +1,81 @@
+{
+  "parent": "minecraft:end/enter_end_gateway",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_boots",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "advancements.end.explore_end.title"
+    },
+    "description": {
+      "translate": "advancements.end.explore_end.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 500
+  },
+  "criteria": {
+    "minecraft:the_end": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:the_end"
+        }
+      }
+    },
+    "minecraft:end_highlands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:end_highlands"
+        }
+      }
+    },
+    "minecraft:end_midlands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:end_midlands"
+        }
+      }
+    },
+    "minecraft:end_barrens": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:end_barrens"
+        }
+      }
+    },
+    "minecraft:small_end_islands": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:small_end_islands"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "minecraft:the_end"
+    ],
+    [
+      "minecraft:end_highlands"
+    ],
+    [
+      "minecraft:end_midlands"
+    ],
+    [
+      "minecraft:end_barrens"
+    ],
+    [
+      "minecraft:small_end_islands"
+    ]
+  ]
+}

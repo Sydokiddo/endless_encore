@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "endlessencore:polished_palestone_bricks"
+  },
+  "result": "endlessencore:polished_palestone_brick_slab",
+  "count": 2
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "endlessencore:chitin"
+    },
+    {
+      "item": "endlessencore:chitin"
+    },
+    {
+      "item": "endlessencore:chitin"
+    }
+  ],
+  "result": {
+    "item": "minecraft:paper",
+    "count": 3
+  }
+}

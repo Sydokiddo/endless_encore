@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "endlessencore:block/end_stone_pillar_top",
+    "side": "endlessencore:block/end_stone_pillar"
+  }
+}
