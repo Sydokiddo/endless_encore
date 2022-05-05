@@ -10,6 +10,8 @@ public class ModSoundEvents {
 
     // Sound Registry:
 
+    // - Block Sounds:
+
     public static final SoundEvent BLOCK_NETTLED_END_STONE_BREAK = registerSoundEvent("block.nettled_end_stone.break");
     public static final SoundEvent BLOCK_NETTLED_END_STONE_STEP = registerSoundEvent("block.nettled_end_stone.step");
     public static final SoundEvent BLOCK_NETTLED_END_STONE_PLACE = registerSoundEvent("block.nettled_end_stone.place");
@@ -34,8 +36,50 @@ public class ModSoundEvents {
     public static final SoundEvent BLOCK_END_ORE_HIT = registerSoundEvent("block.end_ore.hit");
     public static final SoundEvent BLOCK_END_ORE_FALL = registerSoundEvent("block.end_ore.fall");
 
+    // - Ambient Sounds:
+
     public static final SoundEvent AMBIENT_GENERAL_END_MOOD = registerSoundEvent("ambient.general_end.mood");
     public static final SoundEvent AMBIENT_GENERAL_END_LOOP = registerSoundEvent("ambient.general_end.loop");
+
+    // - Entity Sounds:
+
+    public static final SoundEvent ETHEREAL_AMBIENT = registerSoundEvent("entity.ethereal.ambient");
+    public static final SoundEvent ETHEREAL_NOTICE = registerSoundEvent("entity.ethereal.notice");
+    public static final SoundEvent ETHEREAL_HURT = registerSoundEvent("entity.ethereal.hurt");
+    public static final SoundEvent ETHEREAL_DEATH = registerSoundEvent("entity.ethereal.death");
+    public static final SoundEvent ETHEREAL_FRENZY = registerSoundEvent("entity.ethereal.frenzy");
+    public static final SoundEvent ETHEREAL_FRENZY_END = registerSoundEvent("entity.ethereal.frenzy_end");
+
+    public static final SoundEvent GLADIATOR_AMBIENT = registerSoundEvent("entity.gladiator.ambient");
+    public static final SoundEvent GLADIATOR_NOTICE = registerSoundEvent("entity.gladiator.notice");
+    public static final SoundEvent GLADIATOR_HURT = registerSoundEvent("entity.gladiator.hurt");
+    public static final SoundEvent GLADIATOR_DEATH = registerSoundEvent("entity.gladiator.death");
+    public static final SoundEvent GLADIATOR_FRENZY = registerSoundEvent("entity.gladiator.frenzy");
+    public static final SoundEvent GLADIATOR_FRENZY_END = registerSoundEvent("entity.gladiator.frenzy_end");
+
+    public static final SoundEvent CHARMER_AMBIENT = registerSoundEvent("entity.charmer.ambient");
+    public static final SoundEvent CHARMER_HURT = registerSoundEvent("entity.charmer.hurt");
+    public static final SoundEvent CHARMER_DEATH = registerSoundEvent("entity.charmer.death");
+    public static final SoundEvent CHARMER_FRENZY = registerSoundEvent("entity.charmer.frenzy");
+    public static final SoundEvent CHARMER_FRENZY_END = registerSoundEvent("entity.charmer.frenzy_end");
+    public static final SoundEvent CHARMER_REGENERATION_SONG = registerSoundEvent("entity.charmer.regeneration_song");
+    public static final SoundEvent CHARMER_STRENGTH_SONG = registerSoundEvent("entity.charmer.strength_song");
+    public static final SoundEvent CHARMER_RESISTANCE_SONG = registerSoundEvent("entity.charmer.resistance_song");
+    public static final SoundEvent CHARMER_SPEED_SONG = registerSoundEvent("entity.charmer.speed_song");
+    public static final SoundEvent CHARMER_VICTORY_SONG = registerSoundEvent("entity.charmer.victory_song");
+
+    public static final SoundEvent BARRAGE_AMBIENT = registerSoundEvent("entity.barrage.ambient");
+    public static final SoundEvent BARRAGE_OPEN = registerSoundEvent("entity.barrage.open");
+    public static final SoundEvent BARRAGE_CLOSE = registerSoundEvent("entity.barrage.close");
+    public static final SoundEvent BARRAGE_HURT = registerSoundEvent("entity.barrage.hurt");
+    public static final SoundEvent BARRAGE_HURT_CLOSED = registerSoundEvent("entity.barrage.hurt_closed");
+    public static final SoundEvent BARRAGE_DEATH = registerSoundEvent("entity.barrage.death");
+    public static final SoundEvent BARRAGE_LOCK = registerSoundEvent("entity.barrage.lock");
+    public static final SoundEvent BARRAGE_SHOOT = registerSoundEvent("entity.barrage.shoot");
+
+    public static final SoundEvent SNAPDRAGON_HURT = registerSoundEvent("entity.snapdragon.hurt");
+    public static final SoundEvent SNAPDRAGON_FLAP = registerSoundEvent("entity.snapdragon.flap");
+    public static final SoundEvent SNAPDRAGON_TELEPORT = registerSoundEvent("entity.snapdragon.teleport");
 
     // Sound Groups:
 

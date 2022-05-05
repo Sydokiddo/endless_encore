@@ -219,5 +219,337 @@
 		"sounds": [
 			"endlessencore:ambient/end/general_end/ambience"
 		]
+	},
+	"entity.barrage.ambient": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/ambient1",
+			"endlessencore:mob/barrage/ambient2",
+			"endlessencore:mob/barrage/ambient3",
+			"endlessencore:mob/barrage/ambient4",
+			"endlessencore:mob/barrage/ambient5",
+			"endlessencore:mob/barrage/ambient6",
+			"endlessencore:mob/barrage/ambient7",
+			"endlessencore:mob/barrage/ambient8"
+		],
+		"subtitle": "subtitles.entity.barrage.ambient"
+	},
+	"entity.barrage.close": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/close1",
+			"endlessencore:mob/barrage/close2",
+			"endlessencore:mob/barrage/close3",
+			"endlessencore:mob/barrage/close4",
+			"endlessencore:mob/barrage/close5"
+		],
+		"subtitle": "subtitles.entity.barrage.close"
+	},
+	"entity.barrage.death": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/death"
+		]
+	},
+	"entity.barrage.open": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/open1",
+			"endlessencore:mob/barrage/open2",
+			"endlessencore:mob/barrage/open3",
+			"endlessencore:mob/barrage/open4",
+			"endlessencore:mob/barrage/open5"
+		],
+		"subtitle": "subtitles.entity.barrage.open"
+	},
+	"entity.barrage.hurt": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/hurt1",
+			"endlessencore:mob/barrage/hurt2",
+			"endlessencore:mob/barrage/hurt3"
+		],
+		"subtitle": "subtitles.entity.barrage.hurt"
+	},
+	"entity.barrage.hurt_closed": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/hurt_closed1",
+			"endlessencore:mob/barrage/hurt_closed2",
+			"endlessencore:mob/barrage/hurt_closed3",
+			"endlessencore:mob/barrage/hurt_closed4",
+			"endlessencore:mob/barrage/hurt_closed5"
+		],
+		"subtitle": "subtitles.entity.barrage.hurt"
+	},
+	"entity.barrage.lock": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/lock"
+		],
+		"subtitle": "subtitles.entity.barrage.lock"
+	},
+	"entity.barrage.shoot": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/barrage/shoot1"
+		],
+		"subtitle": "subtitles.entity.barrage.shoot"
+	},
+	"entity.ethereal.ambient": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/grunt1",
+			"endlessencore:mob/ethereal/grunt2",
+			"endlessencore:mob/ethereal/grunt3",
+			"endlessencore:mob/ethereal/grunt4",
+			"endlessencore:mob/ethereal/grunt5",
+			"endlessencore:mob/ethereal/grunt6"
+		],
+		"subtitle": "subtitles.entity.ethereal.ambient"
+	},
+	"entity.ethereal.notice": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/notice1",
+			"endlessencore:mob/ethereal/notice2",
+			"endlessencore:mob/ethereal/notice3",
+			"endlessencore:mob/ethereal/notice4"
+		],
+		"subtitle": "subtitles.entity.ethereal.notice"
+	},
+	"entity.ethereal.hurt": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/hurt1",
+			"endlessencore:mob/ethereal/hurt2",
+			"endlessencore:mob/ethereal/hurt3",
+			"endlessencore:mob/ethereal/hurt4"
+		],
+		"subtitle": "subtitles.entity.ethereal.hurt"
+	},
+	"entity.ethereal.death": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/hurt1"
+		],
+		"subtitle": "subtitles.entity.ethereal.death"
+	},
+	"entity.ethereal.frenzy": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/frenzy1",
+			"endlessencore:mob/ethereal/frenzy2",
+			"endlessencore:mob/ethereal/frenzy3"
+		],
+		"subtitle": "subtitles.entity.ethereal.frenzy"
+	},
+	"entity.ethereal.frenzy_end": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/ethereal/frenzy_end"
+		],
+		"subtitle": "subtitles.entity.ethereal.frenzy_end"
+	},
+	"entity.gladiator.ambient": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/grunt1",
+			"endlessencore:mob/gladiator/grunt2",
+			"endlessencore:mob/gladiator/grunt3",
+			"endlessencore:mob/gladiator/grunt4",
+			"endlessencore:mob/gladiator/grunt5",
+			"endlessencore:mob/gladiator/grunt6",
+			"endlessencore:mob/gladiator/grunt7"
+		],
+		"subtitle": "subtitles.entity.gladiator.ambient"
+	},
+	"entity.gladiator.notice": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/notice1",
+			"endlessencore:mob/gladiator/notice2",
+			"endlessencore:mob/gladiator/notice3",
+			"endlessencore:mob/gladiator/notice4"
+		],
+		"subtitle": "subtitles.entity.gladiator.notice"
+	},
+	"entity.gladiator.hurt": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/hurt1",
+			"endlessencore:mob/gladiator/hurt2",
+			"endlessencore:mob/gladiator/hurt3",
+			"endlessencore:mob/gladiator/hurt4"
+		],
+		"subtitle": "subtitles.entity.gladiator.hurt"
+	},
+	"entity.gladiator.death": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/death"
+		],
+		"subtitle": "subtitles.entity.gladiator.death"
+	},
+	"entity.gladiator.frenzy": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/frenzy1",
+			"endlessencore:mob/gladiator/frenzy2",
+			"endlessencore:mob/gladiator/frenzy3"
+		],
+		"subtitle": "subtitles.entity.gladiator.frenzy"
+	},
+	"entity.gladiator.frenzy_end": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/gladiator/frenzy_end"
+		],
+		"subtitle": "subtitles.entity.gladiator.frenzy_end"
+	},
+	"entity.charmer.ambient": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/grunt1",
+			"endlessencore:mob/charmer/grunt2",
+			"endlessencore:mob/charmer/grunt3",
+			"endlessencore:mob/charmer/grunt4",
+			"endlessencore:mob/charmer/grunt5",
+			"endlessencore:mob/charmer/grunt6"
+		],
+		"subtitle": "subtitles.entity.charmer.ambient"
+	},
+	"entity.charmer.hurt": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/hurt1",
+			"endlessencore:mob/charmer/hurt2",
+			"endlessencore:mob/charmer/hurt3",
+			"endlessencore:mob/charmer/hurt4"
+		],
+		"subtitle": "subtitles.entity.charmer.hurt"
+	},
+	"entity.charmer.death": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/death"
+		],
+		"subtitle": "subtitles.entity.charmer.death"
+	},
+	"entity.charmer.frenzy": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/frenzy1",
+			"endlessencore:mob/charmer/frenzy2",
+			"endlessencore:mob/charmer/frenzy3"
+		],
+		"subtitle": "subtitles.entity.charmer.frenzy"
+	},
+	"entity.charmer.frenzy_end": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/frenzy_end"
+		],
+		"subtitle": "subtitles.entity.charmer.frenzy_end"
+	},
+	"entity.charmer.regeneration_song": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/regeneration_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_regeneration"
+	},
+	"entity.charmer.strength_song": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/strength_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_strength"
+	},
+	"entity.charmer.speed_song": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/speed_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_speed"
+	},
+	"entity.charmer.resistance_song": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/resistance_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_resistance"
+	},
+	"entity.charmer.victory_song": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/victory_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_victory"
+	},
+	"entity.snapdragon.ambient": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/growl1",
+			"endlessencore:mob/snapdragon/growl2",
+			"endlessencore:mob/snapdragon/growl3",
+			"endlessencore:mob/snapdragon/growl4"
+		],
+		"subtitle": "subtitles.entity.snapdragon.ambient"
+	},
+	"entity.snapdragon.flap": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/flap1",
+			"endlessencore:mob/snapdragon/flap2",
+			"endlessencore:mob/snapdragon/flap3",
+			"endlessencore:mob/snapdragon/flap4"
+		],
+		"subtitle": "subtitles.entity.snapdragon.flap"
+	},
+	"entity.snapdragon.hurt": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/hurt1",
+			"endlessencore:mob/snapdragon/hurt2",
+			"endlessencore:mob/snapdragon/hurt3",
+			"endlessencore:mob/snapdragon/hurt4"
+		],
+		"subtitle": "subtitles.entity.snapdragon.hurt"
+	},
+	"entity.snapdragon.death": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/death"
+		],
+		"subtitle": "subtitles.entity.snapdragon.death"
+	},
+	"entity.snapdragon.spit": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/spit1",
+			"endlessencore:mob/snapdragon/spit2",
+			"endlessencore:mob/snapdragon/spit3",
+			"endlessencore:mob/snapdragon/spit4"
+		],
+		"subtitle": "subtitles.entity.snapdragon.spit"
+	},
+	"entity.snapdragon.bite": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/bite1",
+			"endlessencore:mob/snapdragon/bite2",
+			"endlessencore:mob/snapdragon/bite3",
+			"endlessencore:mob/snapdragon/bite4"
+		],
+		"subtitle": "subtitles.entity.snapdragon.bite"
+	},
+	"entity.snapdragon.teleport": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/snapdragon/teleport1",
+			"endlessencore:mob/snapdragon/teleport2"
+		],
+		"subtitle": "subtitles.entity.snapdragon.teleport"
 	}
 }
