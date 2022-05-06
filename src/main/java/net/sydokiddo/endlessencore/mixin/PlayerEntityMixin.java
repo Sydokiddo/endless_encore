@@ -77,7 +77,7 @@ public class PlayerEntityMixin implements PlayerAccess {
     }
 
     @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;resetLastAttackedTicks()V"))
-    private void attackResetLastAttackedTickskMixin(CallbackInfo info) {
+    private void attackResetLastAttackedTicksMixin(CallbackInfo info) {
         if (this.offHandAttack) {
             this.resetLastOffhandAttackTicks();
         }

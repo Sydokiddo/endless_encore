@@ -54,7 +54,6 @@ public class ModItems {
             new PeroratiteHoeItem(ModToolMaterial.PERORATITE, -5, 0f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
-
     // Registry for Items:
 
     private static Item registerItem(String name, Item item) {

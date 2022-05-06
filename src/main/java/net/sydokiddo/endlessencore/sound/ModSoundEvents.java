@@ -36,6 +36,10 @@ public class ModSoundEvents {
     public static final SoundEvent BLOCK_END_ORE_HIT = registerSoundEvent("block.end_ore.hit");
     public static final SoundEvent BLOCK_END_ORE_FALL = registerSoundEvent("block.end_ore.fall");
 
+    // - Item Sounds:
+
+    public static final SoundEvent ELYTRA_CLOSE = registerSoundEvent("item.elytra.close");
+
     // - Ambient Sounds:
 
     public static final SoundEvent AMBIENT_GENERAL_END_MOOD = registerSoundEvent("ambient.general_end.mood");

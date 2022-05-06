@@ -7,6 +7,7 @@ import net.sydokiddo.endlessencore.block.ModBlocks;
 
 @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
 public class EndlessEncoreClient implements ClientModInitializer {
+
     @Override
     public void onInitializeClient() {
 

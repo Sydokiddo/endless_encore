@@ -551,5 +551,12 @@
 			"endlessencore:mob/snapdragon/teleport2"
 		],
 		"subtitle": "subtitles.entity.snapdragon.teleport"
+	},
+	"item.elytra.close": {
+		"category": "player",
+		"sounds": [
+			"endlessencore:item/elytra/close"
+		],
+		"subtitle": "subtitles.item.elytra.close"
 	}
 }

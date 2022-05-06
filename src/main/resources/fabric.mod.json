@@ -14,7 +14,7 @@
     "sources": "https://github.com/Sydokiddo/endless_encore"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/endlessencore/icon.png",
 
   "environment": "*",
