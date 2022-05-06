@@ -35,7 +35,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SICKLE = registerItem("peroratite_sickle",
-            new PeroratiteSickleItem(ModToolMaterial.PERORATITE, 2, -2.2f,
+            new PeroratiteSickleItem(ModToolMaterial.PERORATITE, 1, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SHOVEL = registerItem("peroratite_shovel",

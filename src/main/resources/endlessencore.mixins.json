@@ -7,7 +7,9 @@
     "PlayerEntityMixin",
     "EnchantmentMixin",
     "ServerPlayerEntityMixin",
-    "PlayerManagerMixin"
+    "PlayerManagerMixin",
+    "LivingEntityMixin",
+    "EntityAccessor"
   ],
   "client": [
     "client.MinecraftClientMixin",
