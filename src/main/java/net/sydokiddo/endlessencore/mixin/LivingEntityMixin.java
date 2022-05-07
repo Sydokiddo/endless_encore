@@ -5,7 +5,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
-import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -35,7 +34,6 @@ public abstract class LivingEntityMixin extends Entity {
         }
         LivingEntity player = (LivingEntity) (Object) this;
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
-            player.playSound(ModSoundEvents.ELYTRA_CLOSE, 1, 1);
             ((ServerPlayerEntity) player).stopFallFlying();
         }
     }
