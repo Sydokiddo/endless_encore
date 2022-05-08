@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "peroratite_ingot",
+  "ingredients": [
+    {
+      "item": "endlessencore:peroratite_block"
+    }
+  ],
+  "result": {
+    "item": "endlessencore:peroratite_ingot",
+    "count": 9
+  }
+}
