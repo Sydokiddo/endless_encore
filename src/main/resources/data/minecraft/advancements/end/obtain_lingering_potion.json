@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:end/dragon_breath",
+  "display": {
+    "icon": {
+      "item": "minecraft:lingering_potion"
+    },
+    "title": {
+      "translate": "advancements.end.obtain_lingering_potion.title"
+    },
+    "description": {
+      "translate": "advancements.end.obtain_lingering_potion.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "lingering_potion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:lingering_potion"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "lingering_potion"
+    ]
+  ]
+}

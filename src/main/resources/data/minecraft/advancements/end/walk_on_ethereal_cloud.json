@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:end/find_ethereal_city",
+  "display": {
+    "icon": {
+      "item": "endlessencore:ethereal_cloud"
+    },
+    "title": {
+      "translate": "advancements.end.walk_on_ethereal_cloud.title"
+    },
+    "description": {
+      "translate": "advancements.end.walk_on_ethereal_cloud.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "walk_on_ethereal_cloud": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "is_sprinting": true,
+              "stepping_on": {
+                "block": {
+                  "blocks": [
+                    "endlessencore:ethereal_cloud"
+                  ]
+                }
+              }
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "walk_on_ethereal_cloud"
+    ]
+  ]
+}

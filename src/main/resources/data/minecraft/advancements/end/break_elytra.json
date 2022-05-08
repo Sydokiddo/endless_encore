@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:end/elytra",
+  "display": {
+    "icon": {
+      "item": "minecraft:elytra",
+      "nbt": "{Damage:431}"
+    },
+    "title": {
+      "translate": "advancements.end.break_elytra.title"
+    },
+    "description": {
+      "translate": "advancements.end.break_elytra.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "break_elytra": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "player": {
+          "location": {
+            "position": {
+              "y": {
+                "min": 300
+              }
+            }
+          }
+        },
+        "durability": 1,
+        "item": {
+          "items": [
+            "minecraft:elytra"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "break_elytra"
+    ]
+  ]
+}

@@ -25,6 +25,9 @@ public class ModItems {
     public static final Item PERORATITE_INGOT = registerItem("peroratite_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
+    public static final Item ETHEREAL_EMBERS = registerItem("ethereal_embers",
+            new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
     public static final Item PURIFIED_CHORUS_FRUIT = registerItem("purified_chorus_fruit",
             new Item(new FabricItemSettings()
             .food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(10).statusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 160, 0), 1f).build())
