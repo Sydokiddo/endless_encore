@@ -71,6 +71,7 @@ public class ModSoundEvents {
     public static final SoundEvent CHARMER_RESISTANCE_SONG = registerSoundEvent("entity.charmer.resistance_song");
     public static final SoundEvent CHARMER_SPEED_SONG = registerSoundEvent("entity.charmer.speed_song");
     public static final SoundEvent CHARMER_VICTORY_SONG = registerSoundEvent("entity.charmer.victory_song");
+    public static final SoundEvent CHARMER_POWER_UP = registerSoundEvent("entity.charmer.power_up");
 
     public static final SoundEvent BARRAGE_AMBIENT = registerSoundEvent("entity.barrage.ambient");
     public static final SoundEvent BARRAGE_OPEN = registerSoundEvent("entity.barrage.open");

@@ -487,6 +487,14 @@
 		],
 		"subtitle": "subtitles.entity.charmer.flute_victory"
 	},
+	"entity.charmer.power_up": {
+		"category": "hostile",
+		"sounds": [
+			"endlessencore:mob/charmer/power_up1",
+			"endlessencore:mob/charmer/power_up2"
+		],
+		"subtitle": "subtitles.entity.charmer.power_up"
+	},
 	"entity.snapdragon.ambient": {
 		"category": "hostile",
 		"sounds": [
