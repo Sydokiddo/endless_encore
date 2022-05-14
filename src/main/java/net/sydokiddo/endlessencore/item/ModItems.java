@@ -19,6 +19,9 @@ public class ModItems {
     public static final Item BARRAGE_SHELL = registerItem("barrage_shell",
             new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
+    public static final Item SHULKER_PEARL = registerItem("shulker_pearl",
+            new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.ENDLESS_ENCORE)));
+
     public static final Item IOLITE_FRAGMENT = registerItem("iolite_fragment",
             new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
