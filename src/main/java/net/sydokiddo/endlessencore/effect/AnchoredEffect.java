@@ -10,6 +10,8 @@ public class AnchoredEffect extends StatusEffect {
         super(statusEffectCategory, color);
     }
 
+    // Prevents Elytra usage if player has the Anchored status effect
+
     @Override
     public void applyUpdateEffect(LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity instanceof ServerPlayerEntity) {

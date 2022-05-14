@@ -24,14 +24,10 @@ public abstract class PeroratiteItemDropMixin extends Entity {
 
     @Inject(at = @At("TAIL"), method = "tick()V")
     private void dropItem(CallbackInfo info) {
-        // Detects if a Peroratite item is in the tag to disable gravity for it
-        if (!hasNoGravity() && !world.isClient && !getStack().isEmpty()
-                && (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS))) {
+        // Detects if an item is in the tag to disable gravity for it
+        if (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS)) {
             setNoGravity(true);
-        }
-        // Slows down Peroratite item Y Velocity
-        if ((getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS))) {
-            this.setVelocity(this.getVelocity().multiply(1.0D, 0.96D, 1.0D));
+            this.setVelocity(this.getVelocity().multiply(0.96D, 0.96D, 0.96D));
         }
     }
 }
