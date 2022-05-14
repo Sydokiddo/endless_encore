@@ -25,6 +25,7 @@ import net.sydokiddo.endlessencore.core.PreservationHooks;
 import net.sydokiddo.endlessencore.core.PreservationPersistentState;
 import net.sydokiddo.endlessencore.core.inventory.PlayerInventoryContainer;
 import net.sydokiddo.endlessencore.core.inventory.PlayerInventoryContainerProvider;
+import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.enchantment.PreservationEnchantment;
 import net.sydokiddo.endlessencore.item.ModItems;
 import net.sydokiddo.endlessencore.network.PlayerAttackPacket;
@@ -58,6 +59,7 @@ public class EndlessEncore implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModSoundEvents.registerSounds();
+		ModEffects.registerEffects();
 
 		// Preservation Enchantment
 

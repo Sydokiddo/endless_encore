@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "endlessencore:peroratite_ingot",
+    "endlessencore:peroratite_block",
+    "endlessencore:peroratite_sword",
+    "endlessencore:peroratite_sickle",
+    "endlessencore:peroratite_axe",
+    "endlessencore:peroratite_pickaxe",
+    "endlessencore:peroratite_shovel",
+    "endlessencore:peroratite_hoe"
+  ]
+}

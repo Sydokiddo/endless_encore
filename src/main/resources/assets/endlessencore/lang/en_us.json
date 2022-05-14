@@ -298,6 +298,7 @@
   "enchantment.endlessencore.collision": "Collision",
   "enchantment.endlessencore.preservation": "Preservation",
   "effect.endlessencore.fragility": "Fragility",
+  "effect.endlessencore.anchored": "Anchored",
   "container.barrageBox": "Barrage Box",
   "container.barrageBox.more": "and %s more..."
 }

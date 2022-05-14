@@ -4,18 +4,20 @@
   "package": "net.sydokiddo.endlessencore.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "PlayerEntityMixin",
+    "BrewingRecipeRegistryMixin",
     "EnchantmentMixin",
-    "ServerPlayerEntityMixin",
-    "PlayerManagerMixin",
-    "MixinPlayerEntity",
+    "EntityAccessor",
     "LivingEntityMixin",
-    "EntityAccessor"
+    "MixinPlayerEntity",
+    "PeroratiteItemDropMixin",
+    "PlayerEntityMixin",
+    "PlayerManagerMixin",
+    "ServerPlayerEntityMixin"
   ],
   "client": [
-    "client.MinecraftClientMixin",
+    "client.HeldItemRendererMixin",
     "client.InGameHudMixin",
-    "client.HeldItemRendererMixin"
+    "client.MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
