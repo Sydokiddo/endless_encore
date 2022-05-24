@@ -41,8 +41,24 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item STONE_SICKLE = registerItem("stone_sickle",
-            new SickleItem(ToolMaterials.WOOD, 1, -2f,
+            new SickleItem(ToolMaterials.STONE, 1, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item GOLDEN_SICKLE = registerItem("golden_sickle",
+            new SickleItem(ToolMaterials.GOLD, 1, -2f,
+                    new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item IRON_SICKLE = registerItem("iron_sickle",
+            new SickleItem(ToolMaterials.IRON, 1, -2f,
+                    new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item DIAMOND_SICKLE = registerItem("diamond_sickle",
+            new SickleItem(ToolMaterials.DIAMOND, 1, -2f,
+                    new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item NETHERITE_SICKLE = registerItem("netherite_sickle",
+            new SickleItem(ToolMaterials.NETHERITE, 1, -2f,
+                    new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SWORD = registerItem("peroratite_sword",
             new PeroratiteSwordItem(ModToolMaterial.PERORATITE, 3, -2.4f,

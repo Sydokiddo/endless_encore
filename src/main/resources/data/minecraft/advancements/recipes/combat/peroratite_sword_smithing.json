@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:peroratite_axe"
+      "minecraft:peroratite_sword"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:peroratite_axe"
+        "recipe": "minecraft:peroratite_sword_smithing"
       }
     }
   },

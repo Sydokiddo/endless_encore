@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "endlessencore:diamond_sickle"
+  },
+  "result": {
+    "item": "endlessencore:netherite_sickle"
+  }
+}
