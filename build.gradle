@@ -12,10 +12,6 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name 'Moonflower Repo'
-		url 'https://repo.moonflower.gg/releases'
-	}
-	maven {
 		url = "https://maven.shedaniel.me"
 	}
 }
@@ -24,8 +20,6 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	modApi("gg.moonflower:pollen-fabric:1.4.1+1.18.2") { transitive = false }
 
 	modApi "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
