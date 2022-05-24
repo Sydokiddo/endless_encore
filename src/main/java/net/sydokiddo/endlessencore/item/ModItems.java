@@ -36,6 +36,14 @@ public class ModItems {
             .food(new FoodComponent.Builder().alwaysEdible().hunger(6).saturationModifier(10).statusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 160, 0), 1f).build())
             .group(ModItemGroup.ENDLESS_ENCORE)));
 
+    public static final Item WOODEN_SICKLE = registerItem("wooden_sickle",
+            new SickleItem(ToolMaterials.WOOD, 1, -2f,
+                    new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item STONE_SICKLE = registerItem("stone_sickle",
+            new SickleItem(ToolMaterials.WOOD, 1, -2f,
+                    new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
     public static final Item PERORATITE_SWORD = registerItem("peroratite_sword",
             new PeroratiteSwordItem(ModToolMaterial.PERORATITE, 3, -2.4f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));

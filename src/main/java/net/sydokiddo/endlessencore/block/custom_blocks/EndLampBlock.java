@@ -16,7 +16,7 @@ public class EndLampBlock extends Block {
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (random.nextInt(5) == 0) {
-            Direction direction = Direction.random(random);
+            Direction direction = Direction.random((net.minecraft.util.math.random.Random) random);
             if (direction != Direction.UP) {
                 BlockPos blockPos = pos.offset(direction);
                 BlockState blockState = world.getBlockState(blockPos);

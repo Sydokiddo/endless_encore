@@ -23,6 +23,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Random;
 import java.util.function.UnaryOperator;
 
 @Mixin(value = PlayerEntity.class, priority = 6969)
@@ -51,9 +52,9 @@ public abstract class MixinPlayerEntity extends LivingEntity {
     }
 
     public void sb$storeToNbt(NbtCompound nbt) {
-        nbt.put("main", PreservationHooks.getFilteredItemList(this.getInventory().main, this.getRandom()));
-        nbt.put("off_hand", PreservationHooks.getFilteredItemList(this.getInventory().offHand, this.getRandom()));
-        nbt.put("armor", PreservationHooks.getFilteredItemList(this.getInventory().armor, this.getRandom()));
+        nbt.put("main", PreservationHooks.getFilteredItemList(this.getInventory().main, (Random) this.getRandom()));
+        nbt.put("off_hand", PreservationHooks.getFilteredItemList(this.getInventory().offHand, (Random) this.getRandom()));
+        nbt.put("armor", PreservationHooks.getFilteredItemList(this.getInventory().armor, (Random) this.getRandom()));
     }
 
     @Shadow

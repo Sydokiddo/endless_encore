@@ -74,7 +74,7 @@ public class MinecraftClientMixin {
                             BlockPos blockPos = blockHitResult.getBlockPos();
                             if (!player.world.getBlockState(blockPos).isAir()) {
                                 assert this.interactionManager != null;
-                                this.interactionManager.interactBlock(player, player.clientWorld, Hand.OFF_HAND, blockHitResult);
+                                //this.interactionManager.interactBlock(player, player.clientWorld, Hand.OFF_HAND, blockHitResult);
                                 break;
                             }
                         case MISS:

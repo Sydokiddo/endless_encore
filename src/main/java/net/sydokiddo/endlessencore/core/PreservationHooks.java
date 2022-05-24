@@ -29,7 +29,7 @@ public class PreservationHooks {
     }
 
     public static UnaryOperator<ItemStack> createItemProcessor(PreservationContainer container) {
-        Random random = container.getEntity().getRandom();
+        Random random = (Random) container.getEntity().getRandom();
         return stack -> {
             PreservationItemCallback.Context ctx = new PreservationItemCallback.Context(container, stack, EndlessEncore.CONFIG.get().preservationPreservationRate);
             if (PreservationItemCallback.EVENT.invoker().apply(ctx) != TriState.FALSE) {

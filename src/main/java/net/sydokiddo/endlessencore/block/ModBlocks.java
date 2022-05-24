@@ -17,7 +17,7 @@ import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
 public class ModBlocks {
 
-    // List of Blocks:
+// List of Blocks:
 
     public static final Block CHISELED_END_STONE = registerBlock("chiseled_end_stone",
             new Block(FabricBlockSettings.copyOf(Blocks.END_STONE_BRICKS).sounds(BlockSoundGroup.STONE)));
@@ -172,10 +172,10 @@ public class ModBlocks {
             new CarpetBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
 
     public static final Block NETTLE_LEAVES = registerBlock("nettle_leaves",
-            new NettleLeavesBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
+            new LeavesBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
 
     public static final Block FLOWERING_NETTLE_LEAVES = registerBlock("flowering_nettle_leaves",
-            new NettleLeavesBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
+            new LeavesBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
 
     public static final Block CONCORD_STALK = registerBlock("concord_stalk",
             new ModPillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.PURPLE).sounds(ModSoundEvents.END_STALK).strength(2.0f)));
@@ -207,7 +207,7 @@ public class ModBlocks {
     public static final Block PERORATITE_BLOCK = registerBlock("peroratite_block",
             new Block(FabricBlockSettings.of(Material.METAL, MapColor.CYAN).sounds(BlockSoundGroup.NETHERITE).requiresTool().requiresTool().hardness(50.0f).strength(50.0f)));
 
-    // Registry for Blocks:
+// Registry for Blocks:
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
