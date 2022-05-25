@@ -1,10 +1,18 @@
 package net.sydokiddo.endlessencore.mixin;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -36,6 +44,9 @@ public abstract class LivingEntityMixin extends Entity {
         LivingEntity player = (LivingEntity) (Object) this;
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
+            double x = player.getX(), y = player.getY(), z = player.getZ();
+            PlayerEntity p = MinecraftClient.getInstance().player;
+            world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
     }
 }

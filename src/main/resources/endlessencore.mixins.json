@@ -11,7 +11,8 @@
     "PeroratiteItemDropMixin",
     "PlayerEntityMixin",
     "PlayerManagerMixin",
-    "ServerPlayerEntityMixin"
+    "ServerPlayerEntityMixin",
+    "client.entity.MixinElytraEntityModel"
   ],
   "client": [
     "client.HeldItemRendererMixin",

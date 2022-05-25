@@ -13,6 +13,7 @@ public class EndlessEncore implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 	public static final String MOD_ID = "endlessencore";
+	public static boolean elytraThicknessFix = true;
 
 	@Override
 	public void onInitialize() {
