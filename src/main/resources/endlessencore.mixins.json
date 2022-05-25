@@ -8,7 +8,6 @@
     "EnchantmentMixin",
     "EntityAccessor",
     "LivingEntityMixin",
-    "MixinPlayerEntity",
     "PeroratiteItemDropMixin",
     "PlayerEntityMixin",
     "PlayerManagerMixin",

@@ -8,5 +8,5 @@ import net.sydokiddo.endlessencore.EndlessEncore;
 
 public class ModItemGroup {
     public static final ItemGroup ENDLESS_ENCORE = FabricItemGroupBuilder.build(new Identifier(EndlessEncore.MOD_ID, "endlessencore"),
-            () -> new ItemStack(ModItems.IOLITE_FRAGMENT));
+            () -> new ItemStack(ModItems.PERORATITE_SWORD));
 }

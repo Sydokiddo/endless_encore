@@ -24,7 +24,7 @@ public class PlayerAttackPacket {
             int entityId = buffer.readInt();
             server.execute(() -> {
                 ((PlayerAccess) player).setOffhandAttack();
-                // ((PlayerAccess) player).resetLastOffhandAttackTicks();
+                ((PlayerAccess) player).resetLastOffhandAttackTicks();
                 player.updateLastActionTime();
 
                 if (player.world.getEntityById(entityId) != null) {
