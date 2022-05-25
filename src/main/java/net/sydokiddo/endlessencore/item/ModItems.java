@@ -37,27 +37,27 @@ public class ModItems {
             .group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item WOODEN_SICKLE = registerItem("wooden_sickle",
-            new SickleItem(ToolMaterials.WOOD, 1, -2f,
+            new SickleItem(ToolMaterials.WOOD, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item STONE_SICKLE = registerItem("stone_sickle",
-            new SickleItem(ToolMaterials.STONE, 1, -2f,
+            new SickleItem(ToolMaterials.STONE, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item GOLDEN_SICKLE = registerItem("golden_sickle",
-            new SickleItem(ToolMaterials.GOLD, 1, -2f,
+            new SickleItem(ToolMaterials.GOLD, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item IRON_SICKLE = registerItem("iron_sickle",
-            new SickleItem(ToolMaterials.IRON, 1, -2f,
+            new SickleItem(ToolMaterials.IRON, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item DIAMOND_SICKLE = registerItem("diamond_sickle",
-            new SickleItem(ToolMaterials.DIAMOND, 1, -2f,
+            new SickleItem(ToolMaterials.DIAMOND, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item NETHERITE_SICKLE = registerItem("netherite_sickle",
-            new SickleItem(ToolMaterials.NETHERITE, 1, -2f,
+            new SickleItem(ToolMaterials.NETHERITE, 2, -2f,
                     new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SWORD = registerItem("peroratite_sword",
@@ -65,7 +65,7 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SICKLE = registerItem("peroratite_sickle",
-            new PeroratiteSickleItem(ModToolMaterial.PERORATITE, 1, -2f,
+            new PeroratiteSickleItem(ModToolMaterial.PERORATITE, 2, -2f,
                     new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_SHOVEL = registerItem("peroratite_shovel",
