@@ -3,6 +3,7 @@ package net.sydokiddo.endlessencore;
 import net.fabricmc.api.ModInitializer;
 import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.effect.ModEffects;
+import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
 import net.sydokiddo.endlessencore.item.ModItems;
 import net.sydokiddo.endlessencore.network.PlayerAttackPacket;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
@@ -25,6 +26,7 @@ public class EndlessEncore implements ModInitializer {
 		ModItems.registerModItems();
 		ModSoundEvents.registerSounds();
 		ModEffects.registerEffects();
+		ModEnchantments.registerModEnchantments();
 
 		LOGGER.info("Thank you for downloading Endless Encore! :)");
 	}
