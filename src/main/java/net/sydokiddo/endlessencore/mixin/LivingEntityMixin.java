@@ -32,8 +32,6 @@ public abstract class LivingEntityMixin extends Entity {
         super(type, world);
     }
 
-    LivingEntity player = (LivingEntity) (Object) this;
-
     @Redirect(method = "travel(Lnet/minecraft/util/math/Vec3d;)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setFlag(IZ)V"))
     public void travel(LivingEntity entity, int idx, boolean val) {
@@ -42,25 +40,25 @@ public abstract class LivingEntityMixin extends Entity {
     @Redirect(method = "tickFallFlying",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setFlag(IZ)V"))
     public void initAi(LivingEntity entity, int idx, boolean val) {
-
-        ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
-
-            if (entity.getVelocity().y == 0) {
-                if (elytrabounce$timer > 1)
-                    ((EntityAccessor) entity).callSetFlag(7, val);
-                elytrabounce$timer += 1;
-            } else {
-                elytrabounce$timer = 0;
-            }
+        if (entity.getVelocity().y == 0) {
+            if (elytrabounce$timer > 1)
+                ((EntityAccessor) entity).callSetFlag(7, val);
+            elytrabounce$timer += 1;
+        } else {
+            elytrabounce$timer = 0;
+        }
 
         // Allows the player to close their Elytra when sneaking
+
+        LivingEntity player = (LivingEntity) (Object) this;
+
+        ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
             double x = player.getX(), y = player.getY(), z = player.getZ();
             PlayerEntity p = MinecraftClient.getInstance().player;
             world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
-            ((ServerPlayerEntity) player).addExhaustion(0.2f);
         }
             // Prevents the user from gliding when un-equipping Elytra
 
