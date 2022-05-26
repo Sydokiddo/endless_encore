@@ -54,11 +54,18 @@ public abstract class LivingEntityMixin extends Entity {
 
         ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
 
-        if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
-            ((ServerPlayerEntity) player).stopFallFlying();
+        // Plays the sound on the client for closing Elytra
+
+        if (player.isFallFlying() && player.isSneaking()) {
             double x = player.getX(), y = player.getY(), z = player.getZ();
             PlayerEntity p = MinecraftClient.getInstance().player;
             world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        }
+
+        // Closes the Elytra when sneaking
+
+        if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
+            ((ServerPlayerEntity) player).stopFallFlying();
         }
             // Prevents the user from gliding when un-equipping Elytra
 
