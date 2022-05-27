@@ -102,11 +102,12 @@ public class ModBlocks {
             new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.BEDROCK).sounds(BlockSoundGroup.STONE)));
 
     public static final Block PALESTONE = registerBlock("palestone",
-            new Block(FabricBlockSettings.of(Material.STONE, MapColor.OFF_WHITE).requiresTool().sounds(BlockSoundGroup.TUFF).hardness(3.0f).strength(6.0f)));
+            new Block(FabricBlockSettings.of(Material.STONE, MapColor.OFF_WHITE).requiresTool()
+            .sounds(BlockSoundGroup.TUFF).hardness(1.5f).strength(6.0f)));
 
     public static final Block PALESTONE_STAIRS = registerBlock("palestone_stairs",
             new ModStairsBlock(ModBlocks.PALESTONE.getDefaultState(),
-                    FabricBlockSettings.copyOf(ModBlocks.PALESTONE).sounds(BlockSoundGroup.TUFF)));
+            FabricBlockSettings.copyOf(ModBlocks.PALESTONE).sounds(BlockSoundGroup.TUFF)));
 
     public static final Block PALESTONE_SLAB = registerBlock("palestone_slab",
             new SlabBlock(FabricBlockSettings.copyOf(ModBlocks.PALESTONE).sounds(BlockSoundGroup.TUFF)));
