@@ -33,7 +33,7 @@ public abstract class PeroratiteTeleportMixin extends Entity {
         // If a Peroratite item falls into the void, it will teleport upwards so that it doesn't fall in
         if (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS) && (this.getY() < this.world.getBottomY())) {
             this.unsetRemoved();
-            this.requestTeleport(this.getX(), this.world.getBottomY()+20, this.getZ());
+            this.requestTeleport(this.getX(), this.world.getBottomY()+30, this.getZ());
             this.setVelocity(0, 0, 0);
             this.setNoGravity(true);
             this.setGlowing(true);

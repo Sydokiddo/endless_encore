@@ -1,13 +1,12 @@
 package net.sydokiddo.endlessencore.mixin;
 
 import java.util.Map;
-
+import net.sydokiddo.endlessencore.access.PlayerAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.spongepowered.asm.mixin.injection.At;
-import net.sydokiddo.endlessencore.access.PlayerAccess;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -19,11 +18,12 @@ public class EnchantmentMixin {
 
     @Inject(method = "getEquipment", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void getEquipment(LivingEntity entity, CallbackInfoReturnable<Map<EquipmentSlot, ItemStack>> info, Map<EquipmentSlot, ItemStack> map) {
-        if (entity instanceof PlayerEntity) {
+        if (entity != null && entity instanceof PlayerEntity) {
             if (((PlayerAccess) entity).isOffhandAttack() && map.containsKey(EquipmentSlot.MAINHAND)) {
                 map.remove(EquipmentSlot.MAINHAND);
                 map.put(EquipmentSlot.OFFHAND, entity.getOffHandStack());
             }
         }
     }
+
 }
