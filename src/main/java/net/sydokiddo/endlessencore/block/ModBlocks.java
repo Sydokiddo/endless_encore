@@ -205,7 +205,7 @@ public class ModBlocks {
             new OreBlock(FabricBlockSettings.of(Material.STONE, MapColor.PALE_YELLOW).sounds(ModSoundEvents.END_ORE).requiresTool().hardness(3.0f).strength(9.0f), UniformIntProvider.create(3, 7)));
 
     public static final Block PERORATITE_BLOCK = registerBlock("peroratite_block",
-            new Block(FabricBlockSettings.of(Material.METAL, MapColor.CYAN).sounds(BlockSoundGroup.NETHERITE).requiresTool().requiresTool().hardness(50.0f).strength(50.0f)));
+            new Block(FabricBlockSettings.of(Material.METAL, MapColor.CYAN).sounds(BlockSoundGroup.NETHERITE).requiresTool().hardness(50.0f).strength(50.0f)));
 
 // Registry for Blocks:
 

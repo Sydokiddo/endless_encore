@@ -1,7 +1,6 @@
 package net.sydokiddo.endlessencore.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -12,7 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
@@ -59,7 +57,7 @@ public abstract class LivingEntityMixin extends Entity {
 
         // Allows the player to close their Elytra when sneaking
 
-        LivingEntityMixin clientPlayNetworkHandler = (LivingEntityMixin) this;
+        LivingEntityMixin clientPlayNetworkHandler = this;
         World world = clientPlayNetworkHandler.getWorld();
         ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
 
@@ -67,7 +65,7 @@ public abstract class LivingEntityMixin extends Entity {
             ((ServerPlayerEntity) player).stopFallFlying();
             PlayerEntity p = MinecraftClient.getInstance().player;
             double x = p.getX(), y = p.getY(), z = p.getZ();
-            world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+            this.world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
             // Prevents the user from gliding when un-equipping Elytra
 

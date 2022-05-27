@@ -1,7 +1,7 @@
 package net.sydokiddo.endlessencore.mixin;
 
 import net.sydokiddo.endlessencore.access.PlayerAccess;
-import net.sydokiddo.endlessencore.init.ParticleInit;
+import net.sydokiddo.endlessencore.init.ModParticles;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -119,7 +119,7 @@ public class PlayerEntityMixin implements PlayerAccess {
     public void spawnSweepAttackParticles(CallbackInfo info, double d, double e) {
         if (this.offHandAttack) {
             PlayerEntity playerEntity = (PlayerEntity) (Object) this;
-            ((ServerWorld) playerEntity.world).spawnParticles(ParticleInit.OFFHAND_SWEEP_ATTACK, playerEntity.getX() + d, playerEntity.getBodyY(0.5D), playerEntity.getZ() + e, 0, d, 0.0D, e, 0.0D);
+            ((ServerWorld) playerEntity.world).spawnParticles(ModParticles.OFFHAND_SWEEP_ATTACK, playerEntity.getX() + d, playerEntity.getBodyY(0.5D), playerEntity.getZ() + e, 0, d, 0.0D, e, 0.0D);
             info.cancel();
         }
     }

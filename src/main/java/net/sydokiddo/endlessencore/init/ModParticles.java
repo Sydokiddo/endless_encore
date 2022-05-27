@@ -6,8 +6,9 @@ import net.minecraft.client.particle.SweepAttackParticle;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.sydokiddo.endlessencore.EndlessEncore;
 
-public class ParticleInit {
+public class ModParticles {
 
     public static final DefaultParticleType OFFHAND_SWEEP_ATTACK = FabricParticleTypes.simple(true);
 
@@ -19,4 +20,7 @@ public class ParticleInit {
         ParticleFactoryRegistry.getInstance().register(OFFHAND_SWEEP_ATTACK, SweepAttackParticle.Factory::new);
     }
 
+    public static void registerParticles() {
+        System.out.println("Registering Particles for " + EndlessEncore.MOD_ID);
+    }
 }
