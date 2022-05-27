@@ -1,6 +1,7 @@
 package net.sydokiddo.endlessencore.mixin;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -30,13 +31,12 @@ public abstract class PeroratiteTeleportMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "tick")
     private void damageItem(CallbackInfo info) {
-        // If a Peroratite item falls into the void, it will teleport upwards so that it doesn't fall in
+        // If a Peroratite item falls into the void, it will teleport upwards 30 blocks so that it doesn't get lost
         if (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS) && (this.getY() < this.world.getBottomY())) {
             this.unsetRemoved();
             this.requestTeleport(this.getX(), this.world.getBottomY()+30, this.getZ());
             this.setVelocity(0, 0, 0);
             this.setNoGravity(true);
-            this.setGlowing(true);
             double x = p.getX(), y = p.getY(), z = p.getZ();
             world.playSound(p, x, y, z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.NEUTRAL, 0.5F, 1.0F);
         }
