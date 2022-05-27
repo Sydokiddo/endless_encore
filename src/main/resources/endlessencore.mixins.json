@@ -9,6 +9,7 @@
     "EntityAccessor",
     "LivingEntityMixin",
     "PeroratiteItemDropMixin",
+    "PeroratiteTeleportMixin",
     "PlayerEntityMixin",
     "PlayerManagerMixin",
     "ServerPlayerEntityMixin",

@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.mixin;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -25,6 +24,7 @@ public abstract class LivingEntityMixin extends Entity {
     public abstract boolean damage(DamageSource source, float amount);
 
     private int elytrabounce$timer = 0;
+    LivingEntity player = (LivingEntity) (Object) this;
 
     // Allows the player to bounce and continue flying with Elytra
 
@@ -48,21 +48,14 @@ public abstract class LivingEntityMixin extends Entity {
             elytrabounce$timer = 0;
         }
 
-        // Allows the player to close their Elytra when sneaking
-
-        LivingEntity player = (LivingEntity) (Object) this;
-
-        ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
-
-        // Plays the sound on the client for closing Elytra
-
         if (player.isFallFlying() && player.isSneaking()) {
             double x = player.getX(), y = player.getY(), z = player.getZ();
-            PlayerEntity p = MinecraftClient.getInstance().player;
-            world.playSound(p, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+            world.playSound((PlayerEntity) player, x, y, z, ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
 
-        // Closes the Elytra when sneaking
+        // Allows the player to close their Elytra when sneaking
+
+        ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
