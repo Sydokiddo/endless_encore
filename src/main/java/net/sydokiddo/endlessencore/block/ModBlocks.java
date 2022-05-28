@@ -167,7 +167,8 @@ public class ModBlocks {
             new ModPillarBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BLOCK).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block NETTLED_END_STONE = registerBlock("nettled_end_stone",
-            new Block(FabricBlockSettings.of(Material.STONE, MapColor.YELLOW).requiresTool().sounds(ModSoundEvents.NETTLED_END_STONE).hardness(3.0f).strength(9.0f)));
+            new OvergrownEndStoneBlock(FabricBlockSettings.of(Material.STONE, MapColor.YELLOW).requiresTool()
+            .sounds(ModSoundEvents.NETTLED_END_STONE).hardness(3.0f).strength(9.0f).ticksRandomly()));
 
     public static final Block NETTLE_CARPET = registerBlock("nettle_carpet",
             new CarpetBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
@@ -178,6 +179,30 @@ public class ModBlocks {
     public static final Block FLOWERING_NETTLE_LEAVES = registerBlock("flowering_nettle_leaves",
             new LeavesBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.YELLOW).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
 
+    public static final Block NETTLE_ROOTS = registerBlock("nettle_roots",
+            new EndPlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().sounds(BlockSoundGroup.AZALEA_LEAVES).offsetType(AbstractBlock.OffsetType.XZ)));
+
+    public static final Block FLOWERING_NETTLE_ROOTS = registerBlock("flowering_nettle_roots",
+            new EndPlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().sounds(BlockSoundGroup.AZALEA_LEAVES).offsetType(AbstractBlock.OffsetType.XZ)));
+
+    public static final Block NETTLE_SHRUB = registerBlock("nettle_shrub",
+            new EndPlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().sounds(BlockSoundGroup.AZALEA_LEAVES).offsetType(AbstractBlock.OffsetType.XZ)));
+
+    public static final Block FLOWERING_NETTLE_SHRUB = registerBlock("flowering_nettle_shrub",
+            new EndPlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().sounds(BlockSoundGroup.AZALEA_LEAVES).offsetType(AbstractBlock.OffsetType.XZ)));
+
+    public static final Block NETTLE_VINES = registerBlock("nettle_vines",
+            new NettleVineBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().ticksRandomly().sounds(BlockSoundGroup.AZALEA_LEAVES)));
+
+    public static final Block NETTLE_VINES_PLANT = registerBlock("nettle_vines_plant",
+            new NettleVinePlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.YELLOW).nonOpaque().noCollision()
+            .breakInstantly().sounds(BlockSoundGroup.AZALEA_LEAVES)));
+
     public static final Block CONCORD_STALK = registerBlock("concord_stalk",
             new ModPillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.PURPLE).sounds(ModSoundEvents.END_STALK).strength(2.0f)));
 
@@ -185,7 +210,8 @@ public class ModBlocks {
             new ModPillarBlock(FabricBlockSettings.copyOf(ModBlocks.CONCORD_STALK).sounds(ModSoundEvents.END_STALK)));
 
     public static final Block BLIGHTED_END_STONE = registerBlock("blighted_end_stone",
-            new Block(FabricBlockSettings.of(Material.STONE, MapColor.LICHEN_GREEN).requiresTool().sounds(ModSoundEvents.NETTLED_END_STONE).hardness(3.0f).strength(9.0f)));
+            new OvergrownEndStoneBlock(FabricBlockSettings.of(Material.STONE, MapColor.LICHEN_GREEN).requiresTool()
+            .sounds(ModSoundEvents.NETTLED_END_STONE).hardness(3.0f).strength(9.0f).ticksRandomly()));
 
     public static final Block BLIGHTED_CARPET = registerBlock("blighted_carpet",
             new CarpetBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.LICHEN_GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
@@ -217,7 +243,7 @@ public class ModBlocks {
 
     private static Item registerBlockItem(String name, Block block){
         return Registry.register(Registry.ITEM, new Identifier(EndlessEncore.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+        new BlockItem(block, new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
     }
 
     public static void registerModBlocks() {

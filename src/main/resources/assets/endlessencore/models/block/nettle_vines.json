@@ -1,6 +1,6 @@
 {
-  "parent": "block/vine",
+  "parent": "block/cross",
   "textures": {
-    "vine": "endlessencore:block/nettle_vines"
+    "cross": "endlessencore:block/nettle_vines"
   }
 }
