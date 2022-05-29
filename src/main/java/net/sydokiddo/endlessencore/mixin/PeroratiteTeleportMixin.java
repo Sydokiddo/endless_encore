@@ -24,10 +24,10 @@ public abstract class PeroratiteTeleportMixin extends Entity {
 
     @Inject(at = @At("HEAD"), method = "tick")
     private void damageItem(CallbackInfo info) {
-        // If a Peroratite item falls into the void, it will teleport upwards 30 blocks so that it doesn't get lost
+        // If a Peroratite item falls into the void, it will teleport upwards 45 blocks so that it doesn't get lost
         if (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS) && (this.getY() < this.world.getBottomY())) {
             this.unsetRemoved();
-            this.requestTeleport(this.getX(), this.world.getBottomY()+30, this.getZ());
+            this.requestTeleport(this.getX(), this.world.getBottomY()+45, this.getZ());
             this.setVelocity(0, 0, 0);
             this.setNoGravity(true);
         }

@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:diamond_ore",
-    "minecraft:deepslate_diamond_ore",
     "endlessencore:end_diamond_ore"
   ]
 }

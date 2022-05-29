@@ -1,17 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:barrier",
-    "minecraft:bedrock",
-    "minecraft:end_portal",
-    "minecraft:end_portal_frame",
-    "minecraft:end_gateway",
-    "minecraft:command_block",
-    "minecraft:repeating_command_block",
-    "minecraft:chain_command_block",
-    "minecraft:structure_block",
-    "minecraft:jigsaw",
-    "minecraft:moving_piston",
     "#minecraft:bedrock_blocks",
     "endlessencore:end_gateway_activator"
   ]

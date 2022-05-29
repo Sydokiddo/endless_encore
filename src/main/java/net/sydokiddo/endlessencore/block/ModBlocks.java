@@ -216,6 +216,9 @@ public class ModBlocks {
     public static final Block BLIGHTED_CARPET = registerBlock("blighted_carpet",
             new CarpetBlock(FabricBlockSettings.of(Material.LEAVES, MapColor.LICHEN_GREEN).nonOpaque().sounds(BlockSoundGroup.AZALEA_LEAVES).hardness(0.2f).strength(0.2f)));
 
+    public static final Block LILOAM = registerBlock("liloam",
+            new LiloamBlock(FabricBlockSettings.of(Material.AGGREGATE, MapColor.TERRACOTTA_PURPLE).sounds(BlockSoundGroup.SAND).strength(0.5F)));
+
     public static final Block ETHEREAL_CLOUD = registerBlock("ethereal_cloud",
             new EtherealCloudBlock(FabricBlockSettings.of(Material.WOOL, MapColor.EMERALD_GREEN).sounds(BlockSoundGroup.WOOL).luminance(10).hardness(0.1f).strength(0.1f).nonOpaque()));
 

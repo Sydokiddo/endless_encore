@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.misc.EndlessEncoreTags;
 
 public class EndPlantBlock extends PlantBlock {
@@ -19,6 +20,6 @@ public class EndPlantBlock extends PlantBlock {
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(EndlessEncoreTags.OVERGROWN_END_STONE) || floor.isOf(Blocks.SOUL_SOIL) || super.canPlantOnTop(floor, world, pos);
+        return floor.isIn(EndlessEncoreTags.OVERGROWN_END_STONE) || floor.isOf(ModBlocks.LILOAM) || super.canPlantOnTop(floor, world, pos);
     }
 }

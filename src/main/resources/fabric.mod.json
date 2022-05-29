@@ -16,6 +16,7 @@
 
   "license": "CC0-1.0",
   "icon": "assets/endlessencore/icon.png",
+  "accessWidener" : "endlessencore.accesswidener",
 
   "environment": "*",
   "entrypoints": {
