@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:logs",
     "endlessencore:concord_stalk",
     "endlessencore:concord_petiole"
   ]

@@ -148,23 +148,24 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(ModBlocks.PALESTONE).sounds(BlockSoundGroup.TUFF)));
 
     public static final Block IOLITE_BLOCK = registerBlock("iolite_block",
-            new Block(FabricBlockSettings.of(Material.STONE, MapColor.PURPLE).sounds(ModSoundEvents.IOLITE).requiresTool().hardness(1.5f).strength(1.5f)));
+            new IoliteBlock(FabricBlockSettings.of(Material.STONE, MapColor.PURPLE).sounds(ModSoundEvents.IOLITE)
+            .requiresTool().hardness(1.5f).strength(1.5f)));
 
     public static final Block IOLITE_BRICKS = registerBlock("iolite_bricks",
-            new Block(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BLOCK).sounds(ModSoundEvents.IOLITE)));
+            new IoliteBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BLOCK).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block IOLITE_BRICK_STAIRS = registerBlock("iolite_brick_stairs",
-            new ModStairsBlock(ModBlocks.IOLITE_BRICKS.getDefaultState(),
+            new IoliteStairsBlock(ModBlocks.IOLITE_BRICKS.getDefaultState(),
                     FabricBlockSettings.copyOf(ModBlocks.IOLITE_BRICKS).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block IOLITE_BRICK_SLAB = registerBlock("iolite_brick_slab",
-            new SlabBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BRICKS).sounds(ModSoundEvents.IOLITE)));
+            new IoliteSlabBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BRICKS).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block IOLITE_BRICK_WALL = registerBlock("iolite_brick_wall",
-            new WallBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BRICKS).sounds(ModSoundEvents.IOLITE)));
+            new IoliteWallBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BRICKS).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block IOLITE_PILLAR = registerBlock("iolite_pillar",
-            new ModPillarBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BLOCK).sounds(ModSoundEvents.IOLITE)));
+            new IolitePillarBlock(FabricBlockSettings.copyOf(ModBlocks.IOLITE_BLOCK).sounds(ModSoundEvents.IOLITE)));
 
     public static final Block NETTLED_END_STONE = registerBlock("nettled_end_stone",
             new OvergrownEndStoneBlock(FabricBlockSettings.of(Material.STONE, MapColor.YELLOW).requiresTool()
