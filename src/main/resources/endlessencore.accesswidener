@@ -1,3 +1,3 @@
 accessWidener   v1  named
 
-accessible method net/minecraft/block/FireBlock getStateForPosition (Lnet/minecraft/world/BlockView;)V
+accessible method net/minecraft/entity/Entity readCustomDataFromNbt (Lnet/minecraft/nbt/NbtCompound;)V

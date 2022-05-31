@@ -1,16 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "//",
-    "//"
+    "/",
+    "/",
+    "#"
   ],
   "key": {
     "/": {
       "item": "endlessencore:shulker_pearl"
+    },
+    "#": {
+      "item": "minecraft:popped_chorus_fruit"
     }
   },
   "result": {
-    "item": "endlessencore:end_lamp",
-    "count": 1
+    "item": "minecraft:end_rod",
+    "count": 4
   }
 }

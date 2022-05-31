@@ -19,11 +19,11 @@ public class ModItems {
     public static final Item BARRAGE_SHELL = registerItem("barrage_shell",
             new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
 
-    public static final Item SHULKER_PEARL = registerItem("shulker_pearl",
-            new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.ENDLESS_ENCORE)));
-
     public static final Item IOLITE_FRAGMENT = registerItem("iolite_fragment",
             new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item SHULKER_PEARL = registerItem("shulker_pearl",
+            new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item PERORATITE_INGOT = registerItem("peroratite_ingot",
             new Item(new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
@@ -83,6 +83,9 @@ public class ModItems {
     public static final Item PERORATITE_HOE = registerItem("peroratite_hoe",
             new PeroratiteHoeItem(ModToolMaterial.PERORATITE, -5, 0f,
                     new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item RIFT_CHAIN = registerItem("rift_chain",
+            new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.ENDLESS_ENCORE)));
 
     // Registry for Items:
 
