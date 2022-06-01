@@ -1,5 +1,5 @@
 package net.sydokiddo.endlessencore.mixin;
-
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -8,7 +8,9 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.world.World;
+import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,8 +24,9 @@ public abstract class LivingEntityMixin extends Entity {
 
     private int elytrabounce$timer = 0;
     LivingEntity player = (LivingEntity) (Object) this;
+    MinecraftClient client = MinecraftClient.getInstance();
 
-    // Allows the player to bounce and continue flying with Elytra
+    // Allows the player to bounce and continue gliding with Elytra
 
     public LivingEntityMixin(EntityType<?> type, World world) {
         super(type, world);
@@ -51,7 +54,12 @@ public abstract class LivingEntityMixin extends Entity {
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
+            double x = client.player.getX();
+            double y = client.player.getY();
+            double z = client.player.getZ();
+            client.player.playSound(ModSoundEvents.ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
+
             // Prevents the user from gliding when un-equipping Elytra
 
             if (player instanceof ServerPlayerEntity && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA)) {
