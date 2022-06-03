@@ -54,12 +54,12 @@ public class ModSoundEvents {
     public static final SoundEvent ETHEREAL_FRENZY = registerSoundEvent("entity.ethereal.frenzy");
     public static final SoundEvent ETHEREAL_FRENZY_END = registerSoundEvent("entity.ethereal.frenzy_end");
 
-    public static final SoundEvent GLADIATOR_AMBIENT = registerSoundEvent("entity.gladiator.ambient");
-    public static final SoundEvent GLADIATOR_NOTICE = registerSoundEvent("entity.gladiator.notice");
-    public static final SoundEvent GLADIATOR_HURT = registerSoundEvent("entity.gladiator.hurt");
-    public static final SoundEvent GLADIATOR_DEATH = registerSoundEvent("entity.gladiator.death");
-    public static final SoundEvent GLADIATOR_FRENZY = registerSoundEvent("entity.gladiator.frenzy");
-    public static final SoundEvent GLADIATOR_FRENZY_END = registerSoundEvent("entity.gladiator.frenzy_end");
+//    public static final SoundEvent GLADIATOR_AMBIENT = registerSoundEvent("entity.gladiator.ambient");
+//    public static final SoundEvent GLADIATOR_NOTICE = registerSoundEvent("entity.gladiator.notice");
+//    public static final SoundEvent GLADIATOR_HURT = registerSoundEvent("entity.gladiator.hurt");
+//    public static final SoundEvent GLADIATOR_DEATH = registerSoundEvent("entity.gladiator.death");
+//    public static final SoundEvent GLADIATOR_FRENZY = registerSoundEvent("entity.gladiator.frenzy");
+//    public static final SoundEvent GLADIATOR_FRENZY_END = registerSoundEvent("entity.gladiator.frenzy_end");
 
     public static final SoundEvent CHARMER_AMBIENT = registerSoundEvent("entity.charmer.ambient");
     public static final SoundEvent CHARMER_HURT = registerSoundEvent("entity.charmer.hurt");
@@ -82,9 +82,9 @@ public class ModSoundEvents {
     public static final SoundEvent BARRAGE_LOCK = registerSoundEvent("entity.barrage.lock");
     public static final SoundEvent BARRAGE_SHOOT = registerSoundEvent("entity.barrage.shoot");
 
-    public static final SoundEvent SNAPDRAGON_HURT = registerSoundEvent("entity.snapdragon.hurt");
-    public static final SoundEvent SNAPDRAGON_FLAP = registerSoundEvent("entity.snapdragon.flap");
-    public static final SoundEvent SNAPDRAGON_TELEPORT = registerSoundEvent("entity.snapdragon.teleport");
+//    public static final SoundEvent SNAPDRAGON_HURT = registerSoundEvent("entity.snapdragon.hurt");
+//    public static final SoundEvent SNAPDRAGON_FLAP = registerSoundEvent("entity.snapdragon.flap");
+//    public static final SoundEvent SNAPDRAGON_TELEPORT = registerSoundEvent("entity.snapdragon.teleport");
 
     // Sound Groups:
 
