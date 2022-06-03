@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.item.custom_items;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 

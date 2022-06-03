@@ -18,7 +18,7 @@ public class EnchantmentMixin {
 
     @Inject(method = "getEquipment", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void getEquipment(LivingEntity entity, CallbackInfoReturnable<Map<EquipmentSlot, ItemStack>> info, Map<EquipmentSlot, ItemStack> map) {
-        if (entity != null && entity instanceof PlayerEntity) {
+        if (entity instanceof PlayerEntity) {
             if (((PlayerAccess) entity).isOffhandAttack() && map.containsKey(EquipmentSlot.MAINHAND)) {
                 map.remove(EquipmentSlot.MAINHAND);
                 map.put(EquipmentSlot.OFFHAND, entity.getOffHandStack());

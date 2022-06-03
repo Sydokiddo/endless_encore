@@ -8,7 +8,6 @@ import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.misc.EndlessEncoreTags;
 
 public class EndPlantBlock extends PlantBlock {
-    protected static final float field_31235 = 6.0F;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 
     public EndPlantBlock(Settings settings) {

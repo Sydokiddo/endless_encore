@@ -1,7 +1,6 @@
 package net.sydokiddo.endlessencore.item.custom_items;
 
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 
 public class PeroratiteAxeItem extends AxeItem {

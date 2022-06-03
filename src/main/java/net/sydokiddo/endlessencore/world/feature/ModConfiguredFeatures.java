@@ -35,8 +35,8 @@ public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> NETTLE_ROOTS =
             ConfiguredFeatures.register("nettle_roots", Feature.FLOWER,
-                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-                            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NETTLE_ROOTS)))));
+            ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NETTLE_ROOTS)))));
 
 
 // Registry for Configured Features:
