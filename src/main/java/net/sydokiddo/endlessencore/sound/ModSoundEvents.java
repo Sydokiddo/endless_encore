@@ -38,7 +38,7 @@ public class ModSoundEvents {
 
     // - Item Sounds:
 
-    public static final SoundEvent ELYTRA_CLOSE = registerSoundEvent("item.elytra.close");
+    public static final SoundEvent PLAYER_ELYTRA_CLOSE = registerSoundEvent("item.elytra.close");
 
     // - Ambient Sounds:
 
@@ -81,10 +81,6 @@ public class ModSoundEvents {
     public static final SoundEvent BARRAGE_DEATH = registerSoundEvent("entity.barrage.death");
     public static final SoundEvent BARRAGE_LOCK = registerSoundEvent("entity.barrage.lock");
     public static final SoundEvent BARRAGE_SHOOT = registerSoundEvent("entity.barrage.shoot");
-
-//    public static final SoundEvent SNAPDRAGON_HURT = registerSoundEvent("entity.snapdragon.hurt");
-//    public static final SoundEvent SNAPDRAGON_FLAP = registerSoundEvent("entity.snapdragon.flap");
-//    public static final SoundEvent SNAPDRAGON_TELEPORT = registerSoundEvent("entity.snapdragon.teleport");
 
     // Sound Groups:
 

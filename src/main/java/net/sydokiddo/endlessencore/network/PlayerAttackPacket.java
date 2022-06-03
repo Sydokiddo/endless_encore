@@ -30,8 +30,6 @@ public class PlayerAttackPacket {
                     player.attack(player.world.getEntityById(entityId));
                 }
             });
-
         });
-
     }
 }
