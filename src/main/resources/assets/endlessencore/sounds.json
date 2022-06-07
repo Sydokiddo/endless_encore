@@ -1,6 +1,5 @@
 {
 	"block.nettled_end_stone.place": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/nettled_end_stone/break1",
 			"endlessencore:block/nettled_end_stone/break2",
@@ -11,7 +10,6 @@
 		"subtitle": "subtitles.block.generic.place"
 	},
 	"block.nettled_end_stone.break": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/nettled_end_stone/break1",
 			"endlessencore:block/nettled_end_stone/break2",
@@ -22,7 +20,6 @@
 		"subtitle": "subtitles.block.generic.break"
 	},
 	"block.nettled_end_stone.hit": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/nettled_end_stone/step1",
 			"endlessencore:block/nettled_end_stone/step2",
@@ -33,7 +30,6 @@
 		"subtitle": "subtitles.block.generic.hit"
 	},
 	"block.nettled_end_stone.step": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/nettled_end_stone/step1",
 			"endlessencore:block/nettled_end_stone/step2",
@@ -44,7 +40,6 @@
 		"subtitle": "subtitles.block.generic.footsteps"
 	},
 	"block.nettled_end_stone.fall": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/nettled_end_stone/step1",
 			"endlessencore:block/nettled_end_stone/step2",
@@ -54,7 +49,6 @@
 		]
 	},
 	"block.iolite.place": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/iolite/place1",
 			"endlessencore:block/iolite/place2",
@@ -64,7 +58,6 @@
 		"subtitle": "subtitles.block.generic.place"
 	},
 	"block.iolite.break": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/iolite/break1",
 			"endlessencore:block/iolite/break2",
@@ -75,7 +68,6 @@
 		"subtitle": "subtitles.block.generic.break"
 	},
 	"block.iolite.hit": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/iolite/step1",
 			"endlessencore:block/iolite/step2",
@@ -85,7 +77,6 @@
 		"subtitle": "subtitles.block.generic.hit"
 	},
 	"block.iolite.step": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/iolite/step1",
 			"endlessencore:block/iolite/step2",
@@ -95,7 +86,6 @@
 		"subtitle": "subtitles.block.generic.footsteps"
 	},
 	"block.iolite.fall": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/iolite/step1",
 			"endlessencore:block/iolite/step2",
@@ -104,7 +94,6 @@
 		]
 	},
 	"block.end_stalk.place": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_stalks/break1",
 			"endlessencore:block/end_stalks/break2",
@@ -114,7 +103,6 @@
 		"subtitle": "subtitles.block.generic.place"
 	},
 	"block.end_stalk.break": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_stalks/break1",
 			"endlessencore:block/end_stalks/break2",
@@ -124,7 +112,6 @@
 		"subtitle": "subtitles.block.generic.break"
 	},
 	"block.end_stalk.hit": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_stalks/step1",
 			"endlessencore:block/end_stalks/step2",
@@ -133,7 +120,6 @@
 		"subtitle": "subtitles.block.generic.hit"
 	},
 	"block.end_stalk.step": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_stalks/step1",
 			"endlessencore:block/end_stalks/step2",
@@ -142,7 +128,6 @@
 		"subtitle": "subtitles.block.generic.footsteps"
 	},
 	"block.end_stalk.fall": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_stalks/step1",
 			"endlessencore:block/end_stalks/step2",
@@ -150,7 +135,6 @@
 		]
 	},
 	"block.end_ore.place": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_ore/break1",
 			"endlessencore:block/end_ore/break2",
@@ -160,7 +144,6 @@
 		"subtitle": "subtitles.block.generic.place"
 	},
 	"block.end_ore.break": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_ore/break1",
 			"endlessencore:block/end_ore/break2",
@@ -170,7 +153,6 @@
 		"subtitle": "subtitles.block.generic.break"
 	},
 	"block.end_ore.hit": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_ore/step1",
 			"endlessencore:block/end_ore/step2",
@@ -180,7 +162,6 @@
 		"subtitle": "subtitles.block.generic.hit"
 	},
 	"block.end_ore.step": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_ore/step1",
 			"endlessencore:block/end_ore/step2",
@@ -190,7 +171,6 @@
 		"subtitle": "subtitles.block.generic.footsteps"
 	},
 	"block.end_ore.fall": {
-		"category": "block",
 		"sounds": [
 			"endlessencore:block/end_ore/step1",
 			"endlessencore:block/end_ore/step2",
@@ -199,7 +179,6 @@
 		]
 	},
 	"ambient.general_end.mood": {
-		"category": "ambient",
 		"sounds": [
 			"endlessencore:ambient/end/general_end/mood1",
 			"endlessencore:ambient/end/general_end/mood2",
@@ -207,7 +186,6 @@
 		]
 	},
 	"ambient.general_end.additions": {
-		"category": "ambient",
 		"sounds": [
 			"endlessencore:ambient/end/general_end/addition1",
 			"endlessencore:ambient/end/general_end/addition2",
@@ -215,13 +193,11 @@
 		]
 	},
 	"ambient.general_end.loop": {
-		"category": "ambient",
 		"sounds": [
 			"endlessencore:ambient/end/general_end/ambience"
 		]
 	},
 	"entity.barrage.ambient": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/ambient1",
 			"endlessencore:mob/barrage/ambient2",
@@ -235,7 +211,6 @@
 		"subtitle": "subtitles.entity.barrage.ambient"
 	},
 	"entity.barrage.close": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/close1",
 			"endlessencore:mob/barrage/close2",
@@ -246,13 +221,11 @@
 		"subtitle": "subtitles.entity.barrage.close"
 	},
 	"entity.barrage.death": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/death"
 		]
 	},
 	"entity.barrage.open": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/open1",
 			"endlessencore:mob/barrage/open2",
@@ -263,7 +236,6 @@
 		"subtitle": "subtitles.entity.barrage.open"
 	},
 	"entity.barrage.hurt": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/hurt1",
 			"endlessencore:mob/barrage/hurt2",
@@ -272,7 +244,6 @@
 		"subtitle": "subtitles.entity.barrage.hurt"
 	},
 	"entity.barrage.hurt_closed": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/hurt_closed1",
 			"endlessencore:mob/barrage/hurt_closed2",
@@ -283,21 +254,18 @@
 		"subtitle": "subtitles.entity.barrage.hurt"
 	},
 	"entity.barrage.lock": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/lock"
 		],
 		"subtitle": "subtitles.entity.barrage.lock"
 	},
 	"entity.barrage.shoot": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/barrage/shoot1"
 		],
 		"subtitle": "subtitles.entity.barrage.shoot"
 	},
 	"entity.ethereal.ambient": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/grunt1",
 			"endlessencore:mob/ethereal/grunt2",
@@ -309,7 +277,6 @@
 		"subtitle": "subtitles.entity.ethereal.ambient"
 	},
 	"entity.ethereal.notice": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/notice1",
 			"endlessencore:mob/ethereal/notice2",
@@ -319,7 +286,6 @@
 		"subtitle": "subtitles.entity.ethereal.notice"
 	},
 	"entity.ethereal.hurt": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/hurt1",
 			"endlessencore:mob/ethereal/hurt2",
@@ -329,14 +295,12 @@
 		"subtitle": "subtitles.entity.ethereal.hurt"
 	},
 	"entity.ethereal.death": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/hurt1"
 		],
 		"subtitle": "subtitles.entity.ethereal.death"
 	},
 	"entity.ethereal.frenzy": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/frenzy1",
 			"endlessencore:mob/ethereal/frenzy2",
@@ -345,14 +309,12 @@
 		"subtitle": "subtitles.entity.ethereal.frenzy"
 	},
 	"entity.ethereal.frenzy_end": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/ethereal/frenzy_end"
 		],
 		"subtitle": "subtitles.entity.ethereal.frenzy_end"
 	},
 	"entity.gladiator.ambient": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/grunt1",
 			"endlessencore:mob/gladiator/grunt2",
@@ -365,7 +327,6 @@
 		"subtitle": "subtitles.entity.gladiator.ambient"
 	},
 	"entity.gladiator.notice": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/notice1",
 			"endlessencore:mob/gladiator/notice2",
@@ -375,7 +336,6 @@
 		"subtitle": "subtitles.entity.gladiator.notice"
 	},
 	"entity.gladiator.hurt": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/hurt1",
 			"endlessencore:mob/gladiator/hurt2",
@@ -385,14 +345,12 @@
 		"subtitle": "subtitles.entity.gladiator.hurt"
 	},
 	"entity.gladiator.death": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/death"
 		],
 		"subtitle": "subtitles.entity.gladiator.death"
 	},
 	"entity.gladiator.frenzy": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/frenzy1",
 			"endlessencore:mob/gladiator/frenzy2",
@@ -401,14 +359,12 @@
 		"subtitle": "subtitles.entity.gladiator.frenzy"
 	},
 	"entity.gladiator.frenzy_end": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/gladiator/frenzy_end"
 		],
 		"subtitle": "subtitles.entity.gladiator.frenzy_end"
 	},
 	"entity.charmer.ambient": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/grunt1",
 			"endlessencore:mob/charmer/grunt2",
@@ -420,7 +376,6 @@
 		"subtitle": "subtitles.entity.charmer.ambient"
 	},
 	"entity.charmer.hurt": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/hurt1",
 			"endlessencore:mob/charmer/hurt2",
@@ -430,14 +385,12 @@
 		"subtitle": "subtitles.entity.charmer.hurt"
 	},
 	"entity.charmer.death": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/death"
 		],
 		"subtitle": "subtitles.entity.charmer.death"
 	},
 	"entity.charmer.frenzy": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/frenzy1",
 			"endlessencore:mob/charmer/frenzy2",
@@ -446,49 +399,42 @@
 		"subtitle": "subtitles.entity.charmer.frenzy"
 	},
 	"entity.charmer.frenzy_end": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/frenzy_end"
 		],
 		"subtitle": "subtitles.entity.charmer.frenzy_end"
 	},
 	"entity.charmer.regeneration_song": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/regeneration_song"
 		],
 		"subtitle": "subtitles.entity.charmer.flute_regeneration"
 	},
 	"entity.charmer.strength_song": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/strength_song"
 		],
 		"subtitle": "subtitles.entity.charmer.flute_strength"
 	},
 	"entity.charmer.speed_song": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/speed_song"
 		],
 		"subtitle": "subtitles.entity.charmer.flute_speed"
 	},
 	"entity.charmer.resistance_song": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/resistance_song"
 		],
 		"subtitle": "subtitles.entity.charmer.flute_resistance"
 	},
 	"entity.charmer.victory_song": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/victory_song"
 		],
 		"subtitle": "subtitles.entity.charmer.flute_victory"
 	},
 	"entity.charmer.power_up": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/charmer/power_up1",
 			"endlessencore:mob/charmer/power_up2"
@@ -496,7 +442,6 @@
 		"subtitle": "subtitles.entity.charmer.power_up"
 	},
 	"entity.snapdragon.ambient": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/growl1",
 			"endlessencore:mob/snapdragon/growl2",
@@ -506,7 +451,6 @@
 		"subtitle": "subtitles.entity.snapdragon.ambient"
 	},
 	"entity.snapdragon.flap": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/flap1",
 			"endlessencore:mob/snapdragon/flap2",
@@ -516,7 +460,6 @@
 		"subtitle": "subtitles.entity.snapdragon.flap"
 	},
 	"entity.snapdragon.hurt": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/hurt1",
 			"endlessencore:mob/snapdragon/hurt2",
@@ -526,14 +469,12 @@
 		"subtitle": "subtitles.entity.snapdragon.hurt"
 	},
 	"entity.snapdragon.death": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/death"
 		],
 		"subtitle": "subtitles.entity.snapdragon.death"
 	},
 	"entity.snapdragon.spit": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/spit1",
 			"endlessencore:mob/snapdragon/spit2",
@@ -543,7 +484,6 @@
 		"subtitle": "subtitles.entity.snapdragon.spit"
 	},
 	"entity.snapdragon.bite": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/bite1",
 			"endlessencore:mob/snapdragon/bite2",
@@ -553,7 +493,6 @@
 		"subtitle": "subtitles.entity.snapdragon.bite"
 	},
 	"entity.snapdragon.teleport": {
-		"category": "hostile",
 		"sounds": [
 			"endlessencore:mob/snapdragon/teleport1",
 			"endlessencore:mob/snapdragon/teleport2"
@@ -561,10 +500,15 @@
 		"subtitle": "subtitles.entity.snapdragon.teleport"
 	},
 	"item.elytra.close": {
-		"category": "player",
 		"sounds": [
 			"endlessencore:item/elytra/close"
 		],
 		"subtitle": "subtitles.item.elytra.close"
+	},
+	"event.siege.gong": {
+		"sounds": [
+			"endlessencore:event/siege/siege_gong"
+		],
+		"subtitle": "subtitles.event.siege.gong"
 	}
 }
