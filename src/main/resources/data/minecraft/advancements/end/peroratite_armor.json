@@ -1,0 +1,56 @@
+{
+  "parent": "minecraft:end/obtain_peroratite",
+  "criteria": {
+    "peroratite_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_helmet"
+            ]
+          },
+          {
+            "items": [
+              "endlessencore:peroratite_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "endlessencore:peroratite_leggings"
+            ]
+          },
+          {
+            "items": [
+              "endlessencore:peroratite_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.end.peroratite_armor.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "endlessencore:peroratite_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.end.peroratite_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "peroratite_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

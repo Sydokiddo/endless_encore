@@ -510,5 +510,14 @@
 			"endlessencore:event/siege/siege_gong"
 		],
 		"subtitle": "subtitles.event.siege.gong"
+	},
+	"item.armor.equip_peroratite": {
+		"sounds": [
+			"endlessencore:item/armor/equip_peroratite1",
+			"endlessencore:item/armor/equip_peroratite2",
+			"endlessencore:item/armor/equip_peroratite3",
+			"endlessencore:item/armor/equip_peroratite4"
+		],
+		"subtitle": "subtitles.item.armor.equip_peroratite"
 	}
 }

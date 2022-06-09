@@ -8,6 +8,10 @@
     "endlessencore:peroratite_axe",
     "endlessencore:peroratite_pickaxe",
     "endlessencore:peroratite_shovel",
-    "endlessencore:peroratite_hoe"
+    "endlessencore:peroratite_hoe",
+    "endlessencore:peroratite_helmet",
+    "endlessencore:peroratite_chestplate",
+    "endlessencore:peroratite_leggings",
+    "endlessencore:peroratite_boots"
   ]
 }

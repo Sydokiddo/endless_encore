@@ -1,6 +1,7 @@
 package net.sydokiddo.endlessencore.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -82,6 +83,22 @@ public class ModItems {
 
     public static final Item PERORATITE_HOE = registerItem("peroratite_hoe",
             new PeroratiteHoeItem(ModToolMaterial.PERORATITE, -5, 0f,
+                    new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item PERORATITE_HELMET = registerItem("peroratite_helmet",
+            new ArmorItem(ModArmorMaterial.PERORATITE, EquipmentSlot.HEAD,
+                    new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item PERORATITE_CHESTPLATE = registerItem("peroratite_chestplate",
+            new ArmorItem(ModArmorMaterial.PERORATITE, EquipmentSlot.CHEST,
+                    new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item PERORATITE_LEGGINGS = registerItem("peroratite_leggings",
+            new ArmorItem(ModArmorMaterial.PERORATITE, EquipmentSlot.LEGS,
+                    new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item PERORATITE_BOOTS = registerItem("peroratite_boots",
+            new ArmorItem(ModArmorMaterial.PERORATITE, EquipmentSlot.FEET,
                     new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item RIFT_CHAIN = registerItem("rift_chain",

@@ -99,6 +99,54 @@
           }
         ]
       }
+    },
+    "peroratite_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_helmet"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_chestplate"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_leggings"
+            ]
+          }
+        ]
+      }
+    },
+    "peroratite_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "endlessencore:peroratite_boots"
+            ]
+          }
+        ]
+      }
     }
   },
   "requirements": [
@@ -109,7 +157,11 @@
       "peroratite_pickaxe",
       "peroratite_axe",
       "peroratite_shovel",
-      "peroratite_hoe"
+      "peroratite_hoe",
+      "peroratite_helmet",
+      "peroratite_chestplate",
+      "peroratite_leggings",
+      "peroratite_boots"
     ]
   ]
 }
