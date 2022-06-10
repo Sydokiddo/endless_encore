@@ -1,12 +1,12 @@
 package net.sydokiddo.endlessencore.item;
 
+import java.util.function.Supplier;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Lazy;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
-import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements ArmorMaterial {
     PERORATITE("peroratite", 42, new int[]{3, 6, 8, 3}, 18, ModSoundEvents.ITEM_ARMOR_EQUIP_PERORATITE, 4.0F, 0.1F, () -> {
@@ -23,8 +23,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
     private final float knockbackResistance;
     private final Lazy repairIngredientSupplier;
 
-    ModArmorMaterial(String name, int durabilityMultiplier, int[] protectionAmounts,
-        int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
+    private ModArmorMaterial(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredientSupplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -52,7 +51,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient) this.repairIngredientSupplier.get();
+        return (Ingredient)this.repairIngredientSupplier.get();
     }
 
     public String getName() {
