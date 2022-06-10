@@ -72,5 +72,11 @@ public abstract class LivingEntityMixin extends Entity {
             if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431) {
                 ((ServerPlayerEntity) player).stopFallFlying();
             }
+
+            // Plays the breaking sound when Elytra are broken
+
+        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431 && player.isFallFlying()) {
+            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_BREAK, this.getSoundCategory(), 1.0f, 1.0f);
+            }
         }
     }

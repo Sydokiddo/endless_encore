@@ -505,6 +505,12 @@
 		],
 		"subtitle": "subtitles.item.elytra.close"
 	},
+	"item.elytra.break": {
+		"sounds": [
+			"endlessencore:item/elytra/break"
+		],
+		"subtitle": "subtitles.item.elytra.break"
+	},
 	"event.siege.gong": {
 		"sounds": [
 			"endlessencore:event/siege/siege_gong"

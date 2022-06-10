@@ -39,6 +39,7 @@ public class ModSoundEvents {
     // - Misc Sounds:
 
     public static final SoundEvent PLAYER_ELYTRA_CLOSE = registerSoundEvent("item.elytra.close");
+    public static final SoundEvent PLAYER_ELYTRA_BREAK = registerSoundEvent("item.elytra.break");
     public static final SoundEvent EVENT_SIEGE_GONG = registerSoundEvent("event.siege.gong");
     public static final SoundEvent ITEM_ARMOR_EQUIP_PERORATITE = registerSoundEvent("item.armor.equip_peroratite");
 
