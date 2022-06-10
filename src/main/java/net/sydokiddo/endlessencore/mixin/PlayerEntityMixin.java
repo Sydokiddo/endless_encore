@@ -1,5 +1,6 @@
 package net.sydokiddo.endlessencore.mixin;
 
+import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.particle.ParticleTypes;
 import net.sydokiddo.endlessencore.access.PlayerAccess;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
@@ -112,6 +113,9 @@ public class PlayerEntityMixin implements PlayerAccess {
     public void attackMixin(Entity target, CallbackInfo info) {
         if (target.isAttackable()) {
             this.target = target;
+        }
+        if (target instanceof EnderDragonPart) {
+            this.target = ((EnderDragonPart) target).owner;
         }
     }
 

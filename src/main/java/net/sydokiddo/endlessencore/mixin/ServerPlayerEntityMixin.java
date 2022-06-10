@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 @Mixin(ServerPlayerEntity.class)
+
 public class ServerPlayerEntityMixin {
 
     // Allows for the player to swing their off-hand if holding 2 sickles

@@ -69,12 +69,13 @@ public class MinecraftClientMixin {
                             player.attack(((EntityHitResult) this.crosshairTarget).getEntity());
                             Objects.requireNonNull(MinecraftClient.getInstance().getNetworkHandler()).sendPacket(PlayerAttackPacket.attackPacket(((EntityHitResult) this.crosshairTarget).getEntity()));
                             break;
+                // Allows for chests and other blocks to be opened/used if the player has a sickle in their off hand:
                         case BLOCK:
                             BlockHitResult blockHitResult = (BlockHitResult) this.crosshairTarget;
                             BlockPos blockPos = blockHitResult.getBlockPos();
                             if (!player.world.getBlockState(blockPos).isAir()) {
                                 assert this.interactionManager != null;
-                                //this.interactionManager.interactBlock(player, player.clientWorld, Hand.OFF_HAND, blockHitResult);
+                                this.interactionManager.interactBlock(player, Hand.OFF_HAND, blockHitResult);
                                 break;
                             }
                         case MISS:

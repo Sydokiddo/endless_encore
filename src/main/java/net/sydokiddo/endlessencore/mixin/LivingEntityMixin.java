@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
+import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -51,6 +52,13 @@ public abstract class LivingEntityMixin extends Entity {
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
+            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 1.0f);
+        }
+
+        // Adds exhaustion to the player if they bounce on the ground with Elytra
+
+        if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isOnGround()) {
+            ((ServerPlayerEntity) (Object) this).addExhaustion(0.3f);
         }
 
             // Prevents the user from gliding when un-equipping Elytra
