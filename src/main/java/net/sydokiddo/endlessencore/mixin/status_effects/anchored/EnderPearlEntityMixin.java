@@ -4,11 +4,14 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.mob.EndermiteEntity;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.sydokiddo.endlessencore.effect.ModEffects;
@@ -20,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// Cancels Ender Pearl teleportation if the player has the Anchored status effect
+// Cancels Ender Pearl teleportation if the player has the Anchored status effect (Also has a higher chance of spawning an Endermite)
 
 @Environment(EnvType.CLIENT)
 @Mixin(EnderPearlEntity.class)
@@ -41,7 +44,14 @@ public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
         if (entity instanceof ServerPlayerEntity && ((ServerPlayerEntity) entity).hasStatusEffect(ModEffects.ANCHORED)) {
             this.discard();
             entity.emitGameEvent(GameEvent.ITEM_INTERACT_START);
+            this.world.addParticle(ParticleTypes.PORTAL, this.getX(), this.getY() + this.random.nextDouble() * 2.0D, this.getZ(), this.random.nextGaussian(), 0.0D, this.random.nextGaussian());
             this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.EFFECT_ANCHORED_TELEPORT_FAIL, this.getSoundCategory(), 1.0f, 1.0f);
+            if (this.random.nextFloat() < 0.2F && this.world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
+                EndermiteEntity endermiteEntity = EntityType.ENDERMITE.create(this.world);
+                assert endermiteEntity != null;
+                endermiteEntity.refreshPositionAndAngles(entity.getX(), entity.getY(), entity.getZ(), entity.getYaw(), entity.getPitch());
+                this.world.spawnEntity(endermiteEntity);
+            }
             ci.cancel();
         }
     }
