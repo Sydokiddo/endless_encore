@@ -9,7 +9,7 @@ import net.minecraft.util.Lazy;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
 public enum ModArmorMaterial implements ArmorMaterial {
-    PERORATITE("peroratite", 42, new int[]{3, 6, 8, 3}, 18, ModSoundEvents.ITEM_ARMOR_EQUIP_PERORATITE, 4.0F, 0.1F, () -> {
+    PERORATITE("peroratite", 42, new int[]{3, 6, 8, 3}, 18, ModSoundEvents.ITEM_ARMOR_EQUIP_PERORATITE, 3.5F, 0.10F, () -> {
         return Ingredient.ofItems(ModItems.PERORATITE_INGOT);
     });
 
