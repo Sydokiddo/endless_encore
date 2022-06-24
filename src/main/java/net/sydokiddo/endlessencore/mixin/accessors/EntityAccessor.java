@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.accessors;
 
 import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;

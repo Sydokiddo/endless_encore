@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.spongepowered.asm.mixin.Mixin;

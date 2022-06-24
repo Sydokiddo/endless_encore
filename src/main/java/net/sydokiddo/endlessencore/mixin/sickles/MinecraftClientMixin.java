@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin.client;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import net.sydokiddo.endlessencore.access.PlayerAccess;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;

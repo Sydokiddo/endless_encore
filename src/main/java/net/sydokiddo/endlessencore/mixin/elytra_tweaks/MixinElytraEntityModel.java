@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin.client.entity;
+package net.sydokiddo.endlessencore.mixin.elytra_tweaks;
 
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.render.entity.model.AnimalModel;

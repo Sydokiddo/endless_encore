@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin.client;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import net.sydokiddo.endlessencore.access.PlayerAccess;
 import org.spongepowered.asm.mixin.Final;

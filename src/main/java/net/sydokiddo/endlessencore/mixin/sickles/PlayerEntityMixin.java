@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.particle.ParticleTypes;

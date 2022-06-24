@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin.client;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.sydokiddo.endlessencore.access.PlayerAccess;

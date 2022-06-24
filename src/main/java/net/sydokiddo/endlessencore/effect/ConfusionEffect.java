@@ -4,8 +4,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class AnchoredEffect extends StatusEffect {
-    public AnchoredEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class ConfusionEffect extends StatusEffect {
+    public ConfusionEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 

@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.elytra_tweaks;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

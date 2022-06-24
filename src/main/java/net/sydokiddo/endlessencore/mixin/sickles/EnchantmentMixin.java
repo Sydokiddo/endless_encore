@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.sickles;
 
 import java.util.Map;
 import net.sydokiddo.endlessencore.access.PlayerAccess;

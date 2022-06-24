@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.peroratite;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

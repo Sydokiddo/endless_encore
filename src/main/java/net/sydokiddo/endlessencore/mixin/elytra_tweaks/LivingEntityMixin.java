@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin;
+package net.sydokiddo.endlessencore.mixin.elytra_tweaks;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -10,6 +10,8 @@ import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
+import net.sydokiddo.endlessencore.effect.ModEffects;
+import net.sydokiddo.endlessencore.mixin.accessors.EntityAccessor;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -63,22 +65,22 @@ public abstract class LivingEntityMixin extends Entity {
             ((ServerPlayerEntity) player).addExhaustion(0.3f);
         }
 
-            // Prevents the user from gliding when un-equipping Elytra
+        // Prevents the user from gliding when un-equipping Elytra
 
-            if (player instanceof ServerPlayerEntity && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA)) {
-                ((ServerPlayerEntity) player).stopFallFlying();
-            }
+        if (player instanceof ServerPlayerEntity && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA)) {
+            ((ServerPlayerEntity) player).stopFallFlying();
+        }
 
-            // Prevents the user from gliding when Elytra are broken
+        // Prevents the user from gliding when Elytra are broken
 
-            if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431) {
-                ((ServerPlayerEntity) player).stopFallFlying();
-            }
+        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431) {
+            ((ServerPlayerEntity) player).stopFallFlying();
+        }
 
-            // Plays the breaking sound when Elytra are broken
+        // Prevents the user from gliding when under the Anchored status effect
 
-        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431 && player.isFallFlying()) {
-            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_BREAK, this.getSoundCategory(), 1.0f, 1.0f);
-            }
+        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && player.hasStatusEffect(ModEffects.ANCHORED)) {
+            ((ServerPlayerEntity) player).stopFallFlying();
         }
     }
+}
