@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ff",
+    "ff"
+  ],
+  "key": {
+    "f": {
+      "item": "endlessencore:fractured_shulker_bullet"
+    }
+  },
+  "result": {
+    "item": "endlessencore:shulker_bullet",
+    "count": 1
+  }
+}

@@ -26,6 +26,12 @@ public class ModItems {
     public static final Item SHULKER_PEARL = registerItem("shulker_pearl",
             new Item(new FabricItemSettings().maxCount(16).group(ModItemGroup.ENDLESS_ENCORE)));
 
+    public static final Item FRACTURED_SHULKER_BULLET = registerItem("fractured_shulker_bullet",
+            new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
+    public static final Item SHULKER_BULLET = registerItem("shulker_bullet",
+            new Item(new FabricItemSettings().group(ModItemGroup.ENDLESS_ENCORE)));
+
     public static final Item PERORATITE_INGOT = registerItem("peroratite_ingot",
             new Item(new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
 
