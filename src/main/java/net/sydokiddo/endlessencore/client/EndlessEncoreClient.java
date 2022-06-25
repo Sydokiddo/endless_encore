@@ -14,18 +14,18 @@ public class EndlessEncoreClient implements ClientModInitializer {
         // Renders Blocks in List as Transparent (Without Translucency)
 
         BlockRenderLayerMap.INSTANCE.putBlocks(
-                RenderLayer.getCutout(),
+                RenderLayer.getCutout()
 
-                ModBlocks.NETTLE_LEAVES,
-                ModBlocks.FLOWERING_NETTLE_LEAVES,
-                ModBlocks.NETTLE_CARPET,
-                ModBlocks.NETTLE_ROOTS,
-                ModBlocks.FLOWERING_NETTLE_ROOTS,
-                ModBlocks.NETTLE_SHRUB,
-                ModBlocks.FLOWERING_NETTLE_SHRUB,
-                ModBlocks.NETTLE_VINES,
-                ModBlocks.NETTLE_VINES_PLANT,
-                ModBlocks.BLIGHTED_CARPET
+//                ModBlocks.NETTLE_LEAVES,
+//                ModBlocks.FLOWERING_NETTLE_LEAVES,
+//                ModBlocks.NETTLE_CARPET,
+//                ModBlocks.NETTLE_ROOTS,
+//                ModBlocks.FLOWERING_NETTLE_ROOTS,
+//                ModBlocks.NETTLE_SHRUB,
+//                ModBlocks.FLOWERING_NETTLE_SHRUB,
+//                ModBlocks.NETTLE_VINES,
+//                ModBlocks.NETTLE_VINES_PLANT,
+//                ModBlocks.BLIGHTED_CARPET
 
         );
 

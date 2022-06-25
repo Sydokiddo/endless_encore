@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:bedrock_blocks",
-    "endlessencore:end_gateway_activator"
+    "#minecraft:bedrock_blocks"
   ]
 }

@@ -33,10 +33,10 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("end_diamond_ore", Feature.ORE,
                     new OreFeatureConfig(ORE_END_DIAMOND, 5));
 
-    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> NETTLE_ROOTS =
-            ConfiguredFeatures.register("nettle_roots", Feature.FLOWER,
-            ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
-            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NETTLE_ROOTS)))));
+//    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> NETTLE_ROOTS =
+//            ConfiguredFeatures.register("nettle_roots", Feature.FLOWER,
+//            ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+//            new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.NETTLE_ROOTS)))));
 
 
 // Registry for Configured Features:

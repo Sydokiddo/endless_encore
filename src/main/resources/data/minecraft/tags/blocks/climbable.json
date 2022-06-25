@@ -1,8 +1,5 @@
 {
   "replace": false,
   "values": [
-    "minecraft:chain",
-    "endlessencore:nettle_vines",
-    "endlessencore:nettle_vines_plant"
   ]
 }

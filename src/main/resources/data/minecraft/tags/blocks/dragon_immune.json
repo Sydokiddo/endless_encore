@@ -2,13 +2,10 @@
   "replace": false,
   "values": [
     "#minecraft:bedrock_blocks",
-    "endlessencore:nettled_end_stone",
-    "endlessencore:blighted_end_stone",
     "endlessencore:palestone",
     "endlessencore:grongron",
     "endlessencore:end_iolite_ore",
     "endlessencore:end_diamond_ore",
-    "endlessencore:liloam",
-    "endlessencore:end_gateway_activator"
+    "endlessencore:liloam"
   ]
 }

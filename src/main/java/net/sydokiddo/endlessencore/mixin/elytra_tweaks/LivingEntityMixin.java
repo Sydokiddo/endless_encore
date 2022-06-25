@@ -59,6 +59,10 @@ public abstract class LivingEntityMixin extends Entity {
             this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 1.0f);
         }
 
+        if (player instanceof ServerPlayerEntity && player.isSneaking()) {
+            ((ServerPlayerEntity) player).stopFallFlying();
+        }
+
         // Adds exhaustion to the player if they bounce on the ground with Elytra
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isOnGround()) {
