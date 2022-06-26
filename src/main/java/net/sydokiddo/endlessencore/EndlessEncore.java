@@ -26,7 +26,7 @@ public class EndlessEncore implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModSoundEvents.registerSounds();
-		ModEffects.registerAnchoredEffect();
+//		ModEffects.registerAnchoredEffect();
 		ModEffects.registerConfusionEffect();
 		ModConfiguredFeatures.registerConfiguredFeatures();
 		ModWorldGen.generateModWorldGen();
