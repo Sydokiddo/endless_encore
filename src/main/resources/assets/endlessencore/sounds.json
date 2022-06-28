@@ -434,12 +434,24 @@
 		],
 		"subtitle": "subtitles.entity.charmer.flute_victory"
 	},
+	"entity.charmer.confusion_song": {
+		"sounds": [
+			"endlessencore:mob/charmer/confusion_song"
+		],
+		"subtitle": "subtitles.entity.charmer.flute_confusion"
+	},
 	"entity.charmer.power_up": {
 		"sounds": [
 			"endlessencore:mob/charmer/power_up1",
 			"endlessencore:mob/charmer/power_up2"
 		],
 		"subtitle": "subtitles.entity.charmer.power_up"
+	},
+	"entity.charmer.confuse_player": {
+		"sounds": [
+			"endlessencore:mob/charmer/debuff"
+		],
+		"subtitle": "subtitles.entity.charmer.confuse_player"
 	},
 	"entity.snapdragon.ambient": {
 		"sounds": [
