@@ -134,6 +134,41 @@
 			"endlessencore:block/end_stalks/step3"
 		]
 	},
+	"block.ethereal_urn.place": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/place1",
+			"endlessencore:block/ethereal_urn/place2"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.ethereal_urn.break": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/break1",
+			"endlessencore:block/ethereal_urn/break2",
+			"endlessencore:block/ethereal_urn/break3"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.ethereal_urn.hit": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/place1",
+			"endlessencore:block/ethereal_urn/place2"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.ethereal_urn.step": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/place1",
+			"endlessencore:block/ethereal_urn/place2"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.ethereal_urn.fall": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/place1",
+			"endlessencore:block/ethereal_urn/place2"
+		]
+	},
 	"block.end_ore.place": {
 		"sounds": [
 			"endlessencore:block/end_ore/break1",
