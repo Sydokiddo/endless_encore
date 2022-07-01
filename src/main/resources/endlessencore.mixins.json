@@ -10,6 +10,7 @@
     "elytra_tweaks.LivingEntityMixin",
     "elytra_tweaks.MixinElytraEntityModel",
     "entities.shulker.MixinShulkerBulletEntity",
+    "peroratite.PeroratiteBlastProofMixin",
     "peroratite.PeroratiteItemDropMixin",
     "peroratite.PeroratiteTeleportMixin",
     "sickles.EnchantmentMixin",

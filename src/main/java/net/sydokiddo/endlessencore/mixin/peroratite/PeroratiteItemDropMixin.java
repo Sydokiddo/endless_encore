@@ -27,7 +27,7 @@ public abstract class PeroratiteItemDropMixin extends Entity {
         // Detects if an item is in the tag to disable gravity for it
         if (getStack().isIn(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS)) {
             setNoGravity(true);
-            this.setVelocity(this.getVelocity().multiply(0.96D, 0.96D, 0.96D));
+            this.setVelocity(this.getVelocity().multiply(0.8D, 0.8D, 0.8D));
         }
     }
 }
