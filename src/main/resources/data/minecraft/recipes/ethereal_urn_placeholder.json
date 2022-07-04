@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:purpur"
+    }
+  },
+  "result": {
+    "item": "endlessencore:ethereal_urn",
+    "count": 3
+  }
+}
