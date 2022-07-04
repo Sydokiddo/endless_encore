@@ -3,7 +3,9 @@ package net.sydokiddo.endlessencore.block.custom_blocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,6 +26,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
@@ -37,9 +40,13 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         super(settings);
     }
 
+    // Gets the hitbox shape for the block
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
+
+    // Allows players to store items in the Ethereal Urn when right-clicking it with an item
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
@@ -63,6 +70,19 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return ActionResult.SUCCESS;
     }
 
+    // Breaks the Ethereal Urn if an entity falls onto it from 5 blocks or higher
+
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        if (!world.isClient && world.random.nextFloat() < fallDistance - 5.0F && entity instanceof LivingEntity && (entity instanceof PlayerEntity || world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) && entity.getWidth() * entity.getWidth() * entity.getHeight() > 0.512F) {
+            world.playSound(null, pos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
+            world.breakBlock(pos, false);
+        }
+
+        super.onLandedUpon(world, state, pos, entity, fallDistance);
+    }
+
+    // Gets the rotation block states for the block
+
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(FACING, ctx.getPlayerFacing().rotateYClockwise());
     }
@@ -75,9 +95,13 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         builder.add(FACING);
     }
 
+    // Damages entities when the block falls onto them
+
     protected void configureFallingBlockEntity(FallingBlockEntity entity) {
         entity.setHurtEntities(2.0F, 30);
     }
+
+    // Breaks the Ethereal Urn when it falls
 
     public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
         if (!world.isClient) {
@@ -87,6 +111,8 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         }
     }
 
+    // Pistons can only push the Ethereal Urn but not pull it
+
     public PistonBehavior getPistonBehavior(BlockState state) {
         return PistonBehavior.PUSH_ONLY;
     }
@@ -95,6 +121,8 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return false;
     }
 
+    // Breaks the Ethereal Urn if a projectile hits it
+
     public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
         if (!world.isClient) {
             BlockPos blockPos = hit.getBlockPos();
@@ -102,6 +130,8 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
             world.breakBlock(blockPos, false);
         }
     }
+
+    // Drops any stored items if the Ethereal Urn is broken
 
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.isOf(newState.getBlock())) {
@@ -114,6 +144,8 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
+
+    // Damage Source for an Ethereal Urn falling on an entity
 
     public DamageSource getDamageSource() {
         return DamageSource.FALLING_BLOCK;
