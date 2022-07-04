@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ElytraCloseOnDamageMixin {
 
     @Inject(at = @At("RETURN"), method = "damage")
-    private void onDamage(DamageSource source, float amount, CallbackInfoReturnable info) {
+    private void onDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity player = (LivingEntity) (Object) this;
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && !((ServerPlayerEntity) player).isCreative()) {
             ((ServerPlayerEntity) player).stopFallFlying();

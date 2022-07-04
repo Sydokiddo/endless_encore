@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -56,7 +57,7 @@ public abstract class LivingEntityMixin extends Entity {
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
             player.emitGameEvent(GameEvent.FLAP);
-            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 1.0f);
+            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 0.8f + world.random.nextFloat() * 0.4F);
         }
 
         if (player instanceof ServerPlayerEntity && player.isSneaking()) {
@@ -65,8 +66,8 @@ public abstract class LivingEntityMixin extends Entity {
 
         // Adds exhaustion to the player if they bounce on the ground with Elytra
 
-        if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isOnGround()) {
-            ((ServerPlayerEntity) player).addExhaustion(0.3f);
+        if (!world.isClient() && player.isFallFlying() && player.isOnGround()) {
+            ((PlayerEntity) player).addExhaustion(0.3f);
         }
 
         // Prevents the user from gliding when un-equipping Elytra
