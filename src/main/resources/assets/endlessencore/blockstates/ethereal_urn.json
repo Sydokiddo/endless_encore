@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "endlessencore:block/ethereal_urn",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "endlessencore:block/ethereal_urn"
+    },
+    "facing=south": {
+      "model": "endlessencore:block/ethereal_urn",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "endlessencore:block/ethereal_urn",
+      "y": 270
+    }
+  }
+}

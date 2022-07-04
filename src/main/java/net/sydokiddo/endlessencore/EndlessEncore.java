@@ -3,6 +3,7 @@ package net.sydokiddo.endlessencore;
 import net.fabricmc.api.ModInitializer;
 import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.effect.ModEffects;
+import net.sydokiddo.endlessencore.entity.block_entities.ModBlockEntities;
 import net.sydokiddo.endlessencore.item.ModItems;
 import net.sydokiddo.endlessencore.network.PlayerAttackPacket;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
@@ -26,6 +27,7 @@ public class EndlessEncore implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItems.registerModItems();
 		ModSoundEvents.registerSounds();
+		ModBlockEntities.registerBlockEntities();
 //		ModEffects.registerAnchoredEffect();
 		ModEffects.registerConfusionEffect();
 		ModConfiguredFeatures.registerConfiguredFeatures();

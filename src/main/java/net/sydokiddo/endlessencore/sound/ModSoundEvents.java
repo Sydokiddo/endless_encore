@@ -41,6 +41,7 @@ public class ModSoundEvents {
     public static final SoundEvent BLOCK_ETHEREAL_URN_PLACE = registerSoundEvent("block.ethereal_urn.place");
     public static final SoundEvent BLOCK_ETHEREAL_URN_HIT = registerSoundEvent("block.ethereal_urn.hit");
     public static final SoundEvent BLOCK_ETHEREAL_URN_FALL = registerSoundEvent("block.ethereal_urn.fall");
+    public static final SoundEvent BLOCK_ETHEREAL_URN_INSERT = registerSoundEvent("block.ethereal_urn.insert");
 
     // - Misc Sounds:
 

@@ -169,6 +169,12 @@
 			"endlessencore:block/ethereal_urn/place2"
 		]
 	},
+	"block.ethereal_urn.insert": {
+		"sounds": [
+			"endlessencore:block/ethereal_urn/insert"
+		],
+		"subtitle": "subtitles.block.ethereal_urn.insert"
+	},
 	"block.end_ore.place": {
 		"sounds": [
 			"endlessencore:block/end_ore/break1",

@@ -151,6 +151,8 @@
   "block.endlessencore.potted_flowering_nettles": "Potted Flowering Nettles",
   "block.endlessencore.potted_flowering_nettle_roots": "Potted Flowering Nettle Roots",
   "block.endlessencore.potted_blighted_roots": "Potted Blighted Roots",
+  "block.endlessencore.ethereal_urn": "Ethereal Urn",
+  "block.endlessencore.enchanted_ethereal_urn": "Enchanted Ethereal Urn",
   "item.endlessencore.peroratite_ingot": "Peroratite Ingot",
   "item.endlessencore.wooden_sickle": "Wooden Sickle",
   "item.endlessencore.stone_sickle": "Stone Sickle",
@@ -312,6 +314,7 @@
   "subtitles.event.siege.gong": "Mysterious gong clashes",
   "subtitles.item.armor.equip_peroratite": "Peroratite armor reverberates",
   "subtitles.effect.anchored.teleport_fail": "Ender Pearl fails",
+  "subtitles.block.ethereal_urn.insert": "Item inserted into Ethereal Urn",
   "biome.endlessencore.chorus_grove": "Chorus Grove",
   "biome.endlessencore.tangled_mounds": "Tangled Mounds",
   "biome.endlessencore.blighted_barrens": "Blighted Barrens",
@@ -323,5 +326,7 @@
   "effect.endlessencore.anchored": "Anchored",
   "effect.endlessencore.confusion": "Confusion",
   "container.barrageBox": "Barrage Box",
-  "container.barrageBox.more": "and %s more..."
+  "container.barrageBox.more": "and %s more...",
+  "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",
+  "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s"
 }
