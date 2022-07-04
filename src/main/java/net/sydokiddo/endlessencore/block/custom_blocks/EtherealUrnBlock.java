@@ -3,41 +3,50 @@ package net.sydokiddo.endlessencore.block.custom_blocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.FallingBlockEntity;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
+import net.sydokiddo.endlessencore.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
-public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvider {
+public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvider, Waterloggable {
     public static final DirectionProperty FACING;
+    public static final BooleanProperty CONTAINS_ZEAL;
+    public static final BooleanProperty WATERLOGGED;
     private static final VoxelShape SHAPE = VoxelShapes.union(Block.createCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D), Block.createCuboidShape(5.0D, 10.0D, 5.0D, 11.0D, 12.0D, 11.0D));
 
     public EtherealUrnBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false).with(CONTAINS_ZEAL, false));
     }
 
     // Gets the hitbox shape for the block
@@ -87,12 +96,20 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return this.getDefaultState().with(FACING, ctx.getPlayerFacing().rotateYClockwise());
     }
 
-    public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
     // Damages entities when the block falls onto them
@@ -143,6 +160,11 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
             super.onStateReplaced(state, world, pos, newState, moved);
         }
+        if (state.get(CONTAINS_ZEAL)) {
+            world.playSound(null, pos, SoundEvents.PARTICLE_SOUL_ESCAPE, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
+        }
+
+        super.onStateReplaced(state, world, pos, newState, moved);
     }
 
     // Damage Source for an Ethereal Urn falling on an entity
@@ -153,6 +175,12 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     static {
         FACING = HorizontalFacingBlock.FACING;
+        CONTAINS_ZEAL = ModProperties.CONTAINS_ZEAL;
+        WATERLOGGED = Properties.WATERLOGGED;
+    }
+
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING, CONTAINS_ZEAL, WATERLOGGED);
     }
 
     @Nullable

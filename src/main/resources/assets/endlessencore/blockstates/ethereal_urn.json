@@ -1,18 +1,33 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=east,contains_zeal=false": {
       "model": "endlessencore:block/ethereal_urn",
       "y": 90
     },
-    "facing=north": {
+    "facing=north,contains_zeal=false": {
       "model": "endlessencore:block/ethereal_urn"
     },
-    "facing=south": {
+    "facing=south,contains_zeal=false": {
       "model": "endlessencore:block/ethereal_urn",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,contains_zeal=false": {
       "model": "endlessencore:block/ethereal_urn",
+      "y": 270
+    },
+    "facing=east,contains_zeal=true": {
+      "model": "endlessencore:block/ethereal_urn_contains_zeal",
+      "y": 90
+    },
+    "facing=north,contains_zeal=true": {
+      "model": "endlessencore:block/ethereal_urn_contains_zeal"
+    },
+    "facing=south,contains_zeal=true": {
+      "model": "endlessencore:block/ethereal_urn_contains_zeal",
+      "y": 180
+    },
+    "facing=west,contains_zeal=true": {
+      "model": "endlessencore:block/ethereal_urn_contains_zeal",
       "y": 270
     }
   }
