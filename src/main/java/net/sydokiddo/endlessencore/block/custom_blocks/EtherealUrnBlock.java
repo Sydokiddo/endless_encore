@@ -33,6 +33,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.event.GameEvent;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import net.sydokiddo.endlessencore.state.property.ModProperties;
@@ -51,17 +52,18 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     // Gets the hitbox shape for the block
 
+    @SuppressWarnings("ALL")
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
     // Allows players to store items in the Ethereal Urn when right-clicking it with an item
 
-    @Override
+    @Override @SuppressWarnings("ALL")
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
         Hand hand, BlockHitResult hit) {
         ItemStack playerStack = player.getMainHandStack();
-        if (!world.isClient && (!playerStack.isEmpty())) {
+        if (!world.isClient && (!playerStack.isEmpty()) && (!state.get(CONTAINS_ZEAL))) {
             EtherealUrnBlockEntity blockEntity = (EtherealUrnBlockEntity) world.getBlockEntity(pos);
             assert blockEntity != null;
 
@@ -70,6 +72,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
                     playerStack.decrement(1);
                     world.playSound(null, pos, ModSoundEvents.BLOCK_ETHEREAL_URN_INSERT, SoundCategory.BLOCKS, 0.8F, 0.8F + world.random.nextFloat() * 1.2F);
                     player.swingHand(hand);
+                    world.emitGameEvent(null, GameEvent.CONTAINER_OPEN, pos);
                 }
             }
             if (playerStack.isEmpty()) {
@@ -85,6 +88,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         if (!world.isClient && world.random.nextFloat() < fallDistance - 5.0F && entity instanceof LivingEntity && (entity instanceof PlayerEntity || world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) && entity.getWidth() * entity.getWidth() * entity.getHeight() > 0.512F) {
             world.playSound(null, pos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(pos, false);
+            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, pos);
         }
 
         super.onLandedUpon(world, state, pos, entity, fallDistance);
@@ -104,10 +108,12 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
+    @SuppressWarnings("ALL")
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
+    @SuppressWarnings("ALL")
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
@@ -125,31 +131,37 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
             BlockPos blockPos = fallingBlockEntity.getBlockPos();
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(blockPos, false);
+            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, blockPos);
         }
     }
 
     // Pistons can only push the Ethereal Urn but not pull it
 
+    @SuppressWarnings("ALL")
     public PistonBehavior getPistonBehavior(BlockState state) {
         return PistonBehavior.PUSH_ONLY;
     }
 
+    @SuppressWarnings("ALL")
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
     }
 
     // Breaks the Ethereal Urn if a projectile hits it
 
+    @SuppressWarnings("ALL")
     public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
         if (!world.isClient) {
             BlockPos blockPos = hit.getBlockPos();
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(blockPos, false);
+            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, blockPos);
         }
     }
 
     // Drops any stored items if the Ethereal Urn is broken
 
+    @SuppressWarnings("ALL")
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -183,18 +195,17 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         builder.add(FACING, CONTAINS_ZEAL, WATERLOGGED);
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new EtherealUrnBlockEntity(pos, state);
     }
 
-    @Override
+    @Override @SuppressWarnings("ALL")
     public boolean hasComparatorOutput(BlockState state) {
         return true;
     }
 
-    @Override
+    @Override @SuppressWarnings("ALL")
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
     }
