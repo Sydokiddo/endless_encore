@@ -56,7 +56,7 @@ public class ModBlocks {
             new ModPillarBlock(FabricBlockSettings.copyOf(ModBlocks.GRONGRON_TILES).sounds(BlockSoundGroup.BASALT)));
 
     public static final Block ETHEREAL_URN = registerBlock("ethereal_urn",
-            new EtherealUrnBlock(FabricBlockSettings.of(Material.STONE, MapColor.PALE_GREEN).sounds(ModSoundEvents.ETHEREAL_URN).nonOpaque().hardness(2.0f).strength(4.0f)));
+            new EtherealUrnBlock(FabricBlockSettings.of(Material.STONE, MapColor.PALE_GREEN).sounds(ModSoundEvents.ETHEREAL_URN).nonOpaque().strength(1.0f)));
 
     public static final Block ETHEREAL_BRICKS = registerBlock("ethereal_bricks",
             new Block(FabricBlockSettings.of(Material.STONE, MapColor.EMERALD_GREEN).sounds(BlockSoundGroup.NETHERITE).requiresTool().hardness(3.0f).strength(9.0f)));
