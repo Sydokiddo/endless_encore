@@ -6,6 +6,7 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.FluidState;
@@ -151,7 +152,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     @SuppressWarnings("ALL")
     public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
-        if (!world.isClient) {
+        if (!world.isClient && world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
             BlockPos blockPos = hit.getBlockPos();
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(blockPos, false);
@@ -169,13 +170,14 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
                 ItemScatterer.spawn(world, pos, (Inventory)blockEntity);
                 world.updateComparators(pos, this);
             }
-
             super.onStateReplaced(state, world, pos, newState, moved);
         }
-        if (state.get(CONTAINS_ZEAL)) {
+        if (state.get(CONTAINS_ZEAL) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             world.playSound(null, pos, SoundEvents.PARTICLE_SOUL_ESCAPE, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
+            world.emitGameEvent(null, GameEvent.ENTITY_PLACE, pos);
+            AllayEntity zealEntity = (AllayEntity)EntityType.ALLAY.create(world);
+            world.spawnEntity(zealEntity);
         }
-
         super.onStateReplaced(state, world, pos, newState, moved);
     }
 

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -55,6 +56,7 @@ public class ModBlocks {
     public static final Block GRONGRON_PILLAR = registerBlock("grongron_pillar",
             new ModPillarBlock(FabricBlockSettings.copyOf(ModBlocks.GRONGRON_TILES).sounds(BlockSoundGroup.BASALT)));
 
+    private static ServerWorld world;
     public static final Block ETHEREAL_URN = registerBlock("ethereal_urn",
             new EtherealUrnBlock(FabricBlockSettings.of(Material.STONE, MapColor.PALE_GREEN).sounds(ModSoundEvents.ETHEREAL_URN).nonOpaque().strength(1.0f)));
 
