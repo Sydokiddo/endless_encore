@@ -325,6 +325,7 @@
   "enchantment.endlessencore.collision": "Collision",
   "effect.endlessencore.stagnation": "Stagnation",
   "effect.endlessencore.confusion": "Confusion",
+  "effect.endlessencore.vulnerability": "Vulnerability",
   "container.barrageBox": "Barrage Box",
   "container.barrageBox.more": "and %s more...",
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",

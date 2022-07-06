@@ -33,6 +33,7 @@ public class EndlessEncore implements ModInitializer {
 		ModGameEvents.registerGameEvents();
 		ModEffects.registerStagnationEffect();
 		ModEffects.registerConfusionEffect();
+		ModEffects.registerVulnerabilityEffect();
 		ModConfiguredFeatures.registerConfiguredFeatures();
 		ModWorldGen.generateModWorldGen();
 

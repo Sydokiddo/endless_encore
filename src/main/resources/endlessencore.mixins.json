@@ -16,7 +16,8 @@
     "peroratite.PeroratiteTeleportMixin",
     "sickles.EnchantmentMixin",
     "sickles.PlayerEntityMixin",
-    "sickles.ServerPlayerEntityMixin"
+    "sickles.ServerPlayerEntityMixin",
+    "status_effects.vulnerability.VulnerabilityEffectMixin"
   ],
   "client": [
     "sickles.HeldItemRendererMixin",
