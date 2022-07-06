@@ -22,29 +22,7 @@ public class BallisticEnchantmentMixin {
     private void collideWithEntity(Entity entity, CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
         int ballisticLevel = Math.max(0, Math.max(EnchantmentHelper.getLevel(ModEnchantments.BALLISTIC, player.getEquippedStack(EquipmentSlot.CHEST)), EnchantmentHelper.getLevel(ModEnchantments.BALLISTIC, player.getEquippedStack(EquipmentSlot.CHEST))));
-        if (player instanceof ServerPlayerEntity && (player.isFallFlying()) && (player.getVelocity().x >= 1)) {
-            if (ballisticLevel == 1) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 4.0f);
-            }
-            if (ballisticLevel == 2) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 6.5f);
-            }
-            if (ballisticLevel >= 3) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 9.0f);
-            }
-        }
-        if (player instanceof ServerPlayerEntity && (player.isFallFlying()) && (player.getVelocity().y >= 1)) {
-            if (ballisticLevel == 1) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 4.0f);
-            }
-            if (ballisticLevel == 2) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 6.5f);
-            }
-            if (ballisticLevel >= 3) {
-                entity.damage(DamageSource.FLY_INTO_WALL, 9.0f);
-            }
-        }
-        if (player instanceof ServerPlayerEntity && (player.isFallFlying()) && (player.getVelocity().z >= 1)) {
+        if (player instanceof ServerPlayerEntity && (player.isFallFlying()) && (!player.isOnGround()) && (player.getVelocity().horizontalLength() >= 1)) {
             if (ballisticLevel == 1) {
                 entity.damage(DamageSource.FLY_INTO_WALL, 4.0f);
             }
