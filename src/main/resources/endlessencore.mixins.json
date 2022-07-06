@@ -10,6 +10,8 @@
     "elytra_tweaks.ElytraStagnationEffectMixin",
     "elytra_tweaks.LivingEntityMixin",
     "elytra_tweaks.MixinElytraEntityModel",
+    "enchantments.ballistic.BallisticEnchantmentMixin",
+    "enchantments.ballistic.ElytraModification",
     "entities.shulker.MixinShulkerBulletEntity",
     "peroratite.PeroratiteBlastProofMixin",
     "peroratite.PeroratiteItemDropMixin",

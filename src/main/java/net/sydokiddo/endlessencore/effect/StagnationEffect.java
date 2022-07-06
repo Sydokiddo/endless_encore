@@ -5,6 +5,9 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.network.ServerPlayerEntity;
 
+// Stagnation prevents the user from using Elytra
+// Most of the code is in the Mixins folder
+
 public class StagnationEffect extends StatusEffect {
     public StagnationEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);

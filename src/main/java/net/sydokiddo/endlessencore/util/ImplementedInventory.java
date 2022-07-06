@@ -6,6 +6,8 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 
+// Implemented Inventory for Ethereal Urn
+
 public interface ImplementedInventory extends Inventory {
 
     DefaultedList<ItemStack> getItems();

@@ -2,6 +2,8 @@ package net.sydokiddo.endlessencore.util;
 
 import net.minecraft.item.ItemStack;
 
+// Item Stack Utility Code for Ethereal Urn
+
 public class ItemStackUtils {
 
     public static boolean equalsIgnoreCount(ItemStack stack1, ItemStack stack2) {

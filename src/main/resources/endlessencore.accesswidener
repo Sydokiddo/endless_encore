@@ -1,3 +1,4 @@
 accessWidener   v1  named
 
 accessible method net/minecraft/entity/Entity readCustomDataFromNbt (Lnet/minecraft/nbt/NbtCompound;)V
+accessible class net/minecraft/enchantment/EnchantmentHelper$Consumer

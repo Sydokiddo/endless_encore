@@ -37,7 +37,7 @@ import net.minecraft.world.event.GameEvent;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
 import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
-import net.sydokiddo.endlessencore.util.state.property.ModProperties;
+import net.sydokiddo.endlessencore.util.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("ALL")

@@ -6,6 +6,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.sydokiddo.endlessencore.EndlessEncore;
 
+// Status Effect Registry
+
 public class ModEffects {
 
     public static StatusEffect STAGNATION;
@@ -32,6 +34,6 @@ public class ModEffects {
     }
 
     public static void registerVulnerabilityEffect() {
-        VULNERABILITY = registerConfusionEffect("vulnerability");
+        VULNERABILITY = registerVulnerabilityEffect("vulnerability");
     }
 }

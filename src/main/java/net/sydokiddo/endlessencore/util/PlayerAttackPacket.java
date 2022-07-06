@@ -8,6 +8,8 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.Identifier;
 
+// Player Attack Packets for Sickles
+
 public class PlayerAttackPacket {
 
     public static final Identifier ATTACK_PACKET = new Identifier("endlessencore", "attack_entity");
