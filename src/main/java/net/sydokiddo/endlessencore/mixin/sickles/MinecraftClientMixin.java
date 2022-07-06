@@ -1,8 +1,8 @@
 package net.sydokiddo.endlessencore.mixin.sickles;
 
-import net.sydokiddo.endlessencore.access.PlayerAccess;
+import net.sydokiddo.endlessencore.util.PlayerAccess;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
-import net.sydokiddo.endlessencore.network.PlayerAttackPacket;
+import net.sydokiddo.endlessencore.util.PlayerAttackPacket;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

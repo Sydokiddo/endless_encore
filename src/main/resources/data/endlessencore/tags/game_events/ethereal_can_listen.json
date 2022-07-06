@@ -1,0 +1,20 @@
+{
+  "values": [
+    "endlessencore:ethereal_urn_break",
+    "endlessencore:baby_ethereal_tattle",
+    "endlessencore:ethereal_gong",
+    "minecraft:elytra_glide",
+    "minecraft:container_open",
+    "minecraft:container_close",
+    "minecraft:entity_damage",
+    "minecraft:entity_die",
+    "minecraft:explode",
+    "minecraft:instrument_play",
+    "minecraft:prime_fuse",
+    "minecraft:projectile_land",
+    "minecraft:projectile_shoot",
+    "minecraft:note_block_play",
+    "minecraft:entity_shake",
+    "minecraft:entity_place"
+  ]
+}

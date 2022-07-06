@@ -1,7 +1,7 @@
 package net.sydokiddo.endlessencore.mixin.sickles;
 
 import java.util.Map;
-import net.sydokiddo.endlessencore.access.PlayerAccess;
+import net.sydokiddo.endlessencore.util.PlayerAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;

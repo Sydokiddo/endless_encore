@@ -17,16 +17,6 @@ public class EndlessEncoreClient implements ClientModInitializer {
                 RenderLayer.getCutout(),
 
                   ModBlocks.ETHEREAL_URN
-//                ModBlocks.NETTLE_LEAVES,
-//                ModBlocks.FLOWERING_NETTLE_LEAVES,
-//                ModBlocks.NETTLE_CARPET,
-//                ModBlocks.NETTLE_ROOTS,
-//                ModBlocks.FLOWERING_NETTLE_ROOTS,
-//                ModBlocks.NETTLE_SHRUB,
-//                ModBlocks.FLOWERING_NETTLE_SHRUB,
-//                ModBlocks.NETTLE_VINES,
-//                ModBlocks.NETTLE_VINES_PLANT,
-//                ModBlocks.BLIGHTED_CARPET
 
         );
 

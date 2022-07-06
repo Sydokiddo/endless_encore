@@ -1,6 +1,6 @@
 package net.sydokiddo.endlessencore.mixin.sickles;
 
-import net.sydokiddo.endlessencore.access.PlayerAccess;
+import net.sydokiddo.endlessencore.util.PlayerAccess;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

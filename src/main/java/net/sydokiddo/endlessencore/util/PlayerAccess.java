@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.access;
+package net.sydokiddo.endlessencore.util;
 
 public interface PlayerAccess {
 

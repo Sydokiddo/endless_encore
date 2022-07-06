@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.state.property;
+package net.sydokiddo.endlessencore.util.state.property;
 
 import net.minecraft.state.property.BooleanProperty;
 

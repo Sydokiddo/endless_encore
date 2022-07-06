@@ -470,12 +470,5 @@
 			"endlessencore:item/armor/equip_peroratite4"
 		],
 		"subtitle": "subtitles.item.armor.equip_peroratite"
-	},
-	"effect.anchored.teleport_fail": {
-		"sounds": [
-			"endlessencore:effect/anchored/teleport_fail1",
-			"endlessencore:effect/anchored/teleport_fail2"
-		],
-		"subtitle": "subtitles.effect.anchored.teleport_fail"
 	}
 }

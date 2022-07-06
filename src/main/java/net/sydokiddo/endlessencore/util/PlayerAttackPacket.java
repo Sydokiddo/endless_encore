@@ -1,7 +1,6 @@
-package net.sydokiddo.endlessencore.network;
+package net.sydokiddo.endlessencore.util;
 
 import io.netty.buffer.Unpooled;
-import net.sydokiddo.endlessencore.access.PlayerAccess;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;

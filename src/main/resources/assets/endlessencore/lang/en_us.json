@@ -323,7 +323,7 @@
   "stat.endlessencore.siege_trigger": "Sieges Triggered",
   "stat.endlessencore.clean_barrage_box": "Barrage Boxes Cleaned",
   "enchantment.endlessencore.collision": "Collision",
-  "effect.endlessencore.anchored": "Anchored",
+  "effect.endlessencore.stagnation": "Stagnation",
   "effect.endlessencore.confusion": "Confusion",
   "container.barrageBox": "Barrage Box",
   "container.barrageBox.more": "and %s more...",

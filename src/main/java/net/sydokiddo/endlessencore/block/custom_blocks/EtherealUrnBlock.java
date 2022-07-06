@@ -6,7 +6,6 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.FluidState;
@@ -36,8 +35,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
+import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
-import net.sydokiddo.endlessencore.state.property.ModProperties;
+import net.sydokiddo.endlessencore.util.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvider, Waterloggable {
@@ -58,7 +58,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return SHAPE;
     }
 
-    // Allows players to store items in the Ethereal Urn when right-clicking it with an item
+    // Allows players to store items in the Ethereal Urn when right-clicking it with an item while sneaking
 
     @Override @SuppressWarnings("ALL")
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
@@ -67,9 +67,8 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         if (!world.isClient && (!playerStack.isEmpty()) && (!state.get(CONTAINS_ZEAL))) {
             EtherealUrnBlockEntity blockEntity = (EtherealUrnBlockEntity) world.getBlockEntity(pos);
             assert blockEntity != null;
-
             if (!playerStack.isEmpty()) {
-                if (blockEntity.receive(playerStack, 0, 1) == ActionResult.SUCCESS) {
+                if ((blockEntity.receive(playerStack, 0, 1) == ActionResult.SUCCESS)) {
                     playerStack.decrement(1);
                     world.playSound(null, pos, ModSoundEvents.BLOCK_ETHEREAL_URN_INSERT, SoundCategory.BLOCKS, 0.8F, 0.8F + world.random.nextFloat() * 1.2F);
                     player.swingHand(hand);
@@ -89,10 +88,14 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         if (!world.isClient && world.random.nextFloat() < fallDistance - 5.0F && entity instanceof LivingEntity && (entity instanceof PlayerEntity || world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) && entity.getWidth() * entity.getWidth() * entity.getHeight() > 0.512F) {
             world.playSound(null, pos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(pos, false);
-            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, pos);
+            world.emitGameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, pos);
         }
 
         super.onLandedUpon(world, state, pos, entity, fallDistance);
+    }
+
+    public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
+        world.emitGameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, pos);
     }
 
     // Gets the rotation block states for the block
@@ -132,7 +135,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
             BlockPos blockPos = fallingBlockEntity.getBlockPos();
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(blockPos, false);
-            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, blockPos);
+            world.emitGameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, blockPos);
         }
     }
 
@@ -156,9 +159,9 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
             BlockPos blockPos = hit.getBlockPos();
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.breakBlock(blockPos, false);
-            world.emitGameEvent(null, GameEvent.BLOCK_DESTROY, blockPos);
+            world.emitGameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, blockPos);
+            }
         }
-    }
 
     // Drops any stored items if the Ethereal Urn is broken
 
@@ -175,8 +178,6 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         if (state.get(CONTAINS_ZEAL) && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             world.playSound(null, pos, SoundEvents.PARTICLE_SOUL_ESCAPE, SoundCategory.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.emitGameEvent(null, GameEvent.ENTITY_PLACE, pos);
-            AllayEntity zealEntity = (AllayEntity)EntityType.ALLAY.create(world);
-            world.spawnEntity(zealEntity);
         }
         super.onStateReplaced(state, world, pos, newState, moved);
     }

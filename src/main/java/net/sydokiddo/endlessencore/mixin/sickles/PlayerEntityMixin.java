@@ -2,7 +2,7 @@ package net.sydokiddo.endlessencore.mixin.sickles;
 
 import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.particle.ParticleTypes;
-import net.sydokiddo.endlessencore.access.PlayerAccess;
+import net.sydokiddo.endlessencore.util.PlayerAccess;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -42,6 +42,7 @@ public class PlayerEntityMixin implements PlayerAccess {
         lastAttackedOffhandTicks = 0;
     }
 
+    @SuppressWarnings("ALL")
     @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F"), ordinal = 0, require = 0)
     private float attackDamageMixin(float original) {
         Item item = ((PlayerEntity) (Object) this).getOffHandStack().getItem();

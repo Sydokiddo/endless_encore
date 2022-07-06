@@ -11,7 +11,6 @@ import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
-import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.mixin.accessors.EntityAccessor;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
@@ -79,12 +78,6 @@ public abstract class LivingEntityMixin extends Entity {
         // Prevents the user from gliding when Elytra are broken
 
         if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431) {
-            ((ServerPlayerEntity) player).stopFallFlying();
-        }
-
-        // Prevents the user from gliding when under the Anchored status effect
-
-        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && player.hasStatusEffect(ModEffects.ANCHORED)) {
             ((ServerPlayerEntity) player).stopFallFlying();
         }
     }
