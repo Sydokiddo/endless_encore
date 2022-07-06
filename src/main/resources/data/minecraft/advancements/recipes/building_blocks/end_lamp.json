@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shulker_pearl": {
+    "has_shulker_bullet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "endlessencore:shulker_pearl"
+              "endlessencore:shulker_bullet"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_shulker_pearl",
+      "has_shulker_bullet",
       "has_the_recipe"
     ]
   ],

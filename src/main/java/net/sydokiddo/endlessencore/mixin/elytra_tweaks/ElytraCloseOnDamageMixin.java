@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-// Forcefully closes Elytra and gives the Stagnation status effect for 5 seconds when a player takes damage while fall flying
+// Forcefully closes Elytra and gives the Stagnant status effect for 5 seconds when a player takes damage while fall flying
 
 @Mixin(PlayerEntity.class)
 public class ElytraCloseOnDamageMixin {
@@ -26,7 +26,7 @@ public class ElytraCloseOnDamageMixin {
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && !((ServerPlayerEntity) player).isCreative()) {
             ((ServerPlayerEntity) player).stopFallFlying();
             ((ServerPlayerEntity) player).playSound(ModSoundEvents.PLAYER_ELYTRA_CLOSE, SoundCategory.PLAYERS, 1.0f, 1.0f);
-            player.addStatusEffect(new StatusEffectInstance(ModEffects.STAGNATION, 100, 0, false, false, true));
+            player.addStatusEffect(new StatusEffectInstance(ModEffects.STAGNANT, 100, 0, false, false, true));
             ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
             stack.damage(2, player, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.CHEST));
         }

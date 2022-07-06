@@ -7,7 +7,7 @@
     "PlayerManagerMixin",
     "accessors.EntityAccessor",
     "elytra_tweaks.ElytraCloseOnDamageMixin",
-    "elytra_tweaks.ElytraStagnationEffectMixin",
+    "elytra_tweaks.ElytraStagnantEffectMixin",
     "elytra_tweaks.LivingEntityMixin",
     "elytra_tweaks.MixinElytraEntityModel",
     "enchantments.ballistic.BallisticEnchantmentMixin",

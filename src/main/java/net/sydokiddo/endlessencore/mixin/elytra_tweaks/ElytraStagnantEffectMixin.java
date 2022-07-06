@@ -8,15 +8,15 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// Prevents the user from gliding if they have the Stagnation status effect
+// Prevents the user from gliding if they have the Stagnant status effect
 
 @Mixin(LivingEntity.class)
-public class ElytraStagnationEffectMixin {
+public class ElytraStagnantEffectMixin {
 
     @Inject(at = @At("RETURN"), method = "tickFallFlying", cancellable = true)
     private void tickFallFlying(CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
-        if (player instanceof ServerPlayerEntity && player.hasStatusEffect(ModEffects.STAGNATION)) {
+        if (player instanceof ServerPlayerEntity && player.hasStatusEffect(ModEffects.STAGNANT)) {
             ci.cancel();
         }
         if (player.isSneaking()) {
