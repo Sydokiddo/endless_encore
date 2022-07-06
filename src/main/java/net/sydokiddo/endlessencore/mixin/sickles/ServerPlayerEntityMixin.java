@@ -23,5 +23,4 @@ public class ServerPlayerEntityMixin {
         if (hand == Hand.OFF_HAND && (item instanceof SickleItem))
             info.cancel();
     }
-
 }

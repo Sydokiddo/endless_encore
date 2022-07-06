@@ -15,6 +15,7 @@ import net.sydokiddo.endlessencore.block.custom_blocks.*;
 import net.sydokiddo.endlessencore.item.ModItemGroup;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
+@SuppressWarnings("ALL")
 public class ModBlocks {
 
 // List of Blocks:

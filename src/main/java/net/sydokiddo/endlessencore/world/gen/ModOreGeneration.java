@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.gen.GenerationStep;
 import net.sydokiddo.endlessencore.world.feature.ModPlacedFeatures;
 
+@SuppressWarnings("ALL")
 public class ModOreGeneration {
 
 public static void generateOres() {

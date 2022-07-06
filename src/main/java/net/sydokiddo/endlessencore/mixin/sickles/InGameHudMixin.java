@@ -65,5 +65,4 @@ public abstract class InGameHudMixin extends DrawableHelper {
             DrawableHelper.drawTexture(matrices, r, this.scaledHeight - 20 + 18 - s, 0.0F, 18.0F - s, 18, s, 32, 32);
         }
     }
-
 }

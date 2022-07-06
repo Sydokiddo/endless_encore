@@ -17,6 +17,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
+@SuppressWarnings("ALL")
 public class EtherealCloudBlock extends Block {
     private static final VoxelShape FALLING_SHAPE = VoxelShapes.cuboid(0.0D, 0.0D, 0.0D, 1.0D, 0.8999999761581421D, 1.0D);
 

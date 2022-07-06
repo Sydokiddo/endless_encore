@@ -148,5 +148,4 @@ public class PlayerEntityMixin implements PlayerAccess {
     public float getAttackCooldownProgressOffhand(float baseTime) {
         return MathHelper.clamp(((float) this.lastAttackedOffhandTicks + baseTime) / this.getAttackCooldownProgressPerTick(), 0.0F, 1.0F);
     }
-
 }

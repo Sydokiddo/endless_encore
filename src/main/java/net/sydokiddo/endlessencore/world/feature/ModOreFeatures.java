@@ -1,9 +1,9 @@
 package net.sydokiddo.endlessencore.world.feature;
 
 import net.minecraft.world.gen.placementmodifier.*;
-
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class ModOreFeatures {
 
     public ModOreFeatures() {

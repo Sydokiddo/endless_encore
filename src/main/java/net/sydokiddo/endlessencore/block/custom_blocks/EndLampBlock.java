@@ -6,9 +6,9 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-
 import java.util.Random;
 
+@SuppressWarnings("ALL")
 public class EndLampBlock extends Block {
     public EndLampBlock(Settings settings) {
         super(settings);

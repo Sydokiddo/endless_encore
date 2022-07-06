@@ -96,5 +96,4 @@ public class MinecraftClientMixin {
             this.attackedOffhand = false;
         }
     }
-
 }

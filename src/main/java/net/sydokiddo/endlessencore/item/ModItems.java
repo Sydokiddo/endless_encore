@@ -10,6 +10,7 @@ import net.minecraft.util.registry.Registry;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.item.custom_items.*;
 
+@SuppressWarnings("ALL")
 public class ModItems {
 
     // List of Items:

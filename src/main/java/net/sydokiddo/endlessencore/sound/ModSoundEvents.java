@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.sydokiddo.endlessencore.EndlessEncore;
 
+@SuppressWarnings("ALL")
 public class ModSoundEvents {
 
     // Sound Registry:

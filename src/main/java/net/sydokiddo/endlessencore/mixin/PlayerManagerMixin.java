@@ -28,5 +28,4 @@ public class PlayerManagerMixin {
     public void onPlayerConnectMixin(ClientConnection connection, ServerPlayerEntity player, CallbackInfo info) {
         LOGGER.info(player.getName().getString() + " has Endless Encore installed");
     }
-
 }

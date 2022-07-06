@@ -40,6 +40,7 @@ import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import net.sydokiddo.endlessencore.util.state.property.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("ALL")
 public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvider, Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty CONTAINS_ZEAL;
@@ -53,14 +54,13 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     // Gets the hitbox shape for the block
 
-    @SuppressWarnings("ALL")
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
     // Allows players to store items in the Ethereal Urn when right-clicking it with an item while sneaking
 
-    @Override @SuppressWarnings("ALL")
+    @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
         Hand hand, BlockHitResult hit) {
         ItemStack playerStack = player.getMainHandStack();
@@ -112,12 +112,10 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    @SuppressWarnings("ALL")
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
-    @SuppressWarnings("ALL")
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
@@ -141,19 +139,16 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     // Pistons can only push the Ethereal Urn but not pull it
 
-    @SuppressWarnings("ALL")
     public PistonBehavior getPistonBehavior(BlockState state) {
         return PistonBehavior.PUSH_ONLY;
     }
 
-    @SuppressWarnings("ALL")
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;
     }
 
     // Breaks the Ethereal Urn if a projectile hits it
 
-    @SuppressWarnings("ALL")
     public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
         if (!world.isClient && world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING)) {
             BlockPos blockPos = hit.getBlockPos();
@@ -165,7 +160,6 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
 
     // Drops any stored items if the Ethereal Urn is broken
 
-    @SuppressWarnings("ALL")
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -203,12 +197,12 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
         return new EtherealUrnBlockEntity(pos, state);
     }
 
-    @Override @SuppressWarnings("ALL")
+    @Override
     public boolean hasComparatorOutput(BlockState state) {
         return true;
     }
 
-    @Override @SuppressWarnings("ALL")
+    @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
     }

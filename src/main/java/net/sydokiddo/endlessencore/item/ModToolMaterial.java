@@ -6,6 +6,7 @@ import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
+@SuppressWarnings("ALL")
 public enum ModToolMaterial implements ToolMaterial {
     PERORATITE(5, 3125, 11.0F, 5.0F, 18, () -> {
         return Ingredient.ofItems(ModItems.PERORATITE_INGOT);
