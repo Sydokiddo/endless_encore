@@ -13,7 +13,7 @@ public class ModEnchantments {
     new TempoSprintEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.ARMOR_LEGS));
 
     public static Enchantment BALLISTIC = register("ballistic",
-    new BallisticEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.WEARABLE));
+    new BallisticEnchantment(Enchantment.Rarity.RARE, EnchantmentTarget.FISHING_ROD));
 
     private static Enchantment register(String name, Enchantment enchantment) {
         return Registry.register(Registry.ENCHANTMENT, new Identifier(EndlessEncore.MOD_ID, name), enchantment);

@@ -330,5 +330,6 @@
   "container.barrageBox": "Barrage Box",
   "container.barrageBox.more": "and %s more...",
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",
-  "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s"
+  "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s",
+  "death.attack.ballistic": "%1$s was rapidly collided into by %2$s"
 }

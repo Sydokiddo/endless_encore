@@ -1,6 +1,8 @@
 package net.sydokiddo.endlessencore;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.damage.EntityDamageSource;
 import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
@@ -40,5 +42,15 @@ public class EndlessEncore implements ModInitializer {
         ModWorldGen.generateModWorldGen();
 
         LOGGER.info("Thank you for downloading Endless Encore! :)");
+    }
+
+    // Ballistic Damage Source for Ballistic Elytra Enchantment
+
+    public static class BallisticDamageSource extends EntityDamageSource {
+
+        public BallisticDamageSource(Entity source) {
+            super("ballistic", source);
+            setNeutral();
+        }
     }
 }

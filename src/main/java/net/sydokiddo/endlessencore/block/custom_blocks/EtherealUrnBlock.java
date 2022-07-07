@@ -117,8 +117,7 @@ public class EtherealUrnBlock extends FallingBlock implements BlockEntityProvide
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
+        return state.with(FACING, rotation.rotate(state.get(FACING)));    }
 
     // Damages entities when the block falls onto them
 
