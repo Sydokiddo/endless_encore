@@ -16,7 +16,7 @@ public class ElytraStagnantEffectMixin {
     @Inject(at = @At("RETURN"), method = "tickFallFlying", cancellable = true)
     private void tickFallFlying(CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
-        if (player instanceof ServerPlayerEntity && player.hasStatusEffect(ModEffects.STAGNANT)) {
+        if (player instanceof ServerPlayerEntity && player.hasStatusEffect(ModEffects.AERIAL_FATIGUE)) {
             ci.cancel();
         }
         if (player.isSneaking()) {

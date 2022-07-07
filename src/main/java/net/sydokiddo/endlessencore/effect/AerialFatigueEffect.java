@@ -5,11 +5,11 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.server.network.ServerPlayerEntity;
 
-// Stagnant prevents the user from using Elytra
+// Aerial Fatigue prevents the user from using Elytra
 // Most of the code is in the Mixins folder
 
-public class StagnantEffect extends StatusEffect {
-    public StagnantEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class AerialFatigueEffect extends StatusEffect {
+    public AerialFatigueEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 

@@ -10,12 +10,12 @@ import net.sydokiddo.endlessencore.EndlessEncore;
 
 public class ModEffects {
 
-    public static StatusEffect STAGNANT;
+    public static StatusEffect AERIAL_FATIGUE;
     public static StatusEffect CONFUSION;
     public static StatusEffect VULNERABILITY;
 
-    public static StatusEffect registerStagnantEffect(String name) {
-        return Registry.register(Registry.STATUS_EFFECT, new Identifier(EndlessEncore.MOD_ID, name), new StagnantEffect(StatusEffectCategory.HARMFUL, 8346034));
+    public static StatusEffect registerAerialFatigueEffect(String name) {
+        return Registry.register(Registry.STATUS_EFFECT, new Identifier(EndlessEncore.MOD_ID, name), new AerialFatigueEffect(StatusEffectCategory.HARMFUL, 8346034));
     }
     public static StatusEffect registerConfusionEffect(String name) {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(EndlessEncore.MOD_ID, name), new ConfusionEffect(StatusEffectCategory.HARMFUL, 3404127));
@@ -25,8 +25,8 @@ public class ModEffects {
         return Registry.register(Registry.STATUS_EFFECT, new Identifier(EndlessEncore.MOD_ID, name), new VulnerabilityEffect(StatusEffectCategory.HARMFUL, 7892329));
     }
 
-    public static void registerStagnantEffect() {
-        STAGNANT = registerStagnantEffect("stagnant");
+    public static void registerAerialFatigueEffect() {
+        AERIAL_FATIGUE = registerAerialFatigueEffect("aerial_fatigue");
     }
 
     public static void registerConfusionEffect() {
