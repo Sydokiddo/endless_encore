@@ -107,7 +107,7 @@ public class ModItems {
     new FabricItemSettings().fireproof().group(ModItemGroup.ENDLESS_ENCORE)));
 
     public static final Item RIFT_CHAIN = registerItem("rift_chain",
-            new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.ENDLESS_ENCORE)));
+    new Item(new FabricItemSettings().maxCount(1).group(ModItemGroup.ENDLESS_ENCORE)));
 
     // Registry for Items:
 

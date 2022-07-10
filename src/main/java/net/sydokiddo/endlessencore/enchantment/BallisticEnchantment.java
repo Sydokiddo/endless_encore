@@ -29,7 +29,7 @@ public class BallisticEnchantment extends Enchantment {
     }
 
     public boolean isAvailableForEnchantedBookOffer() {
-        return false;
+        return true;
     }
 
     public boolean isAvailableForRandomSelection() {
