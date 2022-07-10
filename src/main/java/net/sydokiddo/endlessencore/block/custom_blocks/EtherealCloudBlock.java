@@ -9,6 +9,7 @@ import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -65,7 +66,7 @@ public class EtherealCloudBlock extends Block {
                 }
 
                 boolean bl = entity instanceof FallingBlockEntity;
-                if (bl || canWalkOnEtherealCloud(entity) && context.isAbove(VoxelShapes.fullCube(), pos, false) && !context.isDescending()) {
+                if (bl || canWalkOnEtherealCloud((PlayerEntity) entity) && context.isAbove(VoxelShapes.fullCube(), pos, false) && !context.isDescending()) {
                     return super.getCollisionShape(state, world, pos, context);
                 }
             }
@@ -78,11 +79,11 @@ public class EtherealCloudBlock extends Block {
         return VoxelShapes.empty();
     }
 
-    public static boolean canWalkOnEtherealCloud(Entity entity) {
-        return entity.isSprinting();
+    public static boolean canWalkOnEtherealCloud(PlayerEntity entity) {
+        return entity.isSprinting() && !entity.isFallFlying();
     }
 
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
-        return true;
+        return false;
     }
 }
