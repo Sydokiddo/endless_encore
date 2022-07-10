@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.sydokiddo.endlessencore.effect.ModEffects;
+import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,6 +30,7 @@ public class ElytraCloseOnDamageMixin {
             player.addStatusEffect(new StatusEffectInstance(ModEffects.AERIAL_FATIGUE, 100, 0, false, false, true));
             ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
             stack.damage(2, player, (e) -> e.sendEquipmentBreakStatus(EquipmentSlot.CHEST));
+            player.emitGameEvent(ModGameEvents.ELYTRA_CLOSE);
         }
     }
 }

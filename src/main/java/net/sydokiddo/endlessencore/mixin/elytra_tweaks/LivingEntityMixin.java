@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.mixin.accessors.EntityAccessor;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
@@ -55,7 +55,7 @@ public abstract class LivingEntityMixin extends Entity {
 
         if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
             ((ServerPlayerEntity) player).stopFallFlying();
-            player.emitGameEvent(GameEvent.FLAP);
+            player.emitGameEvent(ModGameEvents.ELYTRA_CLOSE);
             this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 0.8f + world.random.nextFloat() * 0.4F);
         }
 

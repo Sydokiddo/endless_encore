@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.collection.DefaultedList;
 
 // Implemented Inventory for Ethereal Urn
+// Known Bug: Ethereal Urns delete the stored items in them upon server restart on multiplayer, need to fix this
 
 public interface ImplementedInventory extends Inventory {
 
