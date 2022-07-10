@@ -190,7 +190,8 @@ public class ModBlocks {
     .hardness(3.0f).strength(9.0f), UniformIntProvider.create(3, 7)));
 
     public static final Block PERORATITE_BLOCK = registerBlock("peroratite_block",
-    new Block(FabricBlockSettings.of(Material.METAL, MapColor.CYAN).sounds(BlockSoundGroup.NETHERITE).requiresTool().hardness(50.0f).strength(50.0f)));
+    new Block(FabricBlockSettings.of(Material.METAL, MapColor.PALE_GREEN).sounds(BlockSoundGroup.NETHERITE)
+    .requiresTool().hardness(50.0f).strength(50.0f)));
 
 // Registry for Blocks:
 
