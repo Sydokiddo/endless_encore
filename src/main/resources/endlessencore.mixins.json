@@ -6,8 +6,8 @@
   "mixins": [
     "PlayerManagerMixin",
     "accessors.EntityAccessor",
+    "elytra_tweaks.ElytraChitinRepairingMixin",
     "elytra_tweaks.ElytraCloseOnDamageMixin",
-    "status_effects.aerial_fatigue.AerialFatigueEffectMixin",
     "elytra_tweaks.LivingEntityMixin",
     "elytra_tweaks.MixinElytraEntityModel",
     "enchantments.ballistic.BallisticEnchantmentMixin",
@@ -19,6 +19,7 @@
     "sickles.EnchantmentMixin",
     "sickles.PlayerEntityMixin",
     "sickles.ServerPlayerEntityMixin",
+    "status_effects.aerial_fatigue.AerialFatigueEffectMixin",
     "status_effects.vulnerability.VulnerabilityEffectMixin"
   ],
   "client": [
