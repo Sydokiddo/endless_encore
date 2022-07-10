@@ -178,7 +178,7 @@ public class ModBlocks {
     new LiloamBlock(FabricBlockSettings.of(Material.AGGREGATE, MapColor.TERRACOTTA_PURPLE).sounds(BlockSoundGroup.SAND).strength(0.5F)));
 
     public static final Block ETHEREAL_CLOUD = registerBlock("ethereal_cloud",
-    new EtherealCloudBlock(FabricBlockSettings.of(Material.WOOL, MapColor.EMERALD_GREEN).sounds(BlockSoundGroup.WOOL)
+    new EtherealCloudBlock(FabricBlockSettings.of(Material.WOOL, MapColor.EMERALD_GREEN).sounds(ModSoundEvents.ETHEREAL_CLOUD)
     .luminance(10).hardness(0.1f).strength(0.1f).nonOpaque()));
 
     public static final Block END_IOLITE_ORE = registerBlock("end_iolite_ore",

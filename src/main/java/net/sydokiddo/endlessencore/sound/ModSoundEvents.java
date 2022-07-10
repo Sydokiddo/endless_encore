@@ -44,6 +44,12 @@ public class ModSoundEvents {
     public static final SoundEvent BLOCK_ETHEREAL_URN_FALL = registerSoundEvent("block.ethereal_urn.fall");
     public static final SoundEvent BLOCK_ETHEREAL_URN_INSERT = registerSoundEvent("block.ethereal_urn.insert");
 
+    public static final SoundEvent BLOCK_ETHEREAL_CLOUD_BREAK = registerSoundEvent("block.ethereal_cloud.break");
+    public static final SoundEvent BLOCK_ETHEREAL_CLOUD_STEP = registerSoundEvent("block.ethereal_cloud.step");
+    public static final SoundEvent BLOCK_ETHEREAL_CLOUD_PLACE = registerSoundEvent("block.ethereal_cloud.place");
+    public static final SoundEvent BLOCK_ETHEREAL_CLOUD_HIT = registerSoundEvent("block.ethereal_cloud.hit");
+    public static final SoundEvent BLOCK_ETHEREAL_CLOUD_FALL = registerSoundEvent("block.ethereal_cloud.fall");
+
     // - Misc Sounds:
 
     public static final SoundEvent PLAYER_ELYTRA_CLOSE = registerSoundEvent("item.elytra.close");
@@ -116,6 +122,10 @@ public class ModSoundEvents {
     public static final BlockSoundGroup ETHEREAL_URN = new BlockSoundGroup(1f, 1f,
             ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, ModSoundEvents.BLOCK_ETHEREAL_URN_STEP, ModSoundEvents.BLOCK_ETHEREAL_URN_PLACE,
             ModSoundEvents.BLOCK_ETHEREAL_URN_HIT, ModSoundEvents.BLOCK_ETHEREAL_URN_FALL);
+
+    public static final BlockSoundGroup ETHEREAL_CLOUD = new BlockSoundGroup(1f, 1f,
+            ModSoundEvents.BLOCK_ETHEREAL_CLOUD_BREAK, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_STEP, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_PLACE,
+            ModSoundEvents.BLOCK_ETHEREAL_CLOUD_HIT, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_FALL);
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = new Identifier(EndlessEncore.MOD_ID, name);

@@ -10,13 +10,13 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
 @SuppressWarnings("ALL")
 public class EtherealCloudBlock extends Block {
@@ -44,7 +44,7 @@ public class EtherealCloudBlock extends Block {
     }
 
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float distance) {
-        entity.playSound(SoundEvents.BLOCK_WOOL_FALL, 1, 1);
+        entity.playSound(ModSoundEvents.BLOCK_ETHEREAL_CLOUD_FALL, 1, 1);
         entity.handleFallDamage(distance, 0, DamageSource.FALL);
     }
 

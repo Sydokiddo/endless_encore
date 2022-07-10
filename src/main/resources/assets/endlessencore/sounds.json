@@ -219,6 +219,50 @@
 			"endlessencore:block/end_ore/step4"
 		]
 	},
+	"block.ethereal_cloud.place": {
+		"sounds": [
+			"endlessencore:block/ethereal_cloud/break1",
+			"endlessencore:block/ethereal_cloud/break2",
+			"endlessencore:block/ethereal_cloud/break3",
+			"endlessencore:block/ethereal_cloud/break4"
+		],
+		"subtitle": "subtitles.block.generic.place"
+	},
+	"block.ethereal_cloud.break": {
+		"sounds": [
+			"endlessencore:block/ethereal_cloud/break1",
+			"endlessencore:block/ethereal_cloud/break2",
+			"endlessencore:block/ethereal_cloud/break3",
+			"endlessencore:block/ethereal_cloud/break4"
+		],
+		"subtitle": "subtitles.block.generic.break"
+	},
+	"block.ethereal_cloud.hit": {
+		"sounds": [
+			"endlessencore:block/ethereal_cloud/step1",
+			"endlessencore:block/ethereal_cloud/step2",
+			"endlessencore:block/ethereal_cloud/step3",
+			"endlessencore:block/ethereal_cloud/step4"
+		],
+		"subtitle": "subtitles.block.generic.hit"
+	},
+	"block.ethereal_cloud.step": {
+		"sounds": [
+			"endlessencore:block/ethereal_cloud/step1",
+			"endlessencore:block/ethereal_cloud/step2",
+			"endlessencore:block/ethereal_cloud/step3",
+			"endlessencore:block/ethereal_cloud/step4"
+		],
+		"subtitle": "subtitles.block.generic.footsteps"
+	},
+	"block.ethereal_cloud.fall": {
+		"sounds": [
+			"endlessencore:block/ethereal_cloud/step1",
+			"endlessencore:block/ethereal_cloud/step2",
+			"endlessencore:block/ethereal_cloud/step3",
+			"endlessencore:block/ethereal_cloud/step4"
+		]
+	},
 	"ambient.general_end.mood": {
 		"sounds": [
 			"endlessencore:ambient/end/general_end/mood1",
