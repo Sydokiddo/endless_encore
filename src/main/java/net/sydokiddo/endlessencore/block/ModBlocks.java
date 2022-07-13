@@ -36,7 +36,7 @@ public class ModBlocks {
     .luminance(15).requiresTool().hardness(0.3f).strength(0.3f)));
 
     public static final Block GRONGRON = registerBlock("grongron",
-    new ModPillarBlock(FabricBlockSettings.of(Material.STONE, MapColor.PALE_GREEN).sounds(BlockSoundGroup.BASALT)
+    new ModPillarBlock(FabricBlockSettings.of(Material.STONE, MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.BASALT)
     .requiresTool().hardness(2.0f).strength(8.0f)));
 
     public static final Block GRONGRON_TILES = registerBlock("grongron_tiles",
@@ -63,7 +63,7 @@ public class ModBlocks {
     .nonOpaque().strength(1.0f)));
 
     public static final Block ETHEREAL_BRICKS = registerBlock("ethereal_bricks",
-    new Block(FabricBlockSettings.of(Material.STONE, MapColor.EMERALD_GREEN).sounds(BlockSoundGroup.NETHERITE)
+    new Block(FabricBlockSettings.of(Material.STONE, MapColor.DARK_AQUA).sounds(BlockSoundGroup.NETHERITE)
     .requiresTool().hardness(3.0f).strength(9.0f)));
 
     public static final Block ETHEREAL_BRICK_STAIRS = registerBlock("ethereal_brick_stairs",
@@ -190,7 +190,7 @@ public class ModBlocks {
     .hardness(3.0f).strength(9.0f), UniformIntProvider.create(3, 7)));
 
     public static final Block PERORATITE_BLOCK = registerBlock("peroratite_block",
-    new Block(FabricBlockSettings.of(Material.METAL, MapColor.PALE_GREEN).sounds(BlockSoundGroup.NETHERITE)
+    new Block(FabricBlockSettings.of(Material.METAL, MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.NETHERITE)
     .requiresTool().hardness(50.0f).strength(50.0f)));
 
 // Registry for Blocks:

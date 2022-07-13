@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
+// Fixes stretched UVs on the Elytra model
+
 @Mixin(ElytraEntityModel.class)
 public abstract class MixinElytraEntityModel<T extends LivingEntity> extends AnimalModel<T> {
 
