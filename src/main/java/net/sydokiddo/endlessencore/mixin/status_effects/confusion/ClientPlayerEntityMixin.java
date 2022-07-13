@@ -28,7 +28,7 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
     @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/TutorialManager;onMovement(Lnet/minecraft/client/input/Input;)V"))
     void injectTickNewAi(CallbackInfo ci) {
-        if (getActiveStatusEffects().get(ModEffects.CONFUSION) != null) {
+        if (getActiveStatusEffects().get(ModEffects.DISORIENTATION) != null) {
             this.input.movementSideways *= -1;
             this.input.movementForward *= -1;
         }

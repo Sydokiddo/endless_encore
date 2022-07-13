@@ -213,10 +213,10 @@
   "subtitles.entity.charmer.flute_strength": "Charmer orchestrates strength song",
   "subtitles.entity.charmer.flute_speed": "Charmer orchestrates speed song",
   "subtitles.entity.charmer.flute_resistance": "Charmer orchestrates resistance song",
-  "subtitles.entity.charmer.flute_confusion": "Charmer orchestrates confusion song",
+  "subtitles.entity.charmer.flute_disorientation": "Charmer orchestrates disorientation song",
   "subtitles.entity.charmer.flute_victory": "Charmer orchestrates victoriously",
   "subtitles.entity.charmer.power_up": "Ethereals power up",
-  "subtitles.entity.charmer.confuse_player": "Charmer confuses player",
+  "subtitles.entity.charmer.debuff": "Charmer disorients player",
   "subtitles.entity.charmer.frenzy": "Charmer frenzies",
   "subtitles.entity.charmer.frenzy_end": "Charmer stops frenzying",
   "subtitles.entity.charmer.retreat": "Charmer retreats",
@@ -282,7 +282,7 @@
   "enchantment.endlessencore.tempo_sprint": "Tempo Sprint",
 
   "effect.endlessencore.aerial_fatigue": "Aerial Fatigue",
-  "effect.endlessencore.confusion": "Confusion",
+  "effect.endlessencore.disorientation": "Disorientation",
   "effect.endlessencore.vulnerability": "Vulnerability",
 
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",

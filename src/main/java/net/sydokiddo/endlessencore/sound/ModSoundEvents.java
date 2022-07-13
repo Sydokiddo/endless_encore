@@ -71,13 +71,6 @@ public class ModSoundEvents {
     public static final SoundEvent ETHEREAL_FRENZY = registerSoundEvent("entity.ethereal.frenzy");
     public static final SoundEvent ETHEREAL_FRENZY_END = registerSoundEvent("entity.ethereal.frenzy_end");
 
-//    public static final SoundEvent GLADIATOR_AMBIENT = registerSoundEvent("entity.gladiator.ambient");
-//    public static final SoundEvent GLADIATOR_NOTICE = registerSoundEvent("entity.gladiator.notice");
-//    public static final SoundEvent GLADIATOR_HURT = registerSoundEvent("entity.gladiator.hurt");
-//    public static final SoundEvent GLADIATOR_DEATH = registerSoundEvent("entity.gladiator.death");
-//    public static final SoundEvent GLADIATOR_FRENZY = registerSoundEvent("entity.gladiator.frenzy");
-//    public static final SoundEvent GLADIATOR_FRENZY_END = registerSoundEvent("entity.gladiator.frenzy_end");
-
     public static final SoundEvent CHARMER_AMBIENT = registerSoundEvent("entity.charmer.ambient");
     public static final SoundEvent CHARMER_HURT = registerSoundEvent("entity.charmer.hurt");
     public static final SoundEvent CHARMER_DEATH = registerSoundEvent("entity.charmer.death");
@@ -89,8 +82,8 @@ public class ModSoundEvents {
     public static final SoundEvent CHARMER_SPEED_SONG = registerSoundEvent("entity.charmer.speed_song");
     public static final SoundEvent CHARMER_VICTORY_SONG = registerSoundEvent("entity.charmer.victory_song");
     public static final SoundEvent CHARMER_POWER_UP = registerSoundEvent("entity.charmer.power_up");
-    public static final SoundEvent CHARMER_CONFUSION_SONG = registerSoundEvent("entity.charmer.confusion_song");
-    public static final SoundEvent CHARMER_CONFUSE_PLAYER = registerSoundEvent("entity.charmer.confuse_player");
+    public static final SoundEvent CHARMER_DISORIENTATION_SONG = registerSoundEvent("entity.charmer.disorientation_song");
+    public static final SoundEvent CHARMER_DISORIENT_PLAYER = registerSoundEvent("entity.charmer.debuff");
 
     public static final SoundEvent BARRAGE_AMBIENT = registerSoundEvent("entity.barrage.ambient");
     public static final SoundEvent BARRAGE_OPEN = registerSoundEvent("entity.barrage.open");

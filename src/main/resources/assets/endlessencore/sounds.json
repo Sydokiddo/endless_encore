@@ -469,11 +469,11 @@
 		],
 		"subtitle": "subtitles.entity.charmer.flute_victory"
 	},
-	"entity.charmer.confusion_song": {
+	"entity.charmer.disorientation_song": {
 		"sounds": [
-			"endlessencore:mob/charmer/confusion_song"
+			"endlessencore:mob/charmer/disorientation_song"
 		],
-		"subtitle": "subtitles.entity.charmer.flute_confusion"
+		"subtitle": "subtitles.entity.charmer.flute_disorientation"
 	},
 	"entity.charmer.power_up": {
 		"sounds": [
@@ -482,11 +482,11 @@
 		],
 		"subtitle": "subtitles.entity.charmer.power_up"
 	},
-	"entity.charmer.confuse_player": {
+	"entity.charmer.debuff": {
 		"sounds": [
 			"endlessencore:mob/charmer/debuff"
 		],
-		"subtitle": "subtitles.entity.charmer.confuse_player"
+		"subtitle": "subtitles.entity.charmer.debuff"
 	},
 	"item.elytra.close": {
 		"sounds": [

@@ -4,11 +4,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-// Confusion inverts the player's movement controls
+// Disorientation inverts the player's movement controls
 // Most of the code is in the Mixins folder
 
-public class ConfusionEffect extends StatusEffect {
-    public ConfusionEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class DisorientationEffect extends StatusEffect {
+    public DisorientationEffect(StatusEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 
