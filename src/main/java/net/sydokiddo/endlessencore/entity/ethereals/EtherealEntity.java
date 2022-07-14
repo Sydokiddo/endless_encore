@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.entity.ethereals;
 
-import EntityData;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer.Builder;

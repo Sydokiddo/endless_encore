@@ -1,10 +1,11 @@
 package net.sydokiddo.endlessencore.item;
 
 import java.util.function.Supplier;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Lazy;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
 @SuppressWarnings("ALL")
@@ -44,21 +45,6 @@ public enum ModArmorMaterial implements ArmorMaterial {
 
     public int getEnchantability() {
         return this.enchantability;
-    }
-
-    @Override
-    public int getDurabilityForSlot(EquipmentSlot equipmentSlot) {
-        return 0;
-    }
-
-    @Override
-    public int getDefenseForSlot(EquipmentSlot equipmentSlot) {
-        return 0;
-    }
-
-    @Override
-    public int getEnchantmentValue() {
-        return 0;
     }
 
     public SoundEvent getEquipSound() {

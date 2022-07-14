@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.mixin.enchantments.ballistic;
 
-import EnchantmentTarget;
 import net.minecraft.enchantment.*;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;

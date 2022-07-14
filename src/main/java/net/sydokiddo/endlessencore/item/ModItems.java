@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.item;
 
-import Item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -8,7 +7,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.item.Item;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.item.custom_items.*;
 

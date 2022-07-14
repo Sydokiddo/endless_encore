@@ -2,16 +2,13 @@ package net.sydokiddo.endlessencore.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.core.Registry;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.entity.EntityType;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.entity.ethereals.EtherealEntity;
-import org.checkerframework.checker.signature.qual.Identifier;
 
 public class ModEntities {
 

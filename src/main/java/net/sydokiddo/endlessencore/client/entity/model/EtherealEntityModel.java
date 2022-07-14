@@ -1,7 +1,5 @@
 package net.sydokiddo.endlessencore.client.entity.model;
 
-import ModelData;
-import ModelPart;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
