@@ -12,7 +12,7 @@ public class ModEntityRenderer {
     public static final ModelLayerLocation ETHEREAL = new ModelLayerLocation(new ResourceLocation(EndlessEncore.MOD_ID, "ethereal"), "main");
 
     public static void registerRenderers() {
-        EntityRendererRegistry.register(ModEntities.ETHEREAL, EtherealRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(ETHEREAL, EtherealEntityModel::getTexturedModelData);
+//        EntityRendererRegistry.register(ModEntities.ETHEREAL, EtherealRenderer::new);
+//        EntityModelLayerRegistry.registerModelLayer(ETHEREAL, EtherealEntityModel::getTexturedModelData);
     }
 }
