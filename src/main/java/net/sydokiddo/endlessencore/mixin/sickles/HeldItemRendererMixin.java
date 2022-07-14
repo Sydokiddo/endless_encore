@@ -28,12 +28,10 @@ public class HeldItemRendererMixin {
 
     @Shadow private float mainHandHeight;
     @Shadow private float offHandHeight;
-    @Final
     @Mutable
-    private Minecraft client;
-
+    @Final
+    private final Minecraft client;
     private ItemStack offHand;
-
     private float equipOffhand;
     private boolean isOffhandAttack;
 
@@ -43,6 +41,8 @@ public class HeldItemRendererMixin {
 
     @Inject(method = "tick", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/util/Mth;clamp(FFF)F", ordinal = 3, shift = Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void updateHeldItemsMixin(CallbackInfo info, LocalPlayer clientPlayerEntity, ItemStack itemStack, ItemStack itemStack2) {
+        assert this.client != null;
+        assert this.client.player != null;
         float o = ((PlayerAccess) clientPlayerEntity).getAttackCooldownProgressOffhand(1.0F);
         if (o < 0.1F) this.isOffhandAttack = true;
         if (this.isOffhandAttack) {
@@ -56,7 +56,8 @@ public class HeldItemRendererMixin {
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F"))
     public void updateHeldMainhandMixin(CallbackInfo info) {
-        assert client.player != null;
+        assert this.client != null;
+        assert this.client.player != null;
         float o = ((PlayerAccess) client.player).getAttackCooldownProgressOffhand(1.0F);
         if (o < 0.9F && o > 0.15F)
             this.offHand = new ItemStack(Items.AIR);

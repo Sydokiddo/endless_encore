@@ -28,8 +28,8 @@ public abstract class InGameHudMixin extends GuiComponent {
 
     @Shadow private int screenWidth;
     @Shadow private int screenHeight;
-    @Final
     @Mutable
+    @Final
     private final Minecraft client;
     public InGameHudMixin(Minecraft client) {
         this.client = client;
@@ -37,6 +37,7 @@ public abstract class InGameHudMixin extends GuiComponent {
 
     @Inject(method = "renderCrosshair", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F", shift = Shift.AFTER))
     private void renderCrosshairMixinTEST(PoseStack matrices, CallbackInfo info) {
+        assert this.client != null;
         assert this.client.player != null;
         float o = ((PlayerAccess) this.client.player).getAttackCooldownProgressOffhand(1.0F);
         if (o < 1.0F) {

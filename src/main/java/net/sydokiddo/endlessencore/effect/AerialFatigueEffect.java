@@ -4,6 +4,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
 
 // Aerial Fatigue prevents the user from using Elytra
 // Most of the code is in the Mixins folder
@@ -14,7 +15,7 @@ public class AerialFatigueEffect extends MobEffect {
     }
 
     @Override
-    public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
+    public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
         if (pLivingEntity instanceof ServerPlayer) {
             ((ServerPlayer) pLivingEntity).stopFallFlying();
         }

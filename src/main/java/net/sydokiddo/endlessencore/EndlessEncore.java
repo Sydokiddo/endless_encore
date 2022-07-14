@@ -50,7 +50,6 @@ public class EndlessEncore implements ModInitializer {
 
         public BallisticDamageSource(Entity source) {
             super("ballistic", source);
-            setNoAggro();
         }
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 // Implemented Inventory for Ethereal Urn
 // Known Bug: Ethereal Urns delete the stored items in them upon server restart on multiplayer, need to fix this
@@ -49,7 +50,7 @@ public interface ImplementedInventory extends Container {
     }
 
     @Override
-    default void setItem(int slot, ItemStack stack) {
+    default void setItem(int slot, @NotNull ItemStack stack) {
         getItems().set(slot, stack);
         if (stack.getCount() > getMaxStackSize()) {
             stack.setCount(getMaxStackSize());
@@ -62,7 +63,7 @@ public interface ImplementedInventory extends Container {
     }
 
     @Override
-    default boolean stillValid(Player player) {
+    default boolean stillValid(@NotNull Player player) {
         return true;
     }
 }

@@ -8,7 +8,6 @@
     "elytra_tweaks.ElytraChitinRepairingMixin",
     "elytra_tweaks.ElytraCloseOnDamageMixin",
     "elytra_tweaks.LivingEntityMixin",
-    "elytra_tweaks.MixinElytraEntityModel",
     "enchantments.ballistic.BallisticEnchantmentMixin",
     "enchantments.ballistic.ElytraModification",
     "entities.shulker.MixinShulkerBulletEntity",
@@ -22,10 +21,11 @@
     "status_effects.vulnerability.VulnerabilityEffectMixin"
   ],
   "client": [
-    "sickles.HeldItemRendererMixin",
-    "sickles.InGameHudMixin",
     "sickles.MinecraftClientMixin",
-    "status_effects.disorientation.ClientPlayerEntityMixin"
+    "status_effects.disorientation.ClientPlayerEntityMixin",
+    "elytra_tweaks.MixinElytraEntityModel",
+    "sickles.HeldItemRendererMixin",
+    "sickles.InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

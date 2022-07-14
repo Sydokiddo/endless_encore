@@ -20,8 +20,6 @@ import net.sydokiddo.endlessencore.block.custom_blocks.*;
 import net.sydokiddo.endlessencore.item.ModItemGroup;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
-import java.util.function.ToIntFunction;
-
 @SuppressWarnings("ALL")
 public class ModBlocks {
 

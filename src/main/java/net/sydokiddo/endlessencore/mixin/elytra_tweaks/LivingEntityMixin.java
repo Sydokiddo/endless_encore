@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class LivingEntityMixin extends Entity {
 
     @Shadow
-    public abstract boolean hurt(DamageSource source, float amount);
+    public abstract boolean hurt(@NotNull DamageSource source, float amount);
 
     private int elytrabounce$timer = 0;
     LivingEntity player = (LivingEntity) (Object) this;

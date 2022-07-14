@@ -8,6 +8,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 
+import java.util.Objects;
+
 // Player Attack Packets for Sickles
 
 public class PlayerAttackPacket {
@@ -28,7 +30,7 @@ public class PlayerAttackPacket {
                 player.resetLastActionTime();
 
                 if (player.level.getEntity(entityId) != null) {
-                    player.attack(player.level.getEntity(entityId));
+                    player.attack(Objects.requireNonNull(player.level.getEntity(entityId)));
                 }
             });
         });

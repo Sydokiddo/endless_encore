@@ -15,7 +15,6 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
