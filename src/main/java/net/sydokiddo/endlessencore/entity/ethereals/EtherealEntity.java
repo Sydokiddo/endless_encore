@@ -1,7 +1,6 @@
 package net.sydokiddo.endlessencore.entity.ethereals;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.entity.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;

@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
-import net.minecraft.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;

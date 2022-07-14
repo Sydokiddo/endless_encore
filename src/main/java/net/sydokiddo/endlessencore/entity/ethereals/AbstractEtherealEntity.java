@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.entity.ethereals;
 
-import net.minecraft.entity.mob.*;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.DebugPackets;
 import net.minecraft.world.entity.EntityType;

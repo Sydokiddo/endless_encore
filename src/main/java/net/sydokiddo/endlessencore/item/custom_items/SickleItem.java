@@ -1,6 +1,6 @@
 package net.sydokiddo.endlessencore.item.custom_items;
 
-import net.minecraft.item.*;
+
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
