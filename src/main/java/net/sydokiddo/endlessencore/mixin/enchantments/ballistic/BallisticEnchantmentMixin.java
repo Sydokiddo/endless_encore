@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Player.class)
 public class BallisticEnchantmentMixin {
 
-    @Inject(at = @At("RETURN"), method = "collideWithEntity")
+    @Inject(at = @At("RETURN"), method = "touch")
     private void collideWithEntity(Entity entity, CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
         int ballisticLevel = Math.max(0, Math.max(EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST)), EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));

@@ -184,7 +184,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         this.playSound(SoundEvents.PIGLIN_STEP, 0.15F, 1.0F);
     }
 
-    protected void playSound(SoundEvent sound) {
+    public void playSound(SoundEvent sound) {
         this.playSound(sound, this.getSoundVolume(), this.getVoicePitch());
     }
 }

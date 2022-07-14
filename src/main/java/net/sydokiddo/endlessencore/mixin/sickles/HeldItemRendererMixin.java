@@ -24,17 +24,14 @@ import net.fabricmc.api.EnvType;
 @Environment(EnvType.CLIENT)
 @Mixin(ItemInHandRenderer.class)
 public class HeldItemRendererMixin {
-    @Shadow
-    private float equipProgressOffHand;
-    @Shadow
-    private float equipProgressMainHand;
 
-    @Shadow
+
+    @Shadow private float mainHandHeight;
+    @Shadow private float offHandHeight;
     @Final
     @Mutable
     private Minecraft client;
 
-    @Shadow
     private ItemStack offHand;
 
     private float equipOffhand;
@@ -44,20 +41,20 @@ public class HeldItemRendererMixin {
         this.client = client;
     }
 
-    @Inject(method = "updateHeldItems", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/util/math/MathHelper;clamp(FFF)F", ordinal = 3, shift = Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT)
+    @Inject(method = "tick", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/util/Mth;clamp(FFF)F", ordinal = 3, shift = Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void updateHeldItemsMixin(CallbackInfo info, LocalPlayer clientPlayerEntity, ItemStack itemStack, ItemStack itemStack2) {
         float o = ((PlayerAccess) clientPlayerEntity).getAttackCooldownProgressOffhand(1.0F);
         if (o < 0.1F) this.isOffhandAttack = true;
         if (this.isOffhandAttack) {
-            if (this.equipProgressMainHand >= 1.0F) {
+            if (this.mainHandHeight >= 1.0F) {
                 this.isOffhandAttack = false;
             }
             this.equipOffhand += Mth.clamp((this.offHand == itemStack2 ? o * o * o : 0.0F) - this.equipOffhand, -0.4F, 0.4F);
-            this.equipProgressOffHand = this.equipOffhand;
+            this.offHandHeight = this.equipOffhand;
         }
     }
 
-    @Inject(method = "updateHeldItems", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;getAttackCooldownProgress(F)F"))
+    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F"))
     public void updateHeldMainhandMixin(CallbackInfo info) {
         assert client.player != null;
         float o = ((PlayerAccess) client.player).getAttackCooldownProgressOffhand(1.0F);

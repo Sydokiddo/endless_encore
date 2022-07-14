@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(ElytraModel.class)
 public abstract class MixinElytraEntityModel<T extends LivingEntity> extends AgeableListModel<T> {
 
-    @ModifyArg(method = "getTexturedModelData", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/ModelPartBuilder;cuboid(FFFFFFLnet/minecraft/client/model/Dilation;)Lnet/minecraft/client/model/ModelPartBuilder;"), index = 6)
+    @ModifyArg(method = "createLayer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/geom/builders/CubeListBuilder;addBox(FFFFFFLnet/minecraft/client/model/geom/builders/CubeDeformation;)Lnet/minecraft/client/model/geom/builders/CubeListBuilder;"), index = 6)
     private static CubeDeformation ETF_injected(CubeDeformation dilation) {
         if (EndlessEncore.elytraThicknessFix) {
             return new CubeDeformation(1, 1, 0.2f);

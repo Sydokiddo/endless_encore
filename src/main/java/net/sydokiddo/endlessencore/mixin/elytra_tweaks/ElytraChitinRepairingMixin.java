@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ElytraItem.class)
 public class ElytraChitinRepairingMixin {
 
-    @Inject(at = @At("RETURN"), method = "canRepair", cancellable = true)
+    @Inject(at = @At("RETURN"), method = "isValidRepairItem", cancellable = true)
     private void canRepair(ItemStack stack, ItemStack ingredient, CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(ingredient.is(ModItems.CHITIN));
         }

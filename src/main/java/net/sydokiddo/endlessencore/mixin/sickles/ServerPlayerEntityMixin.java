@@ -17,7 +17,7 @@ public class ServerPlayerEntityMixin {
 
     // Allows for the player to swing their off-hand if holding 2 sickles
 
-    @Inject(method = "swingHand", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;swingHand(Lnet/minecraft/util/Hand;)V", shift = Shift.AFTER), cancellable = true)
+    @Inject(method = "swing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;swing(Lnet/minecraft/world/InteractionHand;)V", shift = Shift.AFTER), cancellable = true)
     private void swingHandMixin(InteractionHand hand, CallbackInfo info) {
         Item item = ((Player) (Object) this).getOffhandItem().getItem();
         if (hand == InteractionHand.OFF_HAND && (item instanceof SickleItem))

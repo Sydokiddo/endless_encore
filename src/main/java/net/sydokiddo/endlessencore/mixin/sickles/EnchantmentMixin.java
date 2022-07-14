@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(Enchantment.class)
 public class EnchantmentMixin {
 
-    @Inject(method = "getEquipment", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
+    @Inject(method = "getSlotItems", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void getEquipment(LivingEntity entity, CallbackInfoReturnable<Map<EquipmentSlot, ItemStack>> info, Map<EquipmentSlot, ItemStack> map) {
         if (entity instanceof Player) {
             if (((PlayerAccess) entity).isOffhandAttack() && map.containsKey(EquipmentSlot.MAINHAND)) {

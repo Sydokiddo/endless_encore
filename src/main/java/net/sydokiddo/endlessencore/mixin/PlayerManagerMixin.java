@@ -23,7 +23,7 @@ public class PlayerManagerMixin {
     @Final
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    @Inject(method = "onPlayerConnect", at = @At(value = "TAIL"))
+    @Inject(method = "placeNewPlayer", at = @At(value = "TAIL"))
     public void onPlayerConnectMixin(Connection connection, ServerPlayer player, CallbackInfo info) {
         LOGGER.info(player.getName().getString() + " has Endless Encore installed");
     }

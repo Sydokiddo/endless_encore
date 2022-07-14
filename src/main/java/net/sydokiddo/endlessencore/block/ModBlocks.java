@@ -20,6 +20,8 @@ import net.sydokiddo.endlessencore.block.custom_blocks.*;
 import net.sydokiddo.endlessencore.item.ModItemGroup;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
+import java.util.function.ToIntFunction;
+
 @SuppressWarnings("ALL")
 public class ModBlocks {
 
@@ -38,8 +40,8 @@ public class ModBlocks {
     new Block(FabricBlockSettings.copyOf(Blocks.PURPUR_BLOCK).sound(SoundType.STONE)));
 
     public static final Block END_LAMP = registerBlock("end_lamp",
-    new EndLampBlock(FabricBlockSettings.of(Material.BUILDABLE_GLASS, MaterialColor.SNOW).sound(SoundType.GLASS)
-    .luminance(15).requiresCorrectToolForDrops().destroyTime(0.3f).strength(0.3f)));
+    new EndLampBlock(FabricBlockSettings.of(Material.BUILDABLE_GLASS, MaterialColor.SNOW).sound(SoundType.GLASS).
+            requiresCorrectToolForDrops().destroyTime(0.3f).strength(0.3f).lightLevel((blockStatex) -> { return 15; })));
 
     public static final Block GRONGRON = registerBlock("grongron",
     new ModPillarBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.GLOW_LICHEN).sound(SoundType.BASALT)
@@ -185,7 +187,7 @@ public class ModBlocks {
 
     public static final Block ETHEREAL_CLOUD = registerBlock("ethereal_cloud",
     new EtherealCloudBlock(FabricBlockSettings.of(Material.WOOL, MaterialColor.EMERALD).sound(ModSoundEvents.ETHEREAL_CLOUD)
-    .luminance(10).destroyTime(0.1f).strength(0.1f).noOcclusion()));
+    .destroyTime(0.1f).strength(0.1f).noOcclusion().lightLevel((blockStatex) -> { return 10; })));
 
     public static final Block END_IOLITE_ORE = registerBlock("end_iolite_ore",
     new DropExperienceBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.SAND).requiresCorrectToolForDrops().sound(ModSoundEvents.END_ORE)

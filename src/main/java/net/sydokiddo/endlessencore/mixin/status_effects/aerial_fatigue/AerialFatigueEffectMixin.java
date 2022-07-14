@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public class AerialFatigueEffectMixin {
 
-    @Inject(at = @At("RETURN"), method = "tickFallFlying", cancellable = true)
+    @Inject(at = @At("RETURN"), method = "updateFallFlying", cancellable = true)
     private void tickFallFlying(CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
         if (player instanceof ServerPlayer && player.hasEffect(ModEffects.AERIAL_FATIGUE)) {

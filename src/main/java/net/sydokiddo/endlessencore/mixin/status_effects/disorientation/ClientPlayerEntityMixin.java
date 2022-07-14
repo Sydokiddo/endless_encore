@@ -26,7 +26,7 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayer {
         super(world, profile, publicKey);
     }
 
-    @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/TutorialManager;onMovement(Lnet/minecraft/client/input/Input;)V"))
+    @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/Tutorial;onInput(Lnet/minecraft/client/player/Input;)V"))
     void injectTickNewAi(CallbackInfo ci) {
         if (getActiveEffectsMap().get(ModEffects.DISORIENTATION) != null) {
             this.input.leftImpulse *= -1;

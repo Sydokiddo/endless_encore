@@ -14,7 +14,7 @@ public abstract class PeroratiteBlastProofMixin {
 
     // Makes Peroratite related items immune to explosion damage
 
-    @Inject(method = "isInvulnerableTo(Lnet/minecraft/entity/damage/DamageSource;)Z", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "isInvulnerableTo(Lnet/minecraft/world/damagesource/DamageSource;)Z", at = @At("RETURN"), cancellable = true)
     protected void isInvulnerableTo(DamageSource source, CallbackInfoReturnable<Boolean> ci) {
         Entity entity = (Entity) (Object) this;
         if (entity instanceof ItemEntity item && item.getItem().is(EndlessEncoreTags.GRAVITY_DISOBEYING_ITEMS)) {

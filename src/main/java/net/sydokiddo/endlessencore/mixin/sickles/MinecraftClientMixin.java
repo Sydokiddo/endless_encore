@@ -30,28 +30,25 @@ public class MinecraftClientMixin {
     @Shadow
     @Nullable
     public LocalPlayer player;
-    @Shadow
+    @Shadow private int rightClickDelay;
     @Nullable
     public MultiPlayerGameMode interactionManager;
-    @Shadow
     @Nullable
     public HitResult crosshairTarget;
-    @Shadow
-    private int itemUseCooldown;
     private int secondAttackCooldown;
     private boolean attackedOffhand;
 
-    @Inject(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;handleInputEvents()V"))
+    @Inject(method = "tick()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Minecraft;handleKeybinds()V"))
     public void tickMixin(CallbackInfo info) {
         if (this.secondAttackCooldown > 0) {
             --this.secondAttackCooldown;
         }
         if (this.attackedOffhand) {
-            this.itemUseCooldown = 4;
+            this.rightClickDelay = 4;
         }
     }
 
-    @Inject(method = "doItemUse", at = @At(value = "HEAD"), cancellable = true)
+    @Inject(method = "startUseItem", at = @At(value = "HEAD"), cancellable = true)
     private void doItemUseMixin(CallbackInfo info) {
         assert player != null;
         Item offHandItem = player.getOffhandItem().getItem();
