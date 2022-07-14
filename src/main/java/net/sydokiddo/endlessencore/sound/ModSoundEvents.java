@@ -1,9 +1,9 @@
 package net.sydokiddo.endlessencore.sound;
 
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.level.block.SoundType;
 import net.sydokiddo.endlessencore.EndlessEncore;
 
 @SuppressWarnings("ALL")
@@ -96,32 +96,32 @@ public class ModSoundEvents {
 
     // Sound Groups:
 
-    public static final BlockSoundGroup NETTLED_END_STONE = new BlockSoundGroup(1f, 1f,
+    public static final SoundType NETTLED_END_STONE = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_NETTLED_END_STONE_BREAK, ModSoundEvents.BLOCK_NETTLED_END_STONE_STEP, ModSoundEvents.BLOCK_NETTLED_END_STONE_PLACE,
             ModSoundEvents.BLOCK_NETTLED_END_STONE_HIT, ModSoundEvents.BLOCK_NETTLED_END_STONE_FALL);
 
-    public static final BlockSoundGroup IOLITE = new BlockSoundGroup(1f, 1f,
+    public static final SoundType IOLITE = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_IOLITE_BREAK, ModSoundEvents.BLOCK_IOLITE_STEP, ModSoundEvents.BLOCK_IOLITE_PLACE,
             ModSoundEvents.BLOCK_IOLITE_HIT, ModSoundEvents.BLOCK_IOLITE_FALL);
 
-    public static final BlockSoundGroup END_STALK = new BlockSoundGroup(1f, 1f,
+    public static final SoundType END_STALK = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_END_STALK_BREAK, ModSoundEvents.BLOCK_END_STALK_STEP, ModSoundEvents.BLOCK_END_STALK_PLACE,
             ModSoundEvents.BLOCK_END_STALK_HIT, ModSoundEvents.BLOCK_END_STALK_FALL);
 
-    public static final BlockSoundGroup END_ORE = new BlockSoundGroup(1f, 1f,
+    public static final SoundType END_ORE = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_END_ORE_BREAK, ModSoundEvents.BLOCK_END_ORE_STEP, ModSoundEvents.BLOCK_END_ORE_PLACE,
             ModSoundEvents.BLOCK_END_ORE_HIT, ModSoundEvents.BLOCK_END_ORE_FALL);
 
-    public static final BlockSoundGroup ETHEREAL_URN = new BlockSoundGroup(1f, 1f,
+    public static final SoundType ETHEREAL_URN = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, ModSoundEvents.BLOCK_ETHEREAL_URN_STEP, ModSoundEvents.BLOCK_ETHEREAL_URN_PLACE,
             ModSoundEvents.BLOCK_ETHEREAL_URN_HIT, ModSoundEvents.BLOCK_ETHEREAL_URN_FALL);
 
-    public static final BlockSoundGroup ETHEREAL_CLOUD = new BlockSoundGroup(1f, 1f,
+    public static final SoundType ETHEREAL_CLOUD = new SoundType(1f, 1f,
             ModSoundEvents.BLOCK_ETHEREAL_CLOUD_BREAK, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_STEP, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_PLACE,
             ModSoundEvents.BLOCK_ETHEREAL_CLOUD_HIT, ModSoundEvents.BLOCK_ETHEREAL_CLOUD_FALL);
 
     private static SoundEvent registerSoundEvent(String name) {
-        Identifier id = new Identifier(EndlessEncore.MOD_ID, name);
+        ResourceLocation id = new ResourceLocation(EndlessEncore.MOD_ID, name);
         return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(id));
     }
 

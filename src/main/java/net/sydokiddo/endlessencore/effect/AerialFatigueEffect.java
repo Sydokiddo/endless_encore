@@ -1,29 +1,30 @@
 package net.sydokiddo.endlessencore.effect;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.NotNull;
 
 // Aerial Fatigue prevents the user from using Elytra
 // Most of the code is in the Mixins folder
 
-public class AerialFatigueEffect extends StatusEffect {
-    public AerialFatigueEffect(StatusEffectCategory statusEffectCategory, int color) {
+public class AerialFatigueEffect extends MobEffect {
+    public AerialFatigueEffect(MobEffectCategory statusEffectCategory, int color) {
         super(statusEffectCategory, color);
     }
 
     @Override
-    public void applyUpdateEffect(LivingEntity pLivingEntity, int pAmplifier) {
-        if (pLivingEntity instanceof ServerPlayerEntity) {
-            ((ServerPlayerEntity) pLivingEntity).stopFallFlying();
+    public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
+        if (pLivingEntity instanceof ServerPlayer) {
+            ((ServerPlayer) pLivingEntity).stopFallFlying();
         }
 
-        super.applyUpdateEffect(pLivingEntity, pAmplifier);
+        super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 
     @Override
-    public boolean canApplyUpdateEffect(int pDuration, int pAmplifier) {
+    public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
         return true;
     }
 }

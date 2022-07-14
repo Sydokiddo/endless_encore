@@ -1,38 +1,38 @@
 package net.sydokiddo.endlessencore.enchantment;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ElytraItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ElytraItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 @SuppressWarnings("ALL")
 public class BallisticEnchantment extends Enchantment {
-    public BallisticEnchantment(Rarity weight, EnchantmentTarget type, EquipmentSlot... slotTypes) {
+    public BallisticEnchantment(Rarity weight, EnchantmentCategory type, EquipmentSlot... slotTypes) {
         super(weight, type, slotTypes);
     }
 
-    public boolean isAcceptableItem(ItemStack stack) {
+    public boolean canEnchant(ItemStack stack) {
         return stack.getItem() instanceof ElytraItem;
     }
 
-    public int getMinPower(int level) {
+    public int getMinCost(int level) {
         return level * 25;
     }
 
-    public int getMaxPower(int level) {
-        return this.getMinPower(level) + 50;
+    public int getMaxCost(int level) {
+        return this.getMinCost(level) + 50;
     }
 
-    public boolean isTreasure() {
+    public boolean isTreasureOnly() {
         return true;
     }
 
-    public boolean isAvailableForEnchantedBookOffer() {
+    public boolean isTradeable() {
         return true;
     }
 
-    public boolean isAvailableForRandomSelection() {
+    public boolean isDiscoverable() {
         return false;
     }
 

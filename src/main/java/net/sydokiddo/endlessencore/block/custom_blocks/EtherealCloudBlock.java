@@ -1,64 +1,64 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.EntityShapeContext;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.FallingBlockEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 
 @SuppressWarnings("ALL")
 public class EtherealCloudBlock extends Block {
-    private static final VoxelShape FALLING_SHAPE = VoxelShapes.cuboid(0.0D, 0.0D, 0.0D, 1.0D, 0.8999999761581421D, 1.0D);
+    private static final VoxelShape FALLING_SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, 0.8999999761581421D, 1.0D);
 
-    public EtherealCloudBlock(Settings settings) {
+    public EtherealCloudBlock(Properties settings) {
         super(settings);
     }
 
-    public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {
-        return stateFrom.isOf(this) || super.isSideInvisible(state, stateFrom, direction);
+    public boolean skipRendering(BlockState state, BlockState stateFrom, Direction direction) {
+        return stateFrom.is(this) || super.skipRendering(state, stateFrom, direction);
     }
 
-    public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
-        return VoxelShapes.empty();
+    public VoxelShape getOcclusionShape(BlockState state, BlockGetter world, BlockPos pos) {
+        return Shapes.empty();
     }
 
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this)) {
-            if (world.isClient) {
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
+        if (!(entity instanceof LivingEntity) || entity.getFeetBlockState().is(this)) {
+            if (world.isClientSide) {
                 world.getRandom();
             }
         }
 
     }
 
-    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float distance) {
+    public void fallOn(Level world, BlockState state, BlockPos pos, Entity entity, float distance) {
         entity.playSound(ModSoundEvents.BLOCK_ETHEREAL_CLOUD_FALL, 1, 1);
-        entity.handleFallDamage(distance, 0, DamageSource.FALL);
+        entity.causeFallDamage(distance, 0, DamageSource.FALL);
     }
 
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        double d = Math.abs(entity.getVelocity().y);
-        if (d < 0.1D && !entity.bypassesSteppingEffects()) {
+    public void stepOn(Level world, BlockPos pos, BlockState state, Entity entity) {
+        double d = Math.abs(entity.getDeltaMovement().y);
+        if (d < 0.1D && !entity.isSteppingCarefully()) {
             double e = 0.4D + d * 0.2D;
         }
 
-        super.onSteppedOn(world, pos, state, entity);
+        super.stepOn(world, pos, state, entity);
     }
 
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if (context instanceof EntityShapeContext entityShapeContext) {
+    public VoxelShape getCollisionShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        if (context instanceof EntityCollisionContext entityShapeContext) {
             Entity entity = entityShapeContext.getEntity();
             if (entity != null) {
                 if (entity.fallDistance > 2.5F) {
@@ -66,24 +66,24 @@ public class EtherealCloudBlock extends Block {
                 }
 
                 boolean bl = entity instanceof FallingBlockEntity;
-                if (bl || canWalkOnEtherealCloud((PlayerEntity) entity) && context.isAbove(VoxelShapes.fullCube(), pos, false) && !context.isDescending()) {
+                if (bl || canWalkOnEtherealCloud((Player) entity) && context.isAbove(Shapes.block(), pos, false) && !context.isDescending()) {
                     return super.getCollisionShape(state, world, pos, context);
                 }
             }
         }
 
-        return VoxelShapes.empty();
+        return Shapes.empty();
     }
 
-    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.empty();
+    public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.empty();
     }
 
-    public static boolean canWalkOnEtherealCloud(PlayerEntity entity) {
+    public static boolean canWalkOnEtherealCloud(Player entity) {
         return entity.isSprinting() && !entity.isFallFlying();
     }
 
-    public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
+    public boolean isPathfindable(BlockState state, BlockGetter world, BlockPos pos, PathComputationType type) {
         return false;
     }
 }

@@ -3,11 +3,13 @@ package net.sydokiddo.endlessencore.client.entity.model;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.entity.model.PlayerEntityModel;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.world.entity.Mob;
 
 @Environment(EnvType.CLIENT)
-public class EtherealEntityModel<T extends MobEntity> extends PlayerEntityModel<T> {
+public class EtherealEntityModel<T extends Mob> extends PlayerModel<T> {
     public final ModelPart rightEar;
     public final ModelPart leftEar;
 
@@ -15,19 +17,19 @@ public class EtherealEntityModel<T extends MobEntity> extends PlayerEntityModel<
         super(modelPart, true);
         this.rightEar = this.head.getChild("right_ear");
         this.leftEar = this.head.getChild("left_ear");
-        ModelTransform bodyRotation = this.body.getTransform();
-        ModelTransform headRotation = this.head.getTransform();
-        ModelTransform leftArmRotation = this.leftArm.getTransform();
-        ModelTransform rightArmRotation = this.rightArm.getTransform();
+        PartPose bodyRotation = this.body.storePose();
+        PartPose headRotation = this.head.storePose();
+        PartPose leftArmRotation = this.leftArm.storePose();
+        PartPose rightArmRotation = this.rightArm.storePose();
     }
 
-    public static ModelData getTexturedModelData(Dilation dilation) {
-        ModelData modelData = PlayerEntityModel.getTexturedModelData(dilation, true);
-        ModelPartData modelPartData = modelData.getRoot();
-        ModelPartData modelPartData2 = modelPartData.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F))
-        .uv(32, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
-        modelPartData2.addChild("left_ear", ModelPartBuilder.create().uv(24, 5).mirrored().cuboid(0.0F, -1.5F, 0.0F, 6.0F, 3.0F, 0.0F, new Dilation(0.01F)).mirrored(false), ModelTransform.pivot(4.0F, -3.5F, 0.0F));
-        modelPartData2.addChild("right_ear", ModelPartBuilder.create().uv(24, 2).mirrored().cuboid(-6.0F, -1.5F, 0.0F, 6.0F, 3.0F, 0.0F, new Dilation(0.01F)).mirrored(false), ModelTransform.pivot(-4.0F, -3.5F, 0.0F));
+    public static MeshDefinition getTexturedModelData(CubeDeformation dilation) {
+        MeshDefinition modelData = PlayerModel.createMesh(dilation, true);
+        PartDefinition modelPartData = modelData.getRoot();
+        PartDefinition modelPartData2 = modelPartData.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
+        .texOffs(32, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        modelPartData2.addOrReplaceChild("left_ear", CubeListBuilder.create().texOffs(24, 5).mirror().addBox(0.0F, -1.5F, 0.0F, 6.0F, 3.0F, 0.0F, new CubeDeformation(0.01F)).mirror(false), PartPose.offset(4.0F, -3.5F, 0.0F));
+        modelPartData2.addOrReplaceChild("right_ear", CubeListBuilder.create().texOffs(24, 2).mirror().addBox(-6.0F, -1.5F, 0.0F, 6.0F, 3.0F, 0.0F, new CubeDeformation(0.01F)).mirror(false), PartPose.offset(-4.0F, -3.5F, 0.0F));
         return modelData;
     }
 }

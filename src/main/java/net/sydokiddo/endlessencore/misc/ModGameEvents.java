@@ -1,8 +1,8 @@
 package net.sydokiddo.endlessencore.misc;
 
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.sydokiddo.endlessencore.EndlessEncore;
 
 public class ModGameEvents {
@@ -13,10 +13,10 @@ public class ModGameEvents {
     public static final GameEvent ELYTRA_CLOSE = new GameEvent("elytra_close", 16);
 
     public static void init() {
-        Registry.register(Registry.GAME_EVENT, new Identifier(EndlessEncore.MOD_ID, "ethereal_urn_break"), ETHEREAL_URN_BREAK);
-        Registry.register(Registry.GAME_EVENT, new Identifier(EndlessEncore.MOD_ID, "baby_ethereal_tattle"), BABY_ETHEREAL_TATTLE);
-        Registry.register(Registry.GAME_EVENT, new Identifier(EndlessEncore.MOD_ID, "ethereal_gong"), ETHEREAL_GONG);
-        Registry.register(Registry.GAME_EVENT, new Identifier(EndlessEncore.MOD_ID, "elytra_close"), ELYTRA_CLOSE);
+        Registry.register(Registry.GAME_EVENT, new ResourceLocation(EndlessEncore.MOD_ID, "ethereal_urn_break"), ETHEREAL_URN_BREAK);
+        Registry.register(Registry.GAME_EVENT, new ResourceLocation(EndlessEncore.MOD_ID, "baby_ethereal_tattle"), BABY_ETHEREAL_TATTLE);
+        Registry.register(Registry.GAME_EVENT, new ResourceLocation(EndlessEncore.MOD_ID, "ethereal_gong"), ETHEREAL_GONG);
+        Registry.register(Registry.GAME_EVENT, new ResourceLocation(EndlessEncore.MOD_ID, "elytra_close"), ELYTRA_CLOSE);
     }
 
     public static void registerGameEvents() {
