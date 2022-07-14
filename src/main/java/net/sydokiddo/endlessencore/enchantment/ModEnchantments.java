@@ -3,6 +3,7 @@ package net.sydokiddo.endlessencore.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.minecraft.util.registry.Registry;
 

@@ -1,4 +1,4 @@
-package net.sydokiddo.endlessencore.mixin.status_effects.confusion;
+package net.sydokiddo.endlessencore.mixin.status_effects.disorientation;
 
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.input.Input;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-// Inverts the player's controls if they have the Confusion status effect applied
+// Inverts the player's controls if they have the Disorientation status effect applied
 
 @Mixin(ClientPlayerEntity.class)
 public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {

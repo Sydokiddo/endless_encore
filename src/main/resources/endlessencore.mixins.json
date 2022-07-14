@@ -26,7 +26,7 @@
     "sickles.HeldItemRendererMixin",
     "sickles.InGameHudMixin",
     "sickles.MinecraftClientMixin",
-    "status_effects.confusion.ClientPlayerEntityMixin"
+    "status_effects.disorientation.ClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

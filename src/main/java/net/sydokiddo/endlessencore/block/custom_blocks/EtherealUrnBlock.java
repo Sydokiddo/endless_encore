@@ -1,5 +1,6 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
+import BlockState;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.piston.PistonBehavior;
