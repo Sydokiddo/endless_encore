@@ -1,10 +1,10 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
-import net.minecraft.block.WoodenButtonBlock;
+import net.minecraft.world.level.block.WoodButtonBlock;
 
 @SuppressWarnings("ALL")
-public class ModWoodenButtonBlock extends WoodenButtonBlock {
-    public ModWoodenButtonBlock(Settings settings) {
+public class ModWoodenButtonBlock extends WoodButtonBlock {
+    public ModWoodenButtonBlock(Properties settings) {
         super(settings);
     }
 }

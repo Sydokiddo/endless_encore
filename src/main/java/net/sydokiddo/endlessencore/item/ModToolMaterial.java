@@ -1,15 +1,14 @@
 package net.sydokiddo.endlessencore.item;
 
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
-
 import java.util.function.Supplier;
+import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
 
 @SuppressWarnings("ALL")
-public enum ModToolMaterial implements ToolMaterial {
+public enum ModToolMaterial implements Tier {
     PERORATITE(5, 3125, 11.0F, 5.0F, 18, () -> {
-        return Ingredient.ofItems(ModItems.PERORATITE_INGOT);
+        return Ingredient.of(ModItems.PERORATITE_INGOT);
     });
 
     private final int miningLevel;
@@ -17,7 +16,7 @@ public enum ModToolMaterial implements ToolMaterial {
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-    private final Lazy repairIngredient;
+    private final LazyLoadedValue repairIngredient;
 
     ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
@@ -25,26 +24,26 @@ public enum ModToolMaterial implements ToolMaterial {
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy(repairIngredient);
+        this.repairIngredient = new LazyLoadedValue(repairIngredient);
     }
 
-    public int getDurability() {
+    public int getUses() {
         return this.itemDurability;
     }
 
-    public float getMiningSpeedMultiplier() {
+    public float getSpeed() {
         return this.miningSpeed;
     }
 
-    public float getAttackDamage() {
+    public float getAttackDamageBonus() {
         return this.attackDamage;
     }
 
-    public int getMiningLevel() {
+    public int getLevel() {
         return this.miningLevel;
     }
 
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 

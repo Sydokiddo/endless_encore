@@ -2,8 +2,8 @@ package net.sydokiddo.endlessencore.entity.block_entities;
 
 import static net.sydokiddo.endlessencore.block.ModBlocks.ETHEREAL_URN;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.core.Registry;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn.EtherealUrnBlockEntity;
 

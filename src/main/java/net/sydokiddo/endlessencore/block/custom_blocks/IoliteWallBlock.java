@@ -1,10 +1,10 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
-import net.minecraft.block.WallBlock;
+import net.minecraft.world.level.block.WallBlock;
 
 @SuppressWarnings("ALL")
 public class IoliteWallBlock extends WallBlock {
-    public IoliteWallBlock(Settings settings) {
+    public IoliteWallBlock(Properties settings) {
         super(settings);
     }
 }

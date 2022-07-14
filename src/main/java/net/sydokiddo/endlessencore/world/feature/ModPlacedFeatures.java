@@ -1,18 +1,18 @@
 package net.sydokiddo.endlessencore.world.feature;
 
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
+import net.minecraft.core.Holder;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ModPlacedFeatures {
 
-    public static final RegistryEntry<PlacedFeature> IOLITE_ORE_PLACED = PlacedFeatures.register("ore_iolite_end",
+    public static final Holder<PlacedFeature> IOLITE_ORE_PLACED = PlacementUtils.register("ore_iolite_end",
             ModConfiguredFeatures.IOLITE_ORE, ModOreFeatures.modifiersWithCount(10,
-                    HeightRangePlacementModifier.uniform(YOffset.aboveBottom(-80), YOffset.aboveBottom(120))));
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(120))));
 
-    public static final RegistryEntry<PlacedFeature> END_DIAMOND_ORE_PLACED = PlacedFeatures.register("ore_diamond_end",
+    public static final Holder<PlacedFeature> END_DIAMOND_ORE_PLACED = PlacementUtils.register("ore_diamond_end",
             ModConfiguredFeatures.END_DIAMOND_ORE, ModOreFeatures.modifiersWithCount(5,
-                    HeightRangePlacementModifier.uniform(YOffset.aboveBottom(-80), YOffset.aboveBottom(120))));
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(120))));
 }

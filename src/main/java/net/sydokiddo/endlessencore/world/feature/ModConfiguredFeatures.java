@@ -1,9 +1,12 @@
 package net.sydokiddo.endlessencore.world.feature;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.structure.rule.BlockMatchRuleTest;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.feature.*;
+import net.minecraft.core.Holder;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.block.ModBlocks;
 import java.util.List;
@@ -15,21 +18,21 @@ public class ModConfiguredFeatures {
 
 // List of Configured Features:
 
-    public static final List<OreFeatureConfig.Target> ORE_END_IOLITE = List.of(
-            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.END_STONE),
-                    ModBlocks.END_IOLITE_ORE.getDefaultState()));
+    public static final List<OreConfiguration.TargetBlockState> ORE_END_IOLITE = List.of(
+            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
+                    ModBlocks.END_IOLITE_ORE.defaultBlockState()));
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> IOLITE_ORE =
-            ConfiguredFeatures.register("iolite_ore", Feature.ORE,
-                    new OreFeatureConfig(ORE_END_IOLITE, 10));
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> IOLITE_ORE =
+            FeatureUtils.register("iolite_ore", Feature.ORE,
+                    new OreConfiguration(ORE_END_IOLITE, 10));
 
-    public static final List<OreFeatureConfig.Target> ORE_END_DIAMOND = List.of(
-            OreFeatureConfig.createTarget(new BlockMatchRuleTest(Blocks.END_STONE),
-                    ModBlocks.END_DIAMOND_ORE.getDefaultState()));
+    public static final List<OreConfiguration.TargetBlockState> ORE_END_DIAMOND = List.of(
+            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
+                    ModBlocks.END_DIAMOND_ORE.defaultBlockState()));
 
-    public static final RegistryEntry<ConfiguredFeature<OreFeatureConfig, ?>> END_DIAMOND_ORE =
-            ConfiguredFeatures.register("end_diamond_ore", Feature.ORE,
-                    new OreFeatureConfig(ORE_END_DIAMOND, 5));
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> END_DIAMOND_ORE =
+            FeatureUtils.register("end_diamond_ore", Feature.ORE,
+                    new OreConfiguration(ORE_END_DIAMOND, 5));
 
 
 // Registry for Configured Features:

@@ -2,22 +2,22 @@ package net.sydokiddo.endlessencore.client.render;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.feature.EyesFeatureRenderer;
-import net.minecraft.client.render.entity.feature.FeatureRendererContext;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.client.renderer.entity.layers.EyesLayer;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Mob;
 import net.sydokiddo.endlessencore.client.entity.model.EtherealEntityModel;
 
 @Environment(EnvType.CLIENT)
-public class EtherealEyesFeatureRenderer<T extends MobEntity, M extends EtherealEntityModel<T>> extends EyesFeatureRenderer<T, M> {
-    private static final RenderLayer SKIN = RenderLayer.getEyes(new Identifier("textures/entity/ethereal/ethereal_eyes.png"));
+public class EtherealEyesFeatureRenderer<T extends Mob, M extends EtherealEntityModel<T>> extends EyesLayer<T, M> {
+    private static final RenderType SKIN = RenderType.eyes(new ResourceLocation("textures/entity/ethereal/ethereal_eyes.png"));
 
-    public EtherealEyesFeatureRenderer(FeatureRendererContext<T, M> featureRendererContext) {
+    public EtherealEyesFeatureRenderer(RenderLayerParent<T, M> featureRendererContext) {
         super(featureRendererContext);
     }
 
-    public RenderLayer getEyesTexture() {
+    public RenderType renderType() {
         return SKIN;
     }
 }

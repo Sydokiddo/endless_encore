@@ -1,10 +1,10 @@
 package net.sydokiddo.endlessencore.item.custom_items;
 
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.Tier;
 
 public class PeroratiteHoeItem extends HoeItem {
-    public PeroratiteHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+    public PeroratiteHoeItem(Tier material, int attackDamage, float attackSpeed, Properties settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
 }

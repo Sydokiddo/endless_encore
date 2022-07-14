@@ -1,8 +1,17 @@
 package net.sydokiddo.endlessencore.mixin.sickles;
 
-import net.minecraft.entity.boss.dragon.EnderDragonPart;
-import net.minecraft.particle.ParticleTypes;
 import net.sydokiddo.endlessencore.util.PlayerAccess;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.boss.EnderDragonPart;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,17 +23,8 @@ import org.spongepowered.asm.mixin.injection.At.Shift;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.spongepowered.asm.mixin.injection.At;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityGroup;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.MathHelper;
 
-@Mixin(value = PlayerEntity.class, priority = 1001)
+@Mixin(value = Player.class, priority = 1001)
 public class PlayerEntityMixin implements PlayerAccess {
 
     private int lastAttackedOffhandTicks;
@@ -45,14 +45,14 @@ public class PlayerEntityMixin implements PlayerAccess {
     @SuppressWarnings("ALL")
     @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAttackDamage(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityGroup;)F"), ordinal = 0, require = 0)
     private float attackDamageMixin(float original) {
-        Item item = ((PlayerEntity) (Object) this).getOffHandStack().getItem();
+        Item item = ((Player) (Object) this).getOffhandItem().getItem();
         if (this.offHandAttack) {
             if (item instanceof SickleItem sickleItem) {
-                return sickleItem.getAttackDamage() + 1F;
+                return sickleItem.getDamage() + 1F;
             } else {
                 SickleItem sickleItem = (SickleItem) item;
                 assert false;
-                return sickleItem.getAttackDamage() + 1F;
+                return sickleItem.getDamage() + 1F;
             }
         } else
             return original;
@@ -60,13 +60,13 @@ public class PlayerEntityMixin implements PlayerAccess {
 
     @ModifyVariable(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/entity/player/PlayerEntity;getAttackCooldownProgress(F)F", shift = Shift.BEFORE), ordinal = 1, require = 0)
     private float attackEnchantmentDamageMixin(float original) {
-        ItemStack itemStack = ((PlayerEntity) (Object) this).getOffHandStack();
+        ItemStack itemStack = ((Player) (Object) this).getOffhandItem();
         if (this.offHandAttack) {
             float h;
             if (this.target != null && this.target instanceof LivingEntity) {
-                h = EnchantmentHelper.getAttackDamage(itemStack, ((LivingEntity) target).getGroup());
+                h = EnchantmentHelper.getDamageBonus(itemStack, ((LivingEntity) target).getMobType());
             } else {
-                h = EnchantmentHelper.getAttackDamage(itemStack, EntityGroup.DEFAULT);
+                h = EnchantmentHelper.getDamageBonus(itemStack, MobType.UNDEFINED);
             }
             return h;
         } else
@@ -96,11 +96,11 @@ public class PlayerEntityMixin implements PlayerAccess {
     }
 
     @Redirect(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;postHit(Lnet/minecraft/entity/LivingEntity;Lnet/minecraft/entity/player/PlayerEntity;)V"), require = 0)
-    private void attackPostHitMixin(ItemStack itemstack, LivingEntity livingEntity, PlayerEntity playerEntity) {
+    private void attackPostHitMixin(ItemStack itemstack, LivingEntity livingEntity, Player playerEntity) {
         if (this.offHandAttack) {
-            playerEntity.getOffHandStack().postHit(livingEntity, playerEntity);
+            playerEntity.getOffhandItem().hurtEnemy(livingEntity, playerEntity);
         } else
-            itemstack.postHit(livingEntity, playerEntity);
+            itemstack.hurtEnemy(livingEntity, playerEntity);
     }
 
     @Inject(method = "attack", at = @At(value = "TAIL"))
@@ -116,15 +116,15 @@ public class PlayerEntityMixin implements PlayerAccess {
             this.target = target;
         }
         if (target instanceof EnderDragonPart) {
-            this.target = ((EnderDragonPart) target).owner;
+            this.target = ((EnderDragonPart) target).parentMob;
         }
     }
 
     @Inject(method = "spawnSweepAttackParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;spawnParticles(Lnet/minecraft/particle/ParticleEffect;DDDIDDDD)I"), locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true)
     public void spawnSweepAttackParticles(CallbackInfo info, double d, double e) {
         if (this.offHandAttack) {
-            PlayerEntity playerEntity = (PlayerEntity) (Object) this;
-            ((ServerWorld) playerEntity.world).spawnParticles(ParticleTypes.SWEEP_ATTACK, playerEntity.getX() + d, playerEntity.getBodyY(0.5D), playerEntity.getZ() + e, 0, d, 0.0D, e, 0.0D);
+            Player playerEntity = (Player) (Object) this;
+            ((ServerLevel) playerEntity.level).sendParticles(ParticleTypes.SWEEP_ATTACK, playerEntity.getX() + d, playerEntity.getY(0.5D), playerEntity.getZ() + e, 0, d, 0.0D, e, 0.0D);
             info.cancel();
         }
     }
@@ -146,6 +146,6 @@ public class PlayerEntityMixin implements PlayerAccess {
 
     @Override
     public float getAttackCooldownProgressOffhand(float baseTime) {
-        return MathHelper.clamp(((float) this.lastAttackedOffhandTicks + baseTime) / this.getAttackCooldownProgressPerTick(), 0.0F, 1.0F);
+        return Mth.clamp(((float) this.lastAttackedOffhandTicks + baseTime) / this.getAttackCooldownProgressPerTick(), 0.0F, 1.0F);
     }
 }

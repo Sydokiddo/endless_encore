@@ -2,3 +2,5 @@ accessWidener   v1  named
 
 accessible method net/minecraft/entity/Entity readCustomDataFromNbt (Lnet/minecraft/nbt/NbtCompound;)V
 accessible class net/minecraft/enchantment/EnchantmentHelper$Consumer
+accessible method net/minecraft/world/entity/Entity setSharedFlag (IZ)V
+accessible method net/minecraft/world/entity/Entity getSharedFlag (I)Z

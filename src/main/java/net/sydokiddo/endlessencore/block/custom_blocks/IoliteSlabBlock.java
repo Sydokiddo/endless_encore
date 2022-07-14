@@ -1,10 +1,10 @@
 package net.sydokiddo.endlessencore.block.custom_blocks;
 
-import net.minecraft.block.SlabBlock;
+import net.minecraft.world.level.block.SlabBlock;
 
 @SuppressWarnings("ALL")
 public class IoliteSlabBlock extends SlabBlock {
-    public IoliteSlabBlock(Settings settings) {
+    public IoliteSlabBlock(Properties settings) {
         super(settings);
     }
 }

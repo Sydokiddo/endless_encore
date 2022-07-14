@@ -1,8 +1,8 @@
 package net.sydokiddo.endlessencore;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.EntityDamageSource;
+import net.minecraft.world.damagesource.EntityDamageSource;
+import net.minecraft.world.entity.Entity;
 import net.sydokiddo.endlessencore.block.ModBlocks;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
@@ -50,7 +50,7 @@ public class EndlessEncore implements ModInitializer {
 
         public BallisticDamageSource(Entity source) {
             super("ballistic", source);
-            setNeutral();
+            setNoAggro();
         }
     }
 }

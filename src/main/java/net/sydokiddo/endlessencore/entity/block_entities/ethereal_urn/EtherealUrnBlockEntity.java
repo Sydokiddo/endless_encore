@@ -1,67 +1,67 @@
 package net.sydokiddo.endlessencore.entity.block_entities.ethereal_urn;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
 import net.sydokiddo.endlessencore.util.ImplementedInventory;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.sydokiddo.endlessencore.entity.block_entities.ModBlockEntities;
 import net.sydokiddo.endlessencore.util.ItemStackUtils;
 
 public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedInventory {
-    private DefaultedList<ItemStack> items;
+    private NonNullList<ItemStack> items;
 
     public EtherealUrnBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ETHEREAL_URN_BLOCK_ENTITY, pos, state);
-        this.items = DefaultedList.ofSize(1, ItemStack.EMPTY);
+        this.items = NonNullList.withSize(1, ItemStack.EMPTY);
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public NonNullList<ItemStack> getItems() {
         return items;
     }
 
-    public int size() {
+    public int getContainerSize() {
         return 1;
     }
 
-    public void setItems(DefaultedList<ItemStack> items) {
+    public void setItems(NonNullList<ItemStack> items) {
         this.items = items;
     }
 
-    public ActionResult receive(ItemStack giver, int index, int amount) {
+    public InteractionResult receive(ItemStack giver, int index, int amount) {
         ItemStack receiver = items.get(index);
 
-        if (receiver.getCount() < receiver.getMaxCount()
+        if (receiver.getCount() < receiver.getMaxStackSize()
                 && (receiver.isEmpty() || ItemStackUtils.equalsIgnoreCount(giver, receiver))) {
             ItemStack transfer = giver.copy();
-            transfer.setCount(Math.min(receiver.getCount() + amount, receiver.getMaxCount()));
+            transfer.setCount(Math.min(receiver.getCount() + amount, receiver.getMaxStackSize()));
 
             items.set(index, transfer);
 
-            if (getWorld() != null) {
-                this.getWorld().updateComparators(getPos(), getCachedState().getBlock());
+            if (getLevel() != null) {
+                this.getLevel().updateNeighbourForOutputSignal(getBlockPos(), getBlockState().getBlock());
             }
 
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
 
-        return ActionResult.FAIL;
+        return InteractionResult.FAIL;
     }
 
     @Override
-    public void readNbt(NbtCompound tag) {
-        super.readNbt(tag);
-        Inventories.readNbt(tag, items);
+    public void load(CompoundTag tag) {
+        super.load(tag);
+        ContainerHelper.loadAllItems(tag, items);
     }
 
     @Override
-    public void writeNbt(NbtCompound tag) {
-        Inventories.writeNbt(tag, items);
-        super.writeNbt(tag);
+    public void saveAdditional(CompoundTag tag) {
+        ContainerHelper.saveAllItems(tag, items);
+        super.saveAdditional(tag);
     }
 }

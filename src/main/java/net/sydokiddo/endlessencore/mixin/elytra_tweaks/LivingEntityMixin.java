@@ -1,17 +1,16 @@
 package net.sydokiddo.endlessencore.mixin.elytra_tweaks;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.world.World;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.sydokiddo.endlessencore.misc.ModGameEvents;
-import net.sydokiddo.endlessencore.mixin.accessors.EntityAccessor;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,28 +21,28 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class LivingEntityMixin extends Entity {
 
     @Shadow
-    public abstract boolean damage(DamageSource source, float amount);
+    public abstract boolean hurt(DamageSource source, float amount);
 
     private int elytrabounce$timer = 0;
     LivingEntity player = (LivingEntity) (Object) this;
 
     // Allows the player to bounce and continue gliding with Elytra
 
-    public LivingEntityMixin(EntityType<?> type, World world) {
+    public LivingEntityMixin(EntityType<?> type, Level world) {
         super(type, world);
     }
 
-    @Redirect(method = "travel(Lnet/minecraft/util/math/Vec3d;)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setFlag(IZ)V"))
+    @Redirect(method = "travel(Lnet/minecraft/world/phys/Vec3;)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setSharedFlag(IZ)V"))
     public void travel(LivingEntity entity, int idx, boolean val) {
     }
 
-    @Redirect(method = "tickFallFlying",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setFlag(IZ)V"))
+    @Redirect(method = "updateFallFlying",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setSharedFlag(IZ)V"))
     public void initAi(LivingEntity entity, int idx, boolean val) {
-        if (entity.getVelocity().y == 0) {
+        if (entity.getDeltaMovement().y == 0) {
             if (elytrabounce$timer > 1)
-                ((EntityAccessor) entity).callSetFlag(7, val);
+                entity.setSharedFlag(7, val);
             elytrabounce$timer += 1;
         } else {
             elytrabounce$timer = 0;
@@ -51,34 +50,34 @@ public abstract class LivingEntityMixin extends Entity {
 
         // Allows the player to close their Elytra when sneaking
 
-        ItemStack stack = player.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack stack = player.getItemBySlot(EquipmentSlot.CHEST);
 
-        if (player instanceof ServerPlayerEntity && player.isFallFlying() && player.isSneaking()) {
-            ((ServerPlayerEntity) player).stopFallFlying();
-            player.emitGameEvent(ModGameEvents.ELYTRA_CLOSE);
-            this.world.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundCategory(), 1.0f, 0.8f + world.random.nextFloat() * 0.4F);
+        if (player instanceof ServerPlayer && player.isFallFlying() && player.isShiftKeyDown()) {
+            ((ServerPlayer) player).stopFallFlying();
+            player.gameEvent(ModGameEvents.ELYTRA_CLOSE);
+            this.level.playSound(null, this.getX(), this.getY(), this.getZ(), ModSoundEvents.PLAYER_ELYTRA_CLOSE, this.getSoundSource(), 1.0f, 0.8f + level.random.nextFloat() * 0.4F);
         }
 
-        if (player instanceof ServerPlayerEntity && player.isSneaking()) {
-            ((ServerPlayerEntity) player).stopFallFlying();
+        if (player instanceof ServerPlayer && player.isShiftKeyDown()) {
+            ((ServerPlayer) player).stopFallFlying();
         }
 
         // Adds exhaustion to the player if they bounce on the ground with Elytra
 
-        if (!world.isClient() && player.isFallFlying() && player.isOnGround()) {
-            ((PlayerEntity) player).addExhaustion(0.3f);
+        if (!level.isClientSide() && player.isFallFlying() && player.isOnGround()) {
+            ((Player) player).causeFoodExhaustion(0.3f);
         }
 
         // Prevents the user from gliding when un-equipping Elytra
 
-        if (player instanceof ServerPlayerEntity && !player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA)) {
-            ((ServerPlayerEntity) player).stopFallFlying();
+        if (player instanceof ServerPlayer && !player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA)) {
+            ((ServerPlayer) player).stopFallFlying();
         }
 
         // Prevents the user from gliding when Elytra are broken
 
-        if (player instanceof ServerPlayerEntity && player.getEquippedStack(EquipmentSlot.CHEST).isOf(Items.ELYTRA) && stack.getDamage() == 431) {
-            ((ServerPlayerEntity) player).stopFallFlying();
+        if (player instanceof ServerPlayer && player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA) && stack.getDamageValue() == 431) {
+            ((ServerPlayer) player).stopFallFlying();
         }
     }
 }

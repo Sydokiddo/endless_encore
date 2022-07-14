@@ -1,11 +1,11 @@
 package net.sydokiddo.endlessencore.mixin.status_effects.disorientation;
 
 import com.mojang.authlib.GameProfile;
-import net.minecraft.client.input.Input;
-import net.minecraft.client.network.AbstractClientPlayerEntity;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.network.encryption.PlayerPublicKey;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.player.Input;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.entity.player.ProfilePublicKey;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,21 +16,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 // Inverts the player's controls if they have the Disorientation status effect applied
 
-@Mixin(ClientPlayerEntity.class)
-public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity {
+@Mixin(LocalPlayer.class)
+public abstract class ClientPlayerEntityMixin extends AbstractClientPlayer {
 
     @Shadow
     public Input input;
 
-    public ClientPlayerEntityMixin(ClientWorld world, GameProfile profile, @Nullable PlayerPublicKey publicKey) {
+    public ClientPlayerEntityMixin(ClientLevel world, GameProfile profile, @Nullable ProfilePublicKey publicKey) {
         super(world, profile, publicKey);
     }
 
     @Inject(method = "tickMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/tutorial/TutorialManager;onMovement(Lnet/minecraft/client/input/Input;)V"))
     void injectTickNewAi(CallbackInfo ci) {
-        if (getActiveStatusEffects().get(ModEffects.DISORIENTATION) != null) {
-            this.input.movementSideways *= -1;
-            this.input.movementForward *= -1;
+        if (getActiveEffectsMap().get(ModEffects.DISORIENTATION) != null) {
+            this.input.leftImpulse *= -1;
+            this.input.forwardImpulse *= -1;
         }
     }
 }
