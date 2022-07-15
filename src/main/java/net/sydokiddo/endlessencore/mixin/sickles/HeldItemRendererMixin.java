@@ -24,15 +24,18 @@ import net.fabricmc.api.EnvType;
 @Environment(EnvType.CLIENT)
 @Mixin(ItemInHandRenderer.class)
 public class HeldItemRendererMixin {
+    @Shadow
+    private float mainHandHeight;
+    @Shadow
+    private float oOffHandHeight;
 
+    @Mutable
+    @Shadow
+    @Final private Minecraft minecraft;
 
-    @Shadow private float mainHandHeight;
-    @Shadow private float offHandHeight;
-    @Mutable
-    @Shadow @Final private Minecraft minecraft;
-    @Mutable
-    @Final
-    private ItemStack offHand;
+    @Shadow
+    private ItemStack offHandItem;
+
     private float equipOffhand;
     private boolean isOffhandAttack;
 
@@ -42,25 +45,22 @@ public class HeldItemRendererMixin {
 
     @Inject(method = "tick", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/util/Mth;clamp(FFF)F", ordinal = 3, shift = Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void updateHeldItemsMixin(CallbackInfo info, LocalPlayer clientPlayerEntity, ItemStack itemStack, ItemStack itemStack2) {
-        assert this.minecraft != null;
-        assert this.minecraft.player != null;
         float o = ((PlayerAccess) clientPlayerEntity).getAttackCooldownProgressOffhand(1.0F);
         if (o < 0.1F) this.isOffhandAttack = true;
         if (this.isOffhandAttack) {
             if (this.mainHandHeight >= 1.0F) {
                 this.isOffhandAttack = false;
             }
-            this.equipOffhand += Mth.clamp((this.offHand == itemStack2 ? o * o * o : 0.0F) - this.equipOffhand, -0.4F, 0.4F);
-            this.offHandHeight = this.equipOffhand;
+            this.equipOffhand += Mth.clamp((this.offHandItem == itemStack2 ? o * o * o : 0.0F) - this.equipOffhand, -0.4F, 0.4F);
+            this.oOffHandHeight = this.equipOffhand;
         }
     }
 
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F"))
     public void updateHeldMainhandMixin(CallbackInfo info) {
-        assert this.minecraft != null;
-        assert this.minecraft.player != null;
+        assert minecraft.player != null;
         float o = ((PlayerAccess) minecraft.player).getAttackCooldownProgressOffhand(1.0F);
         if (o < 0.9F && o > 0.15F)
-            this.offHand = new ItemStack(Items.AIR);
+            this.offHandItem = new ItemStack(Items.AIR);
     }
 }

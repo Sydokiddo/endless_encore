@@ -15,6 +15,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.sydokiddo.endlessencore.item.custom_items.SickleItem;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -128,7 +129,8 @@ public class PlayerEntityMixin implements PlayerAccess {
         }
     }
 
-    public float getAttackCooldownProgressPerTick() {
+    @Shadow
+    public float getCurrentItemAttackStrengthDelay() {
         return 1.0F;
     }
 
@@ -144,6 +146,6 @@ public class PlayerEntityMixin implements PlayerAccess {
 
     @Override
     public float getAttackCooldownProgressOffhand(float baseTime) {
-        return Mth.clamp(((float) this.lastAttackedOffhandTicks + baseTime) / this.getAttackCooldownProgressPerTick(), 0.0F, 1.0F);
+        return Mth.clamp(((float) this.lastAttackedOffhandTicks + baseTime) / this.getCurrentItemAttackStrengthDelay(), 0.0F, 1.0F);
     }
 }

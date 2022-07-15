@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(Enchantment.class)
-public class EnchantmentMixin { 
+public class EnchantmentMixin {
 
     @Inject(method = "getSlotItems", at = @At(value = "TAIL"), locals = LocalCapture.CAPTURE_FAILSOFT)
     public void getEquipment(LivingEntity entity, CallbackInfoReturnable<Map<EquipmentSlot, ItemStack>> info, Map<EquipmentSlot, ItemStack> map) {
