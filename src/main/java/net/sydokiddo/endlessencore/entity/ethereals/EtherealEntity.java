@@ -31,6 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAttackMob, InventoryCarrier {
@@ -41,12 +42,12 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         this.xpReward = 5;
     }
 
-    public void addAdditionalSaveData(CompoundTag nbt) {
+    public void addAdditionalSaveData(@NotNull CompoundTag nbt) {
         super.addAdditionalSaveData(nbt);
         nbt.put("Inventory", this.inventory.createTag());
     }
 
-    public void readAdditionalSaveData(CompoundTag nbt) {
+    public void readAdditionalSaveData(@NotNull CompoundTag nbt) {
         super.readAdditionalSaveData(nbt);
         this.inventory.fromTag(nbt.getList("Inventory", 10));
     }
@@ -56,7 +57,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         return this.inventory;
     }
 
-    protected void dropCustomDeathLoot(DamageSource source, int lootingMultiplier, boolean allowDrops) {
+    protected void dropCustomDeathLoot(@NotNull DamageSource source, int lootingMultiplier, boolean allowDrops) {
         super.dropCustomDeathLoot(source, lootingMultiplier, allowDrops);
         this.inventory.removeAllItems().forEach(this::spawnAtLocation);
     }
@@ -73,7 +74,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         super.defineSynchedData();
     }
 
-    public void onSyncedDataUpdated(EntityDataAccessor<?> data) {
+    public void onSyncedDataUpdated(@NotNull EntityDataAccessor<?> data) {
         super.onSyncedDataUpdated(data);
     }
 
@@ -82,7 +83,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
     }
 
     @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, @Nullable SpawnGroupData entityData, @Nullable CompoundTag entityNbt) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, @NotNull DifficultyInstance difficulty, @NotNull MobSpawnType spawnReason, @Nullable SpawnGroupData entityData, @Nullable CompoundTag entityNbt) {
         RandomSource random = world.getRandom();
         if (spawnReason != MobSpawnType.STRUCTURE) {
             if (random.nextFloat() < 0.2F) {
@@ -105,14 +106,13 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         return !this.isPersistenceRequired();
     }
 
-    protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance localDifficulty) {
+    protected void populateDefaultEquipmentSlots(@NotNull RandomSource random, @NotNull DifficultyInstance localDifficulty) {
         if (this.isAdult()) {
             this.equipAtChance(EquipmentSlot.HEAD, new ItemStack(Items.DIAMOND_HELMET), random);
             this.equipAtChance(EquipmentSlot.CHEST, new ItemStack(Items.DIAMOND_CHESTPLATE), random);
             this.equipAtChance(EquipmentSlot.LEGS, new ItemStack(Items.DIAMOND_LEGGINGS), random);
             this.equipAtChance(EquipmentSlot.FEET, new ItemStack(Items.DIAMOND_BOOTS), random);
         }
-
     }
 
     private void equipAtChance(EquipmentSlot slot, ItemStack stack, RandomSource random) {
@@ -122,7 +122,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
 
     }
 
-    protected float getStandingEyeHeight(Pose pose, EntityDimensions dimensions) {
+    protected float getStandingEyeHeight(@NotNull Pose pose, @NotNull EntityDimensions dimensions) {
         return this.isBaby() ? 0.93F : 1.74F;
     }
 
@@ -142,7 +142,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         this.noActionTime = 0;
     }
 
-    public void performRangedAttack(LivingEntity target, float pullProgress) {
+    public void performRangedAttack(@NotNull LivingEntity target, float pullProgress) {
         this.performCrossbowAttack(this, 1.6F);
     }
 
@@ -150,11 +150,11 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
     public void setChargingCrossbow(boolean charging) {
     }
 
-    public void shootCrossbowProjectile(LivingEntity target, ItemStack crossbow, Projectile projectile, float multiShotSpray) {
+    public void shootCrossbowProjectile(@NotNull LivingEntity target, @NotNull ItemStack crossbow, @NotNull Projectile projectile, float multiShotSpray) {
         this.shootCrossbowProjectile(this, target, projectile, multiShotSpray, 1.6F);
     }
 
-    public boolean canFireProjectileWeapon(ProjectileWeaponItem weapon) {
+    public boolean canFireProjectileWeapon(@NotNull ProjectileWeaponItem weapon) {
         return weapon == Items.CROSSBOW;
     }
 
@@ -172,7 +172,7 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         return ModSoundEvents.ETHEREAL_AMBIENT;
     }
 
-    protected SoundEvent getHurtSound(DamageSource source) {
+    protected SoundEvent getHurtSound(@NotNull DamageSource source) {
         return ModSoundEvents.ETHEREAL_HURT;
     }
 
@@ -180,11 +180,11 @@ public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAt
         return ModSoundEvents.ETHEREAL_DEATH;
     }
 
-    protected void playStepSound(BlockPos pos, BlockState state) {
+    protected void playStepSound(@NotNull BlockPos pos, @NotNull BlockState state) {
         this.playSound(SoundEvents.PIGLIN_STEP, 0.15F, 1.0F);
     }
 
-    public void playSound(SoundEvent sound) {
+    public void playSound(@NotNull SoundEvent sound) {
         this.playSound(sound, this.getSoundVolume(), this.getVoicePitch());
     }
 }

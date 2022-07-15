@@ -41,7 +41,7 @@ public class ModItems {
 
     public static final Item PURIFIED_CHORUS_FRUIT = registerItem("purified_chorus_fruit",
     new Item(new FabricItemSettings()
-    .food(new FoodProperties.Builder().alwaysEat().nutrition(6).saturationMod(10)
+    .food(new FoodProperties.Builder().alwaysEat().nutrition(6).saturationMod(1.0F)
     .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 160, 0), 1f).build())
     .tab(ModItemGroup.ENDLESS_ENCORE)));
 
@@ -109,8 +109,8 @@ public class ModItems {
     new ArmorItem(ModArmorMaterial.PERORATITE, EquipmentSlot.FEET,
     new FabricItemSettings().fireResistant().tab(ModItemGroup.ENDLESS_ENCORE)));
 
-    public static final Item RIFT_CHAIN = registerItem("rift_chain",
-    new Item(new FabricItemSettings().stacksTo(1).tab(ModItemGroup.ENDLESS_ENCORE)));
+//    public static final Item RIFT_CHAIN = registerItem("rift_chain",
+//    new Item(new FabricItemSettings().stacksTo(1).tab(ModItemGroup.ENDLESS_ENCORE)));
 
     // Registry for Items:
 

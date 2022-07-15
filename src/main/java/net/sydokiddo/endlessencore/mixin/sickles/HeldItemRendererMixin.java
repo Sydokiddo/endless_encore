@@ -20,6 +20,7 @@ import net.minecraft.world.item.Items;
 import net.fabricmc.api.EnvType;
 
 // Renders the off-hand swinging when right-clicked with 2 sickles
+// Thanks Stephanie for fixing this :)
 
 @Environment(EnvType.CLIENT)
 @Mixin(ItemInHandRenderer.class)

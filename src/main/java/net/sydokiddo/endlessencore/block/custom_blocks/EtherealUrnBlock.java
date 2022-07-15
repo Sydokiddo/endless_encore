@@ -12,10 +12,12 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Wearable;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.GameRules;
@@ -49,7 +51,7 @@ import net.sydokiddo.endlessencore.util.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings("ALL")
-public class EtherealUrnBlock extends FallingBlock implements EntityBlock, SimpleWaterloggedBlock {
+public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBlock, SimpleWaterloggedBlock {
     public static final DirectionProperty FACING;
     public static final BooleanProperty CONTAINS_ZEAL;
     public static final BooleanProperty WATERLOGGED;
@@ -69,8 +71,7 @@ public class EtherealUrnBlock extends FallingBlock implements EntityBlock, Simpl
     // Allows players to store items in the Ethereal Urn when right-clicking it with an item while sneaking
 
     @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player,
-        InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack playerStack = player.getMainHandItem();
         if (!world.isClientSide && (!playerStack.isEmpty()) && (!state.getValue(CONTAINS_ZEAL))) {
             EtherealUrnBlockEntity blockEntity = (EtherealUrnBlockEntity) world.getBlockEntity(pos);
@@ -102,8 +103,9 @@ public class EtherealUrnBlock extends FallingBlock implements EntityBlock, Simpl
         super.fallOn(world, state, pos, entity, fallDistance);
     }
 
-    public void destroy(LevelAccessor world, BlockPos pos, BlockState state) {
+    public void destroy(LevelAccessor world, BlockPos pos, BlockState state, Player player) {
         world.gameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, pos);
+        PiglinAi.angerNearbyPiglins(player, true);
     }
 
     // Gets the rotation block states for the block
@@ -125,7 +127,7 @@ public class EtherealUrnBlock extends FallingBlock implements EntityBlock, Simpl
     }
 
     public BlockState rotate(BlockState state, Rotation rotation) {
-        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));    }
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));}
 
     // Damages entities when the block falls onto them
 
@@ -162,8 +164,8 @@ public class EtherealUrnBlock extends FallingBlock implements EntityBlock, Simpl
             world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
             world.destroyBlock(blockPos, false);
             world.gameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, blockPos);
-            }
         }
+    }
 
     // Drops any stored items if the Ethereal Urn is broken
 

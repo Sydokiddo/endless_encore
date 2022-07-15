@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.sydokiddo.endlessencore.entity.block_entities.ModBlockEntities;
 import net.sydokiddo.endlessencore.util.ItemStackUtils;
+import org.jetbrains.annotations.NotNull;
 
 public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedInventory {
     private NonNullList<ItemStack> items;
@@ -54,14 +55,15 @@ public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedIn
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
-        ContainerHelper.loadAllItems(tag, items);
-    }
+    public void load(@NotNull CompoundTag compoundTag) {
+        super.load(compoundTag);
+        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(compoundTag, this.items);
+        }
 
     @Override
-    public void saveAdditional(CompoundTag tag) {
-        ContainerHelper.saveAllItems(tag, items);
-        super.saveAdditional(tag);
+    protected void saveAdditional(@NotNull CompoundTag compoundTag) {
+        super.saveAdditional(compoundTag);
+        ContainerHelper.saveAllItems(compoundTag, this.items);
+        }
     }
-}

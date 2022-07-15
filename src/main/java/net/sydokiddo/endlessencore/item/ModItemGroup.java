@@ -8,5 +8,5 @@ import net.sydokiddo.endlessencore.EndlessEncore;
 
 public class ModItemGroup {
     public static final CreativeModeTab ENDLESS_ENCORE = FabricItemGroupBuilder.build(new ResourceLocation(EndlessEncore.MOD_ID, "endlessencore"),
-            () -> new ItemStack(ModItems.PERORATITE_SWORD));
+            () -> new ItemStack(ModItems.PERORATITE_INGOT));
 }
