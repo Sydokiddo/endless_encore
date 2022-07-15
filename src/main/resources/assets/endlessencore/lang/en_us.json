@@ -239,9 +239,12 @@
   "subtitles.entity.fleet.flap": "Fleet flaps",
   "subtitles.entity.fleet.retreat": "Fleet flees",
   "subtitles.entity.fleet.glide": "Fleet glides",
-  "subtitles.entity.fleet.attack": "Fleet attacks",
+  "subtitles.entity.fleet.attack": "Fleet shoots",
+  "subtitles.entity.fleet.projectile_hit": "Fleet pollen hits",
   "subtitles.entity.fleet.hurts": "Fleet hurts",
   "subtitles.entity.fleet.death": "Fleet dies",
+  "subtitles.entity.fleet.eat": "Fleet eats",
+  "subtitles.entity.fleet.purify": "Fleet purifies",
 
   "subtitles.entity.snapdragon.ambient": "Snapdragon growls",
   "subtitles.entity.snapdragon.flap": "Snapdragon flaps",
@@ -271,10 +274,9 @@
   "biome.endlessencore.tangled_mounds": "Tangled Mounds",
   "biome.endlessencore.blighted_barrens": "Blighted Barrens",
 
-  "gamerule.doEtherealSieges": "Allow Ethereal Sieges",
-  "gamerule.doEtherealPatrols": "Allow Ethereal Patrols",
   "stat.endlessencore.siege_trigger": "Sieges Triggered",
   "stat.endlessencore.clean_barrage_box": "Barrage Boxes Cleaned",
+  "stat.endlessencore.interact_with_ethereal_urn": "Interactions with Ethereal Urn",
   "container.barrageBox": "Barrage Box",
   "container.barrageBox.more": "and %s more...",
 
@@ -287,5 +289,19 @@
 
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",
   "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s",
-  "death.attack.ballistic": "%1$s was rapidly collided into by %2$s"
+  "death.attack.ballistic": "%1$s was rapidly collided into by %2$s",
+  "death.attack.goliath_shockwave": "%1$s couldn't keep up wih the rhythm",
+  "death.attack.goliath_shockwave.player": "%1$s couldn't keep up with the rhythm whilst trying to escape %2$s",
+  "death.attack.goliath_stampede": "%1$s didn't run out of the way in time",
+  "death.attack.goliath_stampede.player": "%1$s didn't run out of the way in time whilst trying to escape %2$s",
+
+  "text.autoconfig.endlessencore.title": "Endless Encore Configuration",
+  "text.autoconfig.endlessencore.option.biome_generation": "Biome Generation",
+  "text.autoconfig.endlessencore.option.ethereal_city_generation": "Ethereal City Generation",
+  "text.autoconfig.endlessencore.option.elytra_changes": "Elytra Changes",
+  "text.autoconfig.endlessencore.option.allow_sieges": "Allow Ethereal Sieges",
+  "text.autoconfig.endlessencore.option.allow_ethereal_patrols": "Allow Ethereal Patrols",
+  "text.autoconfig.endlessencore.option.allow_snapdragons": "Allow Snapdragon Spawning",
+  "text.autoconfig.endlessencore.option.allow_bed_bombing": "Allow End Bed-Bombing",
+  "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains"
 }
