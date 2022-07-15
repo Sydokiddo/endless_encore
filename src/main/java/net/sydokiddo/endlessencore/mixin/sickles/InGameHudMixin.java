@@ -28,18 +28,19 @@ public abstract class InGameHudMixin extends GuiComponent {
 
     @Shadow private int screenWidth;
     @Shadow private int screenHeight;
+
     @Mutable
-    @Final
-    private final Minecraft client;
+    @Shadow @Final private Minecraft minecraft;
+
     public InGameHudMixin(Minecraft client) {
-        this.client = client;
+        this.minecraft = client;
     }
 
     @Inject(method = "renderCrosshair", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F", shift = Shift.AFTER))
     private void renderCrosshairMixinTEST(PoseStack matrices, CallbackInfo info) {
-        assert this.client != null;
-        assert this.client.player != null;
-        float o = ((PlayerAccess) this.client.player).getAttackCooldownProgressOffhand(1.0F);
+        assert this.minecraft != null;
+        assert this.minecraft.player != null;
+        float o = ((PlayerAccess) this.minecraft.player).getAttackCooldownProgressOffhand(1.0F);
         if (o < 1.0F) {
             int u = (int) (o * 17.0F);
             RenderSystem.setShaderTexture(0, new ResourceLocation("endlessencore:textures/gui/crosshair_indicator.png"));
@@ -49,10 +50,10 @@ public abstract class InGameHudMixin extends GuiComponent {
 
     @Inject(method = "renderHotbar", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F", shift = Shift.AFTER))
     private void renderHotbar(float tickDelta, PoseStack matrices, CallbackInfo info) {
-        assert this.client.player != null;
-        float o = ((PlayerAccess) this.client.player).getAttackCooldownProgressOffhand(1.0F);
+        assert this.minecraft.player != null;
+        float o = ((PlayerAccess) this.minecraft.player).getAttackCooldownProgressOffhand(1.0F);
         if (o < 1.0F) {
-            HumanoidArm arm = this.client.player.getMainArm().getOpposite();
+            HumanoidArm arm = this.minecraft.player.getMainArm().getOpposite();
             int r = (this.screenWidth / 2) + 91 + 6;
             if (arm == HumanoidArm.RIGHT) {
                 r = (this.screenWidth / 2) - 91 - 22;
