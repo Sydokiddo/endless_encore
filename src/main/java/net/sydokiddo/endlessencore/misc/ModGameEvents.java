@@ -7,6 +7,8 @@ import net.sydokiddo.endlessencore.EndlessEncore;
 
 public class ModGameEvents {
 
+    // Game Event Registry:
+
     public static final GameEvent ETHEREAL_URN_BREAK = new GameEvent("ethereal_urn_break", 16);
     public static final GameEvent BABY_ETHEREAL_TATTLE = new GameEvent("baby_ethereal_tattle", 24);
     public static final GameEvent ETHEREAL_GONG = new GameEvent("ethereal_gong", 32);

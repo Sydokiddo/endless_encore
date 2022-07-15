@@ -8,6 +8,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 @SuppressWarnings("ALL")
+
+// Tag Registry:
+
 public class EndlessEncoreTags {
     public static final TagKey<Item> GRAVITY_DISOBEYING_ITEMS = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("endlessencore", "gravity_disobeying_items"));
     public static final TagKey<Item> BABY_ETHEREAL_BRIBING_ITEMS = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("endlessencore", "baby_ethereal_bribing_items"));

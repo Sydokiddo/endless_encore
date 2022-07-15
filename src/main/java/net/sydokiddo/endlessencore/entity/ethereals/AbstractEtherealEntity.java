@@ -14,6 +14,8 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("ALL")
+
 public abstract class AbstractEtherealEntity extends Monster {
 
     public AbstractEtherealEntity(EntityType<? extends AbstractEtherealEntity> entityType, Level world) {

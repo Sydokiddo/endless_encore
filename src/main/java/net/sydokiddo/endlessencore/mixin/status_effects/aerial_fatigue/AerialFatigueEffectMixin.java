@@ -19,8 +19,5 @@ public class AerialFatigueEffectMixin {
         if (player instanceof ServerPlayer && player.hasEffect(ModEffects.AERIAL_FATIGUE)) {
             ci.cancel();
         }
-        if (player.isShiftKeyDown()) {
-            ci.cancel();
-        }
     }
 }

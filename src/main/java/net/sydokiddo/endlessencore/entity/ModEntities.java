@@ -9,6 +9,10 @@ import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.entity.ethereals.EtherealEntity;
 import net.sydokiddo.endlessencore.util.CoreRegistry;
 
+@SuppressWarnings("ALL")
+
+// This is still very work in progress!!
+
 public class ModEntities {
     public static final CoreRegistry<EntityType<?>> ENTITIES = CoreRegistry.create(Registry.ENTITY_TYPE_REGISTRY, EndlessEncore.MOD_ID);
 

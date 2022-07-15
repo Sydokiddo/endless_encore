@@ -34,6 +34,10 @@ import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("ALL")
+
+// This is still very work in progress!!
+
 public class EtherealEntity extends AbstractEtherealEntity implements CrossbowAttackMob, InventoryCarrier {
     private final SimpleContainer inventory = new SimpleContainer(8);
 

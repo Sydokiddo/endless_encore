@@ -19,20 +19,20 @@ public class ModConfiguredFeatures {
 // List of Configured Features:
 
     public static final List<OreConfiguration.TargetBlockState> ORE_END_IOLITE = List.of(
-            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
-                    ModBlocks.END_IOLITE_ORE.defaultBlockState()));
+    OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
+    ModBlocks.END_IOLITE_ORE.defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> IOLITE_ORE =
-            FeatureUtils.register("iolite_ore", Feature.ORE,
-                    new OreConfiguration(ORE_END_IOLITE, 10));
+    FeatureUtils.register("iolite_ore", Feature.ORE,
+    new OreConfiguration(ORE_END_IOLITE, 10));
 
     public static final List<OreConfiguration.TargetBlockState> ORE_END_DIAMOND = List.of(
-            OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
-                    ModBlocks.END_DIAMOND_ORE.defaultBlockState()));
+    OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
+    ModBlocks.END_DIAMOND_ORE.defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> END_DIAMOND_ORE =
-            FeatureUtils.register("end_diamond_ore", Feature.ORE,
-                    new OreConfiguration(ORE_END_DIAMOND, 5));
+    FeatureUtils.register("end_diamond_ore", Feature.ORE,
+    new OreConfiguration(ORE_END_DIAMOND, 5));
 
 
 // Registry for Configured Features:

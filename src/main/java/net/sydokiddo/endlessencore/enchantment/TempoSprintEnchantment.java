@@ -5,6 +5,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
 
 @SuppressWarnings("ALL")
+
+// Not functional as of yet!
+
 public class TempoSprintEnchantment extends Enchantment {
     public TempoSprintEnchantment(Rarity weight, EnchantmentCategory type, EquipmentSlot... slotTypes) {
         super(weight, type, slotTypes);

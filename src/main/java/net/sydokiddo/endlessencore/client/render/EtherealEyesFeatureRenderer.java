@@ -9,6 +9,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 import net.sydokiddo.endlessencore.client.entity.model.EtherealEntityModel;
 
+@SuppressWarnings("ALL")
+
+// This is still very work in progress!!
+
 @Environment(EnvType.CLIENT)
 public class EtherealEyesFeatureRenderer<T extends Mob, M extends EtherealEntityModel<T>> extends EyesLayer<T, M> {
     private static final RenderType SKIN = RenderType.eyes(new ResourceLocation("textures/entity/ethereal/ethereal_eyes.png"));

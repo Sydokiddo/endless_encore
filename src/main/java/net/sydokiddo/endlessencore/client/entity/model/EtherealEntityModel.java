@@ -8,6 +8,10 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.world.entity.Mob;
 
+@SuppressWarnings("ALL")
+
+// This is still very work in progress!!
+
 @Environment(EnvType.CLIENT)
 public class EtherealEntityModel<T extends Mob> extends PlayerModel<T> {
     public final ModelPart rightEar;
