@@ -59,9 +59,6 @@
   "block.endlessencore.chiseled_polished_palestone": "Chiseled Polished Palestone",
 
   "block.endlessencore.iolite_block": "Iolite Block",
-  "block.endlessencore.iolite_stairs": "Iolite Stairs",
-  "block.endlessencore.iolite_slab": "Iolite Slab",
-  "block.endlessencore.iolite_wall": "Iolite Wall",
   "block.endlessencore.iolite_bricks": "Iolite Bricks",
   "block.endlessencore.iolite_brick_stairs": "Iolite Brick Stairs",
   "block.endlessencore.iolite_brick_slab": "Iolite Brick Slab",
@@ -131,6 +128,7 @@
   "item.endlessencore.fleet_spawn_egg": "Fleet Spawn Egg",
   "item.endlessencore.barrage_spawn_egg": "Barrage Spawn Egg",
   "item.endlessencore.snapdragon_spawn_egg": "Snapdragon Spawn Egg",
+  "item.endlessencore.zeal_spawn_egg": "Zeal Spawn Egg",
 
   "advancements.husbandry.peroratite_hoe.title": "Way Too Much Dedication",
   "advancements.husbandry.peroratite_hoe.description": "Use a Peroratite ingot to upgrade a Netherite hoe, and then seriously reevaluate your life choices",
@@ -142,8 +140,6 @@
   "advancements.end.explore_end.description": "Explore all End biomes",
   "advancements.end.purify_chorus_fruit.title": "Pollination",
   "advancements.end.purify_chorus_fruit.description": "Obtain a Purified Chorus Fruit",
-  "advancements.end.start_siege.title": "Uh Oh...",
-  "advancements.end.start_siege.description": "Blow your cover in an Ethereal City and start a siege",
   "advancements.end.break_elytra.title": "Houston, We Have a Problem",
   "advancements.end.break_elytra.description": "Break an Elytra mid-flight at Y=300 or higher",
   "advancements.end.walk_on_ethereal_cloud.title": "Can't Stop Won't Stop",
@@ -154,9 +150,6 @@
   "advancements.end.obtain_lingering_potion.description": "Brew a Lingering Potion using Dragon's Breath",
   "advancements.end.peroratite_armor.title": "Cover Me in Memories",
   "advancements.end.peroratite_armor.description": "Get a full suit of Peroratite armor",
-
-  "event.endlessencore.siege": "Siege",
-  "event.endlessencore.siege.enemies_remaining": "Enemies Remaining: %s",
 
   "entity.endlessencore.ethereal": "Ethereal",
   "entity.endlessencore.baby_ethereal": "Baby Ethereal",
@@ -233,6 +226,8 @@
   "subtitles.entity.goliath.frenzy_end": "Goliath stops frenzying",
   "subtitles.entity.goliath.stunned": "Goliath stunned",
   "subtitles.entity.goliath.death_secondary": "Goliath crumbles",
+  "subtitles.entity.goliath.sleeping": "Goliath snoozes",
+  "subtitles.entity.goliath.peeking": "Goliath peeks",
 
   "subtitles.entity.fleet.ambient": "Fleet whistles",
   "subtitles.entity.fleet.step": "Fleet scuttles",
@@ -270,11 +265,6 @@
   "subtitles.item.armor.equip_peroratite": "Peroratite armor reverberates",
   "subtitles.block.ethereal_urn.insert": "Item inserted into Ethereal Urn",
 
-  "biome.endlessencore.chorus_grove": "Chorus Grove",
-  "biome.endlessencore.tangled_mounds": "Tangled Mounds",
-  "biome.endlessencore.blighted_barrens": "Blighted Barrens",
-
-  "stat.endlessencore.siege_trigger": "Sieges Triggered",
   "stat.endlessencore.clean_barrage_box": "Barrage Boxes Cleaned",
   "stat.endlessencore.interact_with_ethereal_urn": "Interactions with Ethereal Urn",
   "container.barrageBox": "Barrage Box",
@@ -290,7 +280,7 @@
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",
   "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s",
   "death.attack.ballistic": "%1$s was rapidly collided into by %2$s",
-  "death.attack.goliath_shockwave": "%1$s couldn't keep up wih the rhythm",
+  "death.attack.goliath_shockwave": "%1$s couldn't keep up with the rhythm",
   "death.attack.goliath_shockwave.player": "%1$s couldn't keep up with the rhythm whilst trying to escape %2$s",
   "death.attack.goliath_stampede": "%1$s didn't run out of the way in time",
   "death.attack.goliath_stampede.player": "%1$s didn't run out of the way in time whilst trying to escape %2$s",
