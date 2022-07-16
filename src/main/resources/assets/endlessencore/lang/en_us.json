@@ -289,9 +289,10 @@
   "text.autoconfig.endlessencore.option.biome_generation": "Biome Generation",
   "text.autoconfig.endlessencore.option.ethereal_city_generation": "Ethereal City Generation",
   "text.autoconfig.endlessencore.option.elytra_changes": "Elytra Changes",
-  "text.autoconfig.endlessencore.option.allow_sieges": "Allow Ethereal Sieges",
-  "text.autoconfig.endlessencore.option.allow_ethereal_patrols": "Allow Ethereal Patrols",
   "text.autoconfig.endlessencore.option.allow_snapdragons": "Allow Snapdragon Spawning",
   "text.autoconfig.endlessencore.option.allow_bed_bombing": "Allow End Bed-Bombing",
-  "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains"
+  "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains",
+
+  "enchantment.endlessencore.ballistic.desc": "Allows for the player to collide into mobs with Elytra to deal damage.",
+  "enchantment.endlessencore.tempo_sprint.desc": "Increases movement speed gradually the longer the player is sprinting."
 }
