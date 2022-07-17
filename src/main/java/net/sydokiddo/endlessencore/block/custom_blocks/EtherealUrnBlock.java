@@ -140,6 +140,7 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
     }
 
     // Breaks the Ethereal Urn when it falls, unless it falls onto a hay bale, which prevents it from breaking
+    // Currently hardcoded in here, but I do want to replace it with a tag system instead sometime
 
     public void onLand(Level world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
         if ((!world.isClientSide) && !Arrays.asList(EtherealUrnBlock.getPreventBreaking()).contains(world.getBlockState(pos.below()).getBlock())) {
