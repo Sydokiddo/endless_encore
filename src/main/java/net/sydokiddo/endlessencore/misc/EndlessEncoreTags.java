@@ -21,4 +21,5 @@ public class EndlessEncoreTags {
     public static final TagKey<GameEvent> GLADIATOR_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "gladiator_can_listen"));
     public static final TagKey<GameEvent> CHARMER_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "charmer_can_listen"));
     public static final TagKey<GameEvent> GOLIATH_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "goliath_can_listen"));
+    public static final TagKey<Block> ETHEREAL_URN_PREVENTS_BREAKING = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("endlessencore", "ethereal_urn_prevents_breaking"));
 }

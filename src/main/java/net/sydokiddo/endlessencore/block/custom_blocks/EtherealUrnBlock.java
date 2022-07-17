@@ -19,16 +19,8 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Wearable;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.GameRules;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.FallingBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -50,12 +42,17 @@ import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import net.sydokiddo.endlessencore.util.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
+
 @SuppressWarnings("ALL")
 public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBlock, SimpleWaterloggedBlock {
     public static final DirectionProperty FACING;
     public static final BooleanProperty CONTAINS_ZEAL;
     public static final BooleanProperty WATERLOGGED;
     private static final VoxelShape SHAPE = Shapes.or(Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D), Block.box(5.0D, 10.0D, 5.0D, 11.0D, 12.0D, 11.0D));
+    private static final Block[] PREVENT_BREAKING = new Block[] {
+            Blocks.HAY_BLOCK
+    };
 
     public EtherealUrnBlock(Properties settings) {
         super(settings);
@@ -66,6 +63,12 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return SHAPE;
+    }
+
+    // Gets the list of blocks that prevent the Ethereal Urn from breaking when fallen onto
+
+    public static Block[] getPreventBreaking() {
+        return EtherealUrnBlock.PREVENT_BREAKING;
     }
 
     // Allows players to store items in the Ethereal Urn when right-clicking it with an item while sneaking
@@ -127,7 +130,8 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
     }
 
     public BlockState rotate(BlockState state, Rotation rotation) {
-        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));}
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
 
     // Damages entities when the block falls onto them
 
@@ -135,14 +139,18 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
         entity.setHurtsEntities(2.0F, 30);
     }
 
-    // Breaks the Ethereal Urn when it falls
+    // Breaks the Ethereal Urn when it falls, unless it falls onto a hay bale, which prevents it from breaking
 
     public void onLand(Level world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
-        if (!world.isClientSide) {
+        if ((!world.isClientSide) && !Arrays.asList(EtherealUrnBlock.getPreventBreaking()).contains(world.getBlockState(pos.below()).getBlock())) {
+                BlockPos blockPos = fallingBlockEntity.blockPosition();
+                world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
+                world.destroyBlock(blockPos, false);
+                world.gameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, blockPos);
+            }
+        else {
             BlockPos blockPos = fallingBlockEntity.blockPosition();
-            world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F + world.random.nextFloat() * 1.2F);
-            world.destroyBlock(blockPos, false);
-            world.gameEvent(null, ModGameEvents.ETHEREAL_URN_BREAK, blockPos);
+            world.playSound(null, blockPos, ModSoundEvents.BLOCK_ETHEREAL_URN_FALL, SoundSource.BLOCKS, 1.0F, 1.0F);
         }
     }
 
@@ -173,7 +181,7 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
         if (!state.is(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof Container) {
-                Containers.dropContents(world, pos, (Container)blockEntity);
+                Containers.dropContents(world, pos, (Container) blockEntity);
                 world.updateNeighbourForOutputSignal(pos, this);
             }
             super.onRemove(state, world, pos, newState, moved);
@@ -197,11 +205,16 @@ public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBl
         WATERLOGGED = BlockStateProperties.WATERLOGGED;
     }
 
+    public int getDustColor(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+        return blockState.getMapColor(blockGetter, blockPos).col;
+    }
+
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, CONTAINS_ZEAL, WATERLOGGED);
     }
 
-    @Nullable @Override
+    @Nullable
+    @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new EtherealUrnBlockEntity(pos, state);
     }

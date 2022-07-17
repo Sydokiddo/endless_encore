@@ -21,11 +21,11 @@
     "status_effects.vulnerability.VulnerabilityEffectMixin"
   ],
   "client": [
-    "sickles.MinecraftClientMixin",
-    "status_effects.disorientation.ClientPlayerEntityMixin",
     "elytra_tweaks.MixinElytraEntityModel",
     "sickles.HeldItemRendererMixin",
-    "sickles.InGameHudMixin"
+    "sickles.InGameHudMixin",
+    "sickles.MinecraftClientMixin",
+    "status_effects.disorientation.ClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
