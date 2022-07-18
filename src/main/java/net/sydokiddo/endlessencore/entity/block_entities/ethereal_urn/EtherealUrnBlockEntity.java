@@ -14,11 +14,12 @@ import net.sydokiddo.endlessencore.util.ItemStackUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedInventory {
-    private NonNullList<ItemStack> items;
+    private static NonNullList<ItemStack> items;
+    private static final int INVENTORY_SIZE = 1;
 
     public EtherealUrnBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ETHEREAL_URN_BLOCK_ENTITY, pos, state);
-        this.items = NonNullList.withSize(1, ItemStack.EMPTY);
+        items = NonNullList.withSize(INVENTORY_SIZE, ItemStack.EMPTY);
     }
 
     @Override
@@ -26,12 +27,8 @@ public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedIn
         return items;
     }
 
-    public int getContainerSize() {
-        return 1;
-    }
-
     public void setItems(NonNullList<ItemStack> items) {
-        this.items = items;
+        EtherealUrnBlockEntity.items = items;
     }
 
     public InteractionResult receive(ItemStack giver, int index, int amount) {
@@ -57,13 +54,13 @@ public class EtherealUrnBlockEntity extends BlockEntity implements ImplementedIn
     @Override
     public void load(@NotNull CompoundTag compoundTag) {
         super.load(compoundTag);
-        this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        ContainerHelper.loadAllItems(compoundTag, this.items);
+        items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(compoundTag, items);
         }
 
     @Override
     protected void saveAdditional(@NotNull CompoundTag compoundTag) {
         super.saveAdditional(compoundTag);
-        ContainerHelper.saveAllItems(compoundTag, this.items);
+        ContainerHelper.saveAllItems(compoundTag, items);
         }
     }

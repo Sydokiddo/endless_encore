@@ -10,6 +10,7 @@
     "elytra_tweaks.LivingEntityMixin",
     "enchantments.ballistic.BallisticEnchantmentMixin",
     "enchantments.ballistic.ElytraModification",
+    "entities.endermite.MixinEndermiteEntity",
     "entities.shulker.MixinShulkerBulletEntity",
     "peroratite.PeroratiteBlastProofMixin",
     "peroratite.PeroratiteItemDropMixin",

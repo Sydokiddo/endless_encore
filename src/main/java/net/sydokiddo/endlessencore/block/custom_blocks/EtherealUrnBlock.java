@@ -17,7 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Wearable;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
@@ -41,11 +40,10 @@ import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import net.sydokiddo.endlessencore.util.ModProperties;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.Arrays;
 
 @SuppressWarnings("ALL")
-public class EtherealUrnBlock extends FallingBlock implements Wearable, EntityBlock, SimpleWaterloggedBlock {
+public class EtherealUrnBlock extends FallingBlock implements EntityBlock, SimpleWaterloggedBlock {
     public static final DirectionProperty FACING;
     public static final BooleanProperty CONTAINS_ZEAL;
     public static final BooleanProperty WATERLOGGED;
