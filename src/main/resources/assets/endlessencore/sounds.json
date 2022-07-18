@@ -514,5 +514,35 @@
 			"endlessencore:item/armor/equip_peroratite4"
 		],
 		"subtitle": "subtitles.item.armor.equip_peroratite"
+	},
+	"entity.endermite.ambient": {
+		"sounds": [
+			"endlessencore:mob/endermite/say1",
+			"endlessencore:mob/endermite/say2",
+			"endlessencore:mob/endermite/say3"
+		],
+		"subtitle": "subtitles.entity.endermite.ambient"
+	},
+	"entity.endermite.hurt": {
+		"sounds": [
+			"endlessencore:mob/endermite/hit1",
+			"endlessencore:mob/endermite/hit2",
+			"endlessencore:mob/endermite/hit3"
+		],
+		"subtitle": "subtitles.entity.endermite.hurt"
+	},
+	"entity.endermite.death": {
+		"sounds": [
+			"endlessencore:mob/endermite/death1",
+			"endlessencore:mob/endermite/death2"
+		],
+		"subtitle": "subtitles.entity.endermite.death"
+	},
+	"entity.endermite.teleport": {
+		"sounds": [
+			"endlessencore:mob/endermite/portal1",
+			"endlessencore:mob/endermite/portal2"
+		],
+		"subtitle": "subtitles.entity.endermite.teleport"
 	}
 }

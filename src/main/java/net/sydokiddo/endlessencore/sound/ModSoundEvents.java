@@ -64,6 +64,11 @@ public class ModSoundEvents {
 
     // - Entity Sounds:
 
+    public static final SoundEvent ENDERMITE_AMBIENT = registerSoundEvent("entity.endermite.ambient");
+    public static final SoundEvent ENDERMITE_HURT = registerSoundEvent("entity.endermite.hurt");
+    public static final SoundEvent ENDERMITE_DEATH = registerSoundEvent("entity.endermite.death");
+    public static final SoundEvent ENDERMITE_TELEPORT = registerSoundEvent("entity.endermite.teleport");
+
     public static final SoundEvent ETHEREAL_AMBIENT = registerSoundEvent("entity.ethereal.ambient");
     public static final SoundEvent ETHEREAL_NOTICE = registerSoundEvent("entity.ethereal.notice");
     public static final SoundEvent ETHEREAL_HURT = registerSoundEvent("entity.ethereal.hurt");

@@ -161,6 +161,11 @@
   "entity.endlessencore.snapdragon": "Snapdragon",
   "entity.endlessencore.zeal": "Zeal",
 
+  "subtitles.entity.endermite.ambient": "Endermite scuttles",
+  "subtitles.entity.endermite.hurt": "Endermite hurts",
+  "subtitles.entity.endermite.death": "Endermite dies",
+  "subtitles.entity.endermite.teleport": "Endermite teleports",
+
   "subtitles.entity.barrage.ambient": "Barrage lurks",
   "subtitles.entity.barrage.close": "Barrage closes",
   "subtitles.entity.barrage.death": "Barrage dies",
