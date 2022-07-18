@@ -540,7 +540,7 @@
 	},
 	"entity.endermite.teleport": {
 		"sounds": [
-			"endlessencore:mob/endermite/portal1",
+			"endlessencore:mob/endermite/portal",
 			"endlessencore:mob/endermite/portal2"
 		],
 		"subtitle": "subtitles.entity.endermite.teleport"

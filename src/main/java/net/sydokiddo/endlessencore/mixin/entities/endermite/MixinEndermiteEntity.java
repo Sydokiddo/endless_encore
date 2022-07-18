@@ -5,16 +5,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.IndirectEntityDamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.monster.Endermite;
 import net.minecraft.world.entity.monster.Monster;
@@ -31,7 +27,6 @@ import net.minecraft.world.phys.Vec3;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,16 +34,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
-@SuppressWarnings("ALL")
-
 @Mixin(Endermite.class)
 public abstract class MixinEndermiteEntity extends Monster {
-    private final int targetChangeTime;
-    private static final float ENDERMITE_SPECIAL_EFFECT_CHANCE = 0.1F;
 
-    protected MixinEndermiteEntity(EntityType<? extends Endermite> entityType, Level level, int targetChangeTime) {
+    protected MixinEndermiteEntity(EntityType<? extends Endermite> entityType, Level level) {
         super(entityType, level);
-        this.targetChangeTime = targetChangeTime;
         this.setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
     }
     // Endermites can now give players the Vulnerability status effect
@@ -110,7 +100,7 @@ public abstract class MixinEndermiteEntity extends Monster {
                 this.level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(this));
                 if (!this.isSilent()) {
                     this.level.playSound(null, this.xo, this.yo, this.zo, SoundEvents.ENDERMAN_TELEPORT, this.getSoundSource(), 1.0F, 1.0F);
-                    this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                    this.playSound(ModSoundEvents.ENDERMITE_TELEPORT, 1.0F, 1.0F);
                 }
             }
 
@@ -172,7 +162,7 @@ public abstract class MixinEndermiteEntity extends Monster {
     }
 
     @Override
-    public SoundEvent getHurtSound(DamageSource damageSource) {
+    public SoundEvent getHurtSound(@NotNull DamageSource damageSource) {
         return ModSoundEvents.ENDERMITE_HURT;
     }
 
@@ -182,34 +172,13 @@ public abstract class MixinEndermiteEntity extends Monster {
     }
 
     @Override
-    public void playStepSound(BlockPos blockPos, BlockState blockState) {
+    public void playStepSound(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
         this.playSound(SoundEvents.ENDERMITE_STEP, 0.15F, 1.0F);
-    }
-
-    // Endermites can now spawn with random effects
-
-    public static class EndermiteEffectsGroupData implements SpawnGroupData {
-        @Nullable
-        public MobEffect effect;
-
-        public EndermiteEffectsGroupData() {
-        }
-
-        public void setRandomEffect(RandomSource randomSource) {
-            int i = randomSource.nextInt(5);
-            if (i <= 1) {
-                this.effect = MobEffects.MOVEMENT_SPEED;
-            } else if (i <= 2) {
-                this.effect = MobEffects.DAMAGE_BOOST;
-            } else if (i <= 3) {
-                this.effect = MobEffects.REGENERATION;
-            }
-        }
     }
 
     // Endermites cannot be affected by Vulnerability
 
     public boolean canBeAffected(MobEffectInstance mobEffectInstance) {
-        return mobEffectInstance.getEffect() == ModEffects.VULNERABILITY ? false : super.canBeAffected(mobEffectInstance);
+        return mobEffectInstance.getEffect() != ModEffects.VULNERABILITY && super.canBeAffected(mobEffectInstance);
     }
 }
