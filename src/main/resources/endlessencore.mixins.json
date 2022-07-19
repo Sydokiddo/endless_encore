@@ -10,6 +10,7 @@
     "elytra_tweaks.LivingEntityMixin",
     "enchantments.ballistic.BallisticEnchantmentMixin",
     "enchantments.ballistic.ElytraModification",
+    "enchantments.tempo_sprint.TempoSprintEnchantmentMixin",
     "entities.enderman.MixinEndermanEntity",
     "entities.endermite.MixinEndermiteEntity",
     "entities.shulker.MixinShulkerBulletEntity",

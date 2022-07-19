@@ -21,7 +21,8 @@ public class BallisticEnchantmentMixin {
     @Inject(at = @At("RETURN"), method = "touch")
     private void collideWithEntity(Entity entity, CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
-        int ballisticLevel = Math.max(0, Math.max(EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST)), EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));
+        int ballisticLevel = Math.max(0, Math.max(EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST)),
+        EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));
         if (player instanceof ServerPlayer && (player.isFallFlying()) && (!player.isOnGround()) && (player.getDeltaMovement().horizontalDistance() >= 1)) {
             if (ballisticLevel == 1) {
                 entity.hurt(new EndlessEncore.BallisticDamageSource(player), 4.0f);
