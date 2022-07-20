@@ -28,6 +28,9 @@
     ],
     "client": [
       "net.sydokiddo.endlessencore.client.EndlessEncoreClient"
+    ],
+    "modmenu": [
+      "net.sydokiddo.endlessencore.config.ModMenuCompatibility"
     ]
   },
   "mixins": [

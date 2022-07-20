@@ -292,10 +292,13 @@
 
   "text.autoconfig.endlessencore.title": "Endless Encore Configuration",
   "text.autoconfig.endlessencore.option.biome_generation": "Biome Generation",
-  "text.autoconfig.endlessencore.option.ethereal_city_generation": "Ethereal City Generation",
+  "text.autoconfig.endlessencore.option.structure_generation": "Structure Generation",
+  "text.autoconfig.endlessencore.option.mob_registry": "New Mobs",
   "text.autoconfig.endlessencore.option.elytra_changes": "Elytra Changes",
-  "text.autoconfig.endlessencore.option.allow_snapdragons": "Allow Snapdragon Spawning",
-  "text.autoconfig.endlessencore.option.allow_bed_bombing": "Allow End Bed-Bombing",
+  "text.autoconfig.endlessencore.option.elytra_camera": "Elytra Camera Tilt",
+  "text.autoconfig.endlessencore.option.upgraded_dragon_fight": "Upgraded Dragon Fight",
+  "text.autoconfig.endlessencore.option.endermite_changes": "Endermite Changes",
+  "text.autoconfig.endlessencore.option.shulker_changes": "Shulker Changes",
   "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains",
 
   "enchantment.endlessencore.ballistic.desc": "Allows for the player to collide into mobs with Elytra to deal damage.",

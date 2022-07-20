@@ -1,9 +1,12 @@
 package net.sydokiddo.endlessencore;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.entity.Entity;
 import net.sydokiddo.endlessencore.block.ModBlocks;
+import net.sydokiddo.endlessencore.config.ModConfig;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
 import net.sydokiddo.endlessencore.entity.block_entities.ModBlockEntities;
@@ -20,7 +23,7 @@ public class EndlessEncore implements ModInitializer {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("modid");
     public static final String MOD_ID = "endlessencore";
-    public static boolean elytraThicknessFix = true;
+    private static final ModConfig CONFIG = AutoConfig.register(ModConfig.class, GsonConfigSerializer::new).getConfig();
 
     @Override
     public void onInitialize() {
@@ -51,5 +54,11 @@ public class EndlessEncore implements ModInitializer {
         public BallisticDamageSource(Entity source) {
             super("ballistic", source);
         }
+    }
+
+    // Mod Config
+
+    public static ModConfig getConfig () {
+        return CONFIG;
     }
 }

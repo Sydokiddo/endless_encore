@@ -8,6 +8,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
@@ -24,13 +25,15 @@ public class ElytraCloseOnDamageMixin {
     @Inject(at = @At("RETURN"), method = "hurt")
     private void onDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity player = (LivingEntity) (Object) this;
-        if (player instanceof ServerPlayer && player.isFallFlying() && !((ServerPlayer) player).isCreative()) {
-            ((ServerPlayer) player).stopFallFlying();
-            ((ServerPlayer) player).playNotifySound(ModSoundEvents.PLAYER_ELYTRA_CLOSE, SoundSource.PLAYERS, 1.0f, 1.0f);
-            player.addEffect(new MobEffectInstance(ModEffects.AERIAL_FATIGUE, 100, 0, false, false, true));
-            ItemStack stack = player.getItemBySlot(EquipmentSlot.CHEST);
-            stack.hurtAndBreak(2, player, (e) -> e.broadcastBreakEvent(EquipmentSlot.CHEST));
-            player.gameEvent(ModGameEvents.ELYTRA_CLOSE);
+        if (EndlessEncore.getConfig().elytra_changes) {
+            if (player instanceof ServerPlayer && player.isFallFlying() && !((ServerPlayer) player).isCreative()) {
+                ((ServerPlayer) player).stopFallFlying();
+                ((ServerPlayer) player).playNotifySound(ModSoundEvents.PLAYER_ELYTRA_CLOSE, SoundSource.PLAYERS, 1.0f, 1.0f);
+                player.addEffect(new MobEffectInstance(ModEffects.AERIAL_FATIGUE, 100, 0, false, false, true));
+                ItemStack stack = player.getItemBySlot(EquipmentSlot.CHEST);
+                stack.hurtAndBreak(2, player, (e) -> e.broadcastBreakEvent(EquipmentSlot.CHEST));
+                player.gameEvent(ModGameEvents.ELYTRA_CLOSE);
+            }
         }
     }
 }

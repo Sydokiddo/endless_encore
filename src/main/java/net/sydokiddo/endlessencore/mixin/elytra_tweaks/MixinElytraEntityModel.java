@@ -16,7 +16,7 @@ public abstract class MixinElytraEntityModel<T extends LivingEntity> extends Age
 
     @ModifyArg(method = "createLayer", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/geom/builders/CubeListBuilder;addBox(FFFFFFLnet/minecraft/client/model/geom/builders/CubeDeformation;)Lnet/minecraft/client/model/geom/builders/CubeListBuilder;"), index = 6)
     private static CubeDeformation ETF_injected(CubeDeformation dilation) {
-        if (EndlessEncore.elytraThicknessFix) {
+        if (EndlessEncore.getConfig().elytra_changes) {
             return new CubeDeformation(1, 1, 0.2f);
         }
         return dilation;

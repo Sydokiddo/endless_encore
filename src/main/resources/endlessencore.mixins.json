@@ -26,6 +26,7 @@
   ],
   "client": [
     "elytra_tweaks.MixinElytraEntityModel",
+    "elytra_tweaks.elytra_camera.GameRendererMixin",
     "sickles.HeldItemRendererMixin",
     "sickles.InGameHudMixin",
     "sickles.MinecraftClientMixin",
