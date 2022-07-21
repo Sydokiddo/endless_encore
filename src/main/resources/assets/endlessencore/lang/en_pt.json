@@ -283,13 +283,5 @@
   "death.attack.goliath_shockwave": "%1$s couldn't keep up with Captain Greenbeard's rhythm",
   "death.attack.goliath_shockwave.player": "%1$s couldn't keep up with Captain Greenbeard's rhythm whilst trying to flee from %2$s",
   "death.attack.goliath_stampede": "%1$s didn't run out of the way in time",
-  "death.attack.goliath_stampede.player": "%1$s didn't run out of the way in time whilst trying to flee from %2$s",
-
-  "text.autoconfig.endlessencore.title": "Endless Encore Configuration",
-  "text.autoconfig.endlessencore.option.biome_generation": "Biome Generation",
-  "text.autoconfig.endlessencore.option.ethereal_city_generation": "Ethereal City Generation",
-  "text.autoconfig.endlessencore.option.elytra_changes": "Elytra Changes",
-  "text.autoconfig.endlessencore.option.allow_snapdragons": "Allow Snapdragon Spawning",
-  "text.autoconfig.endlessencore.option.allow_bed_bombing": "Allow End Bed-Bombing",
-  "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains"
+  "death.attack.goliath_stampede.player": "%1$s didn't run out of the way in time whilst trying to flee from %2$s"
 }
