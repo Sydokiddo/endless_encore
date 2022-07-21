@@ -1,0 +1,22 @@
+{
+    "textures": {
+        "particle": "endlessencore:block/dragon_omelette_side",
+        "bottom": "endlessencore:block/dragon_omelette_bottom",
+        "top": "endlessencore:block/dragon_omelette_top",
+        "side": "endlessencore:block/dragon_omelette_side",
+        "inside": "endlessencore:block/dragon_omelette_inner"
+    },
+    "elements": [
+        {   "from": [ 3, 0, 1 ],
+            "to": [ 15, 8, 15 ],
+            "faces": {
+                "down":  { "texture": "#bottom", "cullface": "down" },
+                "up":    { "texture": "#top" },
+                "north": { "texture": "#side" },
+                "south": { "texture": "#side" },
+                "west":  { "texture": "#inside" },
+                "east":  { "texture": "#side" }
+            }
+        }
+    ]
+}

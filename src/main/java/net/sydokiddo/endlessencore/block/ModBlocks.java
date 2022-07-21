@@ -199,6 +199,10 @@ public class ModBlocks {
     new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.GLOW_LICHEN).sound(SoundType.NETHERITE_BLOCK)
     .requiresCorrectToolForDrops().destroyTime(50.0f).strength(50.0f)));
 
+    public static final Block DRAGON_OMELETTE = registerBlock("dragon_omelette",
+    new DragonOmeletteBlock(FabricBlockSettings.of(Material.CAKE, MaterialColor.TERRACOTTA_PURPLE)
+    .sound(SoundType.WOOL).strength(1.0f)));
+
 // Registry for Blocks:
 
     private static Block registerBlock(String name, Block block){

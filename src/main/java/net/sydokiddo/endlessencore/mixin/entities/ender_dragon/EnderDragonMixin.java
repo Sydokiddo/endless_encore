@@ -29,10 +29,10 @@ public class EnderDragonMixin {
         }
     }
 
-        // Buffs the Ender Dragon's health from 200 to 400
+    // Buffs the Ender Dragon's health from 200 to 400
 
-        @Inject(at = @At("HEAD"), method = "createAttributes", cancellable = true)
-        private static void createAttributes (CallbackInfoReturnable < AttributeSupplier.Builder > cir) {
+    @Inject(at = @At("HEAD"), method = "createAttributes", cancellable = true)
+    private static void createAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
         if (EndlessEncore.getConfig().upgraded_dragon_fight) {
             cir.setReturnValue(Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 400.0D));
         }

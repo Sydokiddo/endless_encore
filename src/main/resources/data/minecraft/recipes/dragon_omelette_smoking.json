@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "minecraft:dragon_egg"
+  },
+  "result": "endlessencore:dragon_omelette",
+  "experience": 0.1,
+  "cookingtime": 100
+}
