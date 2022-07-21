@@ -33,6 +33,9 @@ public class ModConfig implements ConfigData {
             "doubling the dragon's health to 400, and making it immune to explosive damage.")
     public boolean upgraded_dragon_fight = true;
 
+    @Comment("If true, will allow for Dragon Omelettes to exist and be crafted.")
+    public boolean allow_dragon_omelettes = true;
+
     @Comment("If true, will allow for Rift Fountains to be created and activated.")
     public boolean allow_rift_fountains = true;
 }

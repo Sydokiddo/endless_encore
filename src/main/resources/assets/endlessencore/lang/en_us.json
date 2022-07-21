@@ -302,6 +302,7 @@
   "text.autoconfig.endlessencore.option.endermite_changes": "Endermite Changes",
   "text.autoconfig.endlessencore.option.shulker_changes": "Shulker Changes",
   "text.autoconfig.endlessencore.option.allow_rift_fountains": "Allow Rift Fountains",
+  "text.autoconfig.endlessencore.option.allow_dragon_omelettes": "Allow Dragon Omelettes",
 
   "enchantment.endlessencore.ballistic.desc": "Allows for the player to collide into mobs with Elytra to deal damage.",
   "enchantment.endlessencore.tempo_sprint.desc": "Increases movement speed gradually the longer the player is sprinting."

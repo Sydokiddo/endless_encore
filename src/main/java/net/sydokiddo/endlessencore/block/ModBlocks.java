@@ -39,7 +39,9 @@ public class ModBlocks {
 
     public static final Block END_LAMP = registerBlock("end_lamp",
     new EndLampBlock(FabricBlockSettings.of(Material.BUILDABLE_GLASS, MaterialColor.SNOW).sound(SoundType.GLASS).
-            requiresCorrectToolForDrops().destroyTime(0.3f).strength(0.3f).lightLevel((blockStatex) -> { return 15; })));
+    requiresCorrectToolForDrops().destroyTime(0.3f).strength(0.3f).lightLevel((blockStatex) -> {
+    return 15;
+    })));
 
     public static final Block GRONGRON = registerBlock("grongron",
     new ModPillarBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.GLOW_LICHEN).sound(SoundType.BASALT)
@@ -185,7 +187,9 @@ public class ModBlocks {
 
     public static final Block ETHEREAL_CLOUD = registerBlock("ethereal_cloud",
     new EtherealCloudBlock(FabricBlockSettings.of(Material.WOOL, MaterialColor.EMERALD).sound(ModSoundEvents.ETHEREAL_CLOUD)
-    .destroyTime(0.1f).strength(0.1f).noOcclusion().lightLevel((blockStatex) -> { return 10; })));
+    .destroyTime(0.1f).strength(0.1f).noOcclusion().lightLevel((blockStatex) -> {
+    return 10;
+    })));
 
     public static final Block END_IOLITE_ORE = registerBlock("end_iolite_ore",
     new DropExperienceBlock(FabricBlockSettings.of(Material.STONE, MaterialColor.SAND).requiresCorrectToolForDrops().sound(ModSoundEvents.END_ORE)
@@ -201,11 +205,13 @@ public class ModBlocks {
 
     public static final Block DRAGON_OMELETTE = registerBlock("dragon_omelette",
     new DragonOmeletteBlock(FabricBlockSettings.of(Material.CAKE, MaterialColor.TERRACOTTA_PURPLE)
-    .sound(SoundType.WOOL).strength(1.0f)));
+    .sound(SoundType.WOOL).strength(1.0f).lightLevel((blockStatex) -> {
+    return 1;
+    })));
 
 // Registry for Blocks:
 
-    private static Block registerBlock(String name, Block block){
+    private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registry.BLOCK, new ResourceLocation(EndlessEncore.MOD_ID, name), block);
     }
