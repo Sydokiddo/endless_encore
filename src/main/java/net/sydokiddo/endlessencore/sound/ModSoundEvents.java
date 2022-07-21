@@ -99,6 +99,10 @@ public class ModSoundEvents {
     public static final SoundEvent BARRAGE_LOCK = registerSoundEvent("entity.barrage.lock");
     public static final SoundEvent BARRAGE_SHOOT = registerSoundEvent("entity.barrage.shoot");
 
+    // Music:
+
+    public static final SoundEvent MUSIC_ETHEREAL_CITY = registerSoundEvent("music.end.ethereal_city");
+
     // Sound Groups:
 
     public static final SoundType NETTLED_END_STONE = new SoundType(1f, 1f,

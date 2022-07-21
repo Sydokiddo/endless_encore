@@ -544,5 +544,13 @@
 			"endlessencore:mob/endermite/portal2"
 		],
 		"subtitle": "subtitles.entity.endermite.teleport"
+	},
+	"music.end.ethereal_city": {
+		"sounds": [
+			{
+				"name": "endlessencore:music/game/end/enkindling",
+				"stream": true
+			}
+		]
 	}
 }
