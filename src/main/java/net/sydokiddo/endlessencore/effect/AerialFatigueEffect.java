@@ -1,6 +1,5 @@
 package net.sydokiddo.endlessencore.effect;
 
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,11 +15,6 @@ public class AerialFatigueEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(@NotNull LivingEntity pLivingEntity, int pAmplifier) {
-        if (pLivingEntity instanceof ServerPlayer) {
-            ((ServerPlayer) pLivingEntity).stopFallFlying();
-        }
-
-        super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 
     @Override
