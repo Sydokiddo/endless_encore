@@ -5,6 +5,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
@@ -26,16 +27,18 @@ public class BallisticEnchantmentMixin {
         if (player instanceof ServerPlayer && (player.isFallFlying()) && (!player.isOnGround()) && (player.getDeltaMovement().horizontalDistance() >= 1) && entity instanceof LivingEntity) {
             if (ballisticLevel == 1) {
                 entity.hurt(new EndlessEncore.BallisticDamageSource(player), 3.0f);
-                ((LivingEntity) entity).knockback(0.5D, entity.getX(), entity.getZ());
+                ((LivingEntity) entity).knockback(0.2D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel == 2) {
                 entity.hurt(new EndlessEncore.BallisticDamageSource(player), 5.0f);
-                ((LivingEntity) entity).knockback(1.0D, entity.getX(), entity.getZ());
+                ((LivingEntity) entity).knockback(0.5D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel >= 3) {
                 entity.hurt(new EndlessEncore.BallisticDamageSource(player), 7.0f);
-                ((LivingEntity) entity).knockback(1.5D, entity.getX(), entity.getZ());
+                ((LivingEntity) entity).knockback(0.8D, entity.getX(), entity.getZ());
             }
+            ItemStack stack = player.getItemBySlot(EquipmentSlot.CHEST);
+            stack.hurtAndBreak(1, player, (e) -> e.broadcastBreakEvent(EquipmentSlot.CHEST));
         }
     }
 }
