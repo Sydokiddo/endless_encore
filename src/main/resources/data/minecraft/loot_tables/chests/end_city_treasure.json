@@ -326,6 +326,19 @@
           "type": "minecraft:item",
           "functions": [
             {
+              "enchantments": [
+                "endlessencore:aerial_affinity"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:book",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
               "function": "minecraft:enchant_with_levels",
               "levels": {
                 "type": "minecraft:uniform",
@@ -344,6 +357,22 @@
         "max": 6.0,
         "min": 2.0
       }
+    },
+    {
+      "type": "minecraft:item",
+      "functions": [
+        {
+          "add": false,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 2.0,
+            "min": 0.0
+          },
+          "function": "minecraft:set_count"
+        }
+      ],
+      "name": "endlessencore:peroratite_ingot",
+      "weight": 3
     }
   ]
 }

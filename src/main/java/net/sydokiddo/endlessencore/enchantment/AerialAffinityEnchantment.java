@@ -16,12 +16,12 @@ public class AerialAffinityEnchantment extends Enchantment {
         return stack.getItem() instanceof ElytraItem;
     }
 
-    public int getMinCost(int level) {
-        return level * 25;
+    public int getMinCost(int i) {
+        return 1;
     }
 
-    public int getMaxCost(int level) {
-        return this.getMinCost(level) + 50;
+    public int getMaxCost(int i) {
+        return this.getMinCost(i) + 40;
     }
 
     public boolean isTreasureOnly() {
