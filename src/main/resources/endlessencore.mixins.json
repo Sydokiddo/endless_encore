@@ -8,6 +8,7 @@
     "elytra_tweaks.ElytraChitinRepairingMixin",
     "elytra_tweaks.ElytraCloseOnDamageMixin",
     "elytra_tweaks.LivingEntityMixin",
+    "enchantments.aerial_affinity.PlayerEntityMixin",
     "enchantments.ballistic.BallisticEnchantmentMixin",
     "enchantments.ballistic.ElytraModification",
     "entities.ender_dragon.EnderDragonMixin",

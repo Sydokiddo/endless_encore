@@ -15,6 +15,9 @@ public class ModEnchantments {
     public static Enchantment BALLISTIC = register("ballistic",
     new BallisticEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.FISHING_ROD));
 
+    public static Enchantment AERIAL_AFFINITY = register("aerial_affinity",
+    new AerialAffinityEnchantment(Enchantment.Rarity.UNCOMMON, EnchantmentCategory.FISHING_ROD));
+
     private static Enchantment register(String name, Enchantment enchantment) {
         return Registry.register(Registry.ENCHANTMENT, new ResourceLocation(EndlessEncore.MOD_ID, name), enchantment);
     }

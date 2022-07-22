@@ -278,6 +278,7 @@
   "container.barrageBox.more": "and %s more...",
 
   "enchantment.endlessencore.ballistic": "Ballistic",
+  "enchantment.endlessencore.aerial_affinity": "Aerial Affinity",
   "enchantment.endlessencore.tempo_sprint": "Tempo Sprint",
 
   "effect.endlessencore.aerial_fatigue": "Aerial Fatigue",
@@ -305,5 +306,6 @@
   "text.autoconfig.endlessencore.option.allow_dragon_omelettes": "Allow Dragon Omelettes",
 
   "enchantment.endlessencore.ballistic.desc": "Allows for the player to collide into mobs with Elytra to deal damage.",
+  "enchantment.endlessencore.aerial_affinity.desc": "Increases mining speed while mid-air.",
   "enchantment.endlessencore.tempo_sprint.desc": "Increases movement speed gradually the longer the player is sprinting."
 }
