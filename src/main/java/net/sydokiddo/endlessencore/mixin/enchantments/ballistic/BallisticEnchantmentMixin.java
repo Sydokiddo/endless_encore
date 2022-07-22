@@ -22,16 +22,19 @@ public class BallisticEnchantmentMixin {
     private void collideWithEntity(Entity entity, CallbackInfo ci) {
         LivingEntity player = (LivingEntity) (Object) this;
         int ballisticLevel = Math.max(0, Math.max(EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST)),
-        EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));
-        if (player instanceof ServerPlayer && (player.isFallFlying()) && (!player.isOnGround()) && (player.getDeltaMovement().horizontalDistance() >= 1)) {
+                EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));
+        if (player instanceof ServerPlayer && (player.isFallFlying()) && (!player.isOnGround()) && (player.getDeltaMovement().horizontalDistance() >= 1) && entity instanceof LivingEntity) {
             if (ballisticLevel == 1) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 4.0f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 3.0f);
+                ((LivingEntity) entity).knockback(0.5D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel == 2) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 6.5f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 5.0f);
+                ((LivingEntity) entity).knockback(1.0D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel >= 3) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 9.0f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 7.0f);
+                ((LivingEntity) entity).knockback(1.5D, entity.getX(), entity.getZ());
             }
         }
     }
