@@ -285,6 +285,15 @@
   "effect.endlessencore.disorientation": "Disorientation",
   "effect.endlessencore.vulnerability": "Vulnerability",
 
+  "item.minecraft.potion.effect.levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.levitation": "Lingering Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.levitation": "Arrow of Levitation",
+  "item.minecraft.potion.effect.long_levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.long_levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.long_levitation": "Lingering Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.long_levitation": "Arrow of Levitation",
+
   "death.attack.ethereal_urn": "%1$s was hit in the head by a falling urn",
   "death.attack.ethereal_urn.player": "%1$s was hit in the head by a falling urn whilst fighting %2$s",
   "death.attack.ballistic": "%1$s was rapidly collided into by %2$s",

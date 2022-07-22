@@ -279,6 +279,15 @@
   "effect.endlessencore.disorientation": "Ain't Got Your Sea Legs",
   "effect.endlessencore.vulnerability": "More Pain",
 
+  "item.minecraft.potion.effect.levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.levitation": "Lingering Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.levitation": "Arrow of Levitation",
+  "item.minecraft.potion.effect.long_levitation": "Potion of Levitation",
+  "item.minecraft.splash_potion.effect.long_levitation": "Splash Potion of Levitation",
+  "item.minecraft.lingering_potion.effect.long_levitation": "Lingering Potion of Levitation",
+  "item.minecraft.tipped_arrow.effect.long_levitation": "Arrow of Levitation",
+
   "death.attack.ethereal_urn": "%1$s was knocked in the head by a falling treasure pot",
   "death.attack.ethereal_urn.player": "%1$s was knocked in the head by a falling treasure pot urn whilst battling %2$s",
   "death.attack.ballistic": "%1$s was cannonballed into by %2$s",

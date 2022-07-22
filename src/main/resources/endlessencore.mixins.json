@@ -19,6 +19,7 @@
     "peroratite.PeroratiteBlastProofMixin",
     "peroratite.PeroratiteItemDropMixin",
     "peroratite.PeroratiteTeleportMixin",
+    "potions.BrewingRecipeRegistryMixin",
     "sickles.EnchantmentMixin",
     "sickles.PlayerEntityMixin",
     "sickles.ServerPlayerEntityMixin",

@@ -11,6 +11,7 @@ import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.enchantment.ModEnchantments;
 import net.sydokiddo.endlessencore.entity.block_entities.ModBlockEntities;
 import net.sydokiddo.endlessencore.item.ModItems;
+import net.sydokiddo.endlessencore.item.ModPotions;
 import net.sydokiddo.endlessencore.misc.ModGameEvents;
 import net.sydokiddo.endlessencore.util.PlayerAttackPacket;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
@@ -43,6 +44,8 @@ public class EndlessEncore implements ModInitializer {
         ModEffects.registerVulnerabilityEffect();
         ModConfiguredFeatures.registerConfiguredFeatures();
         ModWorldGen.generateModWorldGen();
+        ModPotions.registerLevitationPotion();
+        ModPotions.registerLongLevitationPotion();
 
         LOGGER.info("Thank you for downloading Endless Encore! :)");
     }
