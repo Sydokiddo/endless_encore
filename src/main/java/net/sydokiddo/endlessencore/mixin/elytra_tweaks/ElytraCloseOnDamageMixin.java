@@ -25,7 +25,7 @@ public class ElytraCloseOnDamageMixin {
     @Inject(at = @At("RETURN"), method = "hurt")
     private void onDamage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity player = (LivingEntity) (Object) this;
-        if (EndlessEncore.getConfig().elytra_changes) {
+        if (EndlessEncore.getConfig().elytra_changes.aerial_fatigue) {
             if (player instanceof ServerPlayer && player.isFallFlying() && !((ServerPlayer) player).isCreative()) {
                 ((ServerPlayer) player).stopFallFlying();
                 ((ServerPlayer) player).playNotifySound(ModSoundEvents.PLAYER_ELYTRA_CLOSE, SoundSource.PLAYERS, 1.0f, 1.0f);

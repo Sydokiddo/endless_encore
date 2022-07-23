@@ -22,7 +22,7 @@ public class EnderDragonMixin {
 
     @Inject(at = @At("HEAD"), method = "hurt(Lnet/minecraft/world/entity/boss/EnderDragonPart;Lnet/minecraft/world/damagesource/DamageSource;F)Z", cancellable = true)
     public void hurt(EnderDragonPart enderDragonPart, DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {
-        if (EndlessEncore.getConfig().upgraded_dragon_fight) {
+        if (EndlessEncore.getConfig().ender_dragon_changes.explosion_immunity) {
             if (damageSource.isExplosion()) {
                 cir.setReturnValue(false);
             }
@@ -33,7 +33,7 @@ public class EnderDragonMixin {
 
     @Inject(at = @At("HEAD"), method = "createAttributes", cancellable = true)
     private static void createAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
-        if (EndlessEncore.getConfig().upgraded_dragon_fight) {
+        if (EndlessEncore.getConfig().ender_dragon_changes.increased_health) {
             cir.setReturnValue(Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 400.0D));
         }
     }

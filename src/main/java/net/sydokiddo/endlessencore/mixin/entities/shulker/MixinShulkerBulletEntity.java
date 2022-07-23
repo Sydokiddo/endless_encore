@@ -7,6 +7,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ShulkerBullet;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.item.ModItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,7 +24,7 @@ public abstract class MixinShulkerBulletEntity {
     @Inject(at = @At("HEAD"), method = "tick()V", cancellable = true)
     public void tick(CallbackInfo ci) {
         Object self = this;
-        if (!((Entity) self).level.isClientSide) {
+        if (!((Entity) self).level.isClientSide && EndlessEncore.getConfig().vanilla_mobs.shulker_changes) {
             Entity owner = ((Projectile) self).getOwner();
             if (owner == null || !owner.isAlive()) {
                 ((Projectile) self).playSound(SoundEvents.SHULKER_BULLET_HURT);

@@ -23,12 +23,12 @@ public class ElytraCameraHandler {
             return;
         if (mc.player == null || mc.player.isSleeping())
             return;
-        if (!EndlessEncore.getConfig().elytra_camera) {
+        if (!EndlessEncore.getConfig().elytra_changes.elytra_camera) {
             return;
         }
 
         if (mc.player.isFallFlying()) {
-            if (EndlessEncore.getConfig().elytra_camera) {
+            if (EndlessEncore.getConfig().elytra_changes.elytra_camera) {
                 float pTicks = Minecraft.getInstance().getFrameTime();
                 Vec3 look = mc.player.getViewVector(pTicks);
                 look = new Vec3(look.x, 0, look.z);
@@ -41,9 +41,9 @@ public class ElytraCameraHandler {
 
             // Sometimes if the game is too laggy, the specific tick may be skipped
 
-            if (EndlessEncore.getConfig().elytra_camera && mc.player.getFallFlyingTicks() >= 10) {
+            if (EndlessEncore.getConfig().elytra_changes.elytra_camera && mc.player.getFallFlyingTicks() >= 10) {
                 elytraFlying = true;
-            } else if (EndlessEncore.getConfig().elytra_camera && elytraFlying) {
+            } else if (EndlessEncore.getConfig().elytra_changes.elytra_camera && elytraFlying) {
                 elytraFlying = false;
             }
         }

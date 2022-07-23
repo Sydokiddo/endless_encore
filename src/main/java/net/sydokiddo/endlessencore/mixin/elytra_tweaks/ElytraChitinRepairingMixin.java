@@ -16,7 +16,7 @@ public class ElytraChitinRepairingMixin {
 
     @Inject(at = @At("RETURN"), method = "isValidRepairItem", cancellable = true)
     private void canRepair(ItemStack stack, ItemStack ingredient, CallbackInfoReturnable<Boolean> cir) {
-        if (EndlessEncore.getConfig().elytra_changes) {
+        if (EndlessEncore.getConfig().elytra_changes.repair_with_chitin) {
             cir.setReturnValue(ingredient.is(ModItems.CHITIN));
         }
     }

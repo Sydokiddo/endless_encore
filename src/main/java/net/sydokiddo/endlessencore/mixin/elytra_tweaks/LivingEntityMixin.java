@@ -42,7 +42,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Redirect(method = "updateFallFlying",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;setSharedFlag(IZ)V"))
     public void initAi(LivingEntity entity, int idx, boolean val) {
-        if (EndlessEncore.getConfig().elytra_changes) {
+        if (EndlessEncore.getConfig().elytra_changes.elytra_hopping) {
             if (entity.getDeltaMovement().y == 0) {
                 if (elytrabounce$timer > 1)
                     entity.setSharedFlag(7, val);

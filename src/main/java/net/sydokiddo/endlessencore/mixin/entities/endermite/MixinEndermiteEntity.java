@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
+import net.sydokiddo.endlessencore.EndlessEncore;
 import net.sydokiddo.endlessencore.effect.ModEffects;
 import net.sydokiddo.endlessencore.sound.ModSoundEvents;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +45,7 @@ public abstract class MixinEndermiteEntity extends Monster {
     // Endermites can now give players the Vulnerability status effect
 
     public boolean doHurtTarget(@NotNull Entity entity) {
-        if (super.doHurtTarget(entity)) {
+        if (super.doHurtTarget(entity) && EndlessEncore.getConfig().vanilla_mobs.endermite_changes) {
             if (entity instanceof LivingEntity) {
                 int i = 0;
                 if (this.level.getDifficulty() == Difficulty.NORMAL) {
@@ -67,13 +68,13 @@ public abstract class MixinEndermiteEntity extends Monster {
     // Endermites are now hurt by water
 
     public boolean isSensitiveToWater() {
-        return true;
+        return EndlessEncore.getConfig().vanilla_mobs.endermite_changes;
     }
 
     // Endermite Teleportation
 
     protected boolean teleport() {
-        if (!this.level.isClientSide() && this.isAlive()) {
+        if (!this.level.isClientSide() && this.isAlive() && EndlessEncore.getConfig().vanilla_mobs.endermite_changes) {
             double d = this.getX() + (this.random.nextDouble() - 0.5D) * 64.0D;
             double e = this.getY() + (double)(this.random.nextInt(64) - 32);
             double f = this.getZ() + (this.random.nextDouble() - 0.5D) * 64.0D;
@@ -93,7 +94,7 @@ public abstract class MixinEndermiteEntity extends Monster {
         BlockState blockState = this.level.getBlockState(mutableBlockPos);
         boolean bl = blockState.getMaterial().blocksMotion();
         boolean bl2 = blockState.getFluidState().is(FluidTags.WATER);
-        if (bl && !bl2) {
+        if (bl && !bl2 && EndlessEncore.getConfig().vanilla_mobs.endermite_changes) {
             Vec3 vec3 = this.position();
             boolean bl3 = this.randomTeleport(d, e, f, true);
             if (bl3) {
@@ -121,7 +122,7 @@ public abstract class MixinEndermiteEntity extends Monster {
     public boolean hurt(@NotNull DamageSource damageSource, float f) {
         if (this.isInvulnerableTo(damageSource)) {
             return false;
-        } else if (damageSource instanceof IndirectEntityDamageSource) {
+        } else if (damageSource instanceof IndirectEntityDamageSource && EndlessEncore.getConfig().vanilla_mobs.endermite_changes) {
             Entity entity = damageSource.getDirectEntity();
             boolean bl;
             if (entity instanceof ThrownPotion) {

@@ -43,12 +43,16 @@ public class ModPotions {
     // Potion Recipes
 
     private static void registerLevitationPotionRecipe() {
-        BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, ModItems.SHULKER_BULLET,
-        ModPotions.LEVITATION);
+        if (EndlessEncore.getConfig().misc_tweaks.allow_levitation_potions) {
+            BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(Potions.AWKWARD, ModItems.SHULKER_BULLET,
+            ModPotions.LEVITATION);
+        }
     }
 
     private static void registerLongLevitationPotionRecipe() {
+        if (EndlessEncore.getConfig().misc_tweaks.allow_levitation_potions) {
         BrewingRecipeRegistryMixin.invokeRegisterPotionRecipe(ModPotions.LEVITATION, Items.REDSTONE,
         ModPotions.LONG_LEVITATION);
+        }
     }
 }
