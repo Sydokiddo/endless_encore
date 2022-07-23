@@ -26,15 +26,15 @@ public class BallisticEnchantmentMixin {
         EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BALLISTIC, player.getItemBySlot(EquipmentSlot.CHEST))));
         if (player instanceof ServerPlayer && (player.isFallFlying()) && (!player.isOnGround()) && (player.getDeltaMovement().horizontalDistance() >= 1) && entity instanceof LivingEntity) {
             if (ballisticLevel == 1) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 3.0f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 5.0f);
                 ((LivingEntity) entity).knockback(0.2D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel == 2) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 5.0f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 7.0f);
                 ((LivingEntity) entity).knockback(0.5D, entity.getX(), entity.getZ());
             }
             if (ballisticLevel >= 3) {
-                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 7.0f);
+                entity.hurt(new EndlessEncore.BallisticDamageSource(player), 9.0f);
                 ((LivingEntity) entity).knockback(0.8D, entity.getX(), entity.getZ());
             }
             ItemStack stack = player.getItemBySlot(EquipmentSlot.CHEST);
