@@ -16,6 +16,7 @@ public class EndlessEncoreTags {
     public static final TagKey<Item> BABY_ETHEREAL_BRIBING_ITEMS = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("endlessencore", "baby_ethereal_bribing_items"));
     public static final TagKey<Block> BASE_STONE_END = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("endlessencore", "base_stone_end"));
     public static final TagKey<Block> RIFT_FOUNTAIN_BLOCKS = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("endlessencore", "rift_fountain_blocks"));
+    public static final TagKey<Block> CHORUS_PLANT_CAN_GROW_ON = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("endlessencore", "chorus_plant_can_grow_on"));
     public static final TagKey<GameEvent> ETHEREAL_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "ethereal_can_listen"));
     public static final TagKey<GameEvent> BABY_ETHEREAL_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "baby_ethereal_can_listen"));
     public static final TagKey<GameEvent> GLADIATOR_CAN_LISTEN = TagKey.create(Registry.GAME_EVENT_REGISTRY, new ResourceLocation("endlessencore", "gladiator_can_listen"));

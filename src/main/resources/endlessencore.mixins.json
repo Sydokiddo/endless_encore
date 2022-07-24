@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "PlayerManagerMixin",
+    "blocks.chorus_plant.ChorusFlowerCanGrowOn",
     "elytra_tweaks.ElytraChitinRepairingMixin",
     "elytra_tweaks.ElytraCloseOnDamageMixin",
     "elytra_tweaks.LivingEntityMixin",
